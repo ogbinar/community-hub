@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pathway Checklist — DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    @media print {
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md no-print">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Pathway</a>
+        <button onclick="window.print()" class="bg-dep-gold text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition-colors">🖨️ Print / PDF</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24 no-print">
+
+  <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-2">Pathway Checklist</h1>
+  <p class="text-lg text-dep-slate max-w-2xl leading-relaxed mb-6">Track your progress through the 8-week Career Shifter DA/DE Pathway. Your selections are saved locally in your browser.</p>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar" class="mb-10">
+    <div class="w-full bg-gray-200 rounded-full h-4">
+      <div id="progress-fill" class="bg-dep-gold h-4 rounded-full transition-all duration-300" style="width: 0%"></div>
+    </div>
+    <p class="text-sm text-dep-slate mt-2">Progress: <span id="progress-text">0%</span> (<span id="completed-count">0</span> of 8 weeks completed)</p>
+  </div>
+
+  <!-- Week Checkboxes -->
+  <div class="space-y-4">
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="1" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">Week 1–2:</span> SQL Basics + Excel/Power Query — Assignment submitted
+        <span class="block text-sm text-dep-slate mt-0.5">Write 5 SQL queries against a sample dataset</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="2" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">Week 3–4:</span> Power BI Fundamentals + DAX Basics — Dashboard built
+        <span class="block text-sm text-dep-slate mt-0.5">Build a dashboard from a sample dataset</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="3" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">Week 5–6:</span> Python pandas + Data Manipulation — Analysis complete
+        <span class="block text-sm text-dep-slate mt-0.5">Analyze a real dataset and produce insights</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="4" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">Week 7–8:</span> Cloud Deployment + GitHub Portfolio — Portfolio live
+        <span class="block text-sm text-dep-slate mt-0.5">Deploy scripts to cloud, set up GitHub portfolio</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="5" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">Discord Check-in:</span> Posted progress in Discord check-in thread
+        <span class="block text-sm text-dep-slate mt-0.5">Post your weekly progress in the #pathway-checkins channel</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="6" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">AI-Augmented Modules:</span> Completed all 3 modules (SQL, Python, Excel/Power BI)
+        <span class="block text-sm text-dep-slate mt-0.5">Watch videos, read Gists, post questions in Discord</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="7" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">LinkedIn Profile:</span> Updated LinkedIn with new skills and projects
+        <span class="block text-sm text-dep-slate mt-0.5">Use the LinkedIn Profile Optimizer checklist</span>
+      </div>
+    </label>
+
+    <label class="flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+      <input type="checkbox" class="week-checkbox w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold" data-week="8" onchange="saveProgress()" />
+      <div>
+        <span class="font-semibold text-dep-blue">Badge Earned:</span> Received DEP-branded completion badge
+        <span class="block text-sm text-dep-slate mt-0.5">Download and share on LinkedIn</span>
+      </div>
+    </label>
+  </div>
+
+  <!-- Completion Message -->
+  <div id="completion-message" class="hidden mt-8 bg-dep-gold/10 rounded-xl p-6 border-l-4 border-dep-gold text-center">
+    <h3 class="text-lg font-bold text-dep-blue mb-2">🎉 Congratulations! All weeks completed!</h3>
+    <p class="text-dep-slate">You've finished the 8-week Career Shifter DA/DE Pathway. Share your completion badge on LinkedIn!</p>
+    <a href="../linkedin/index.html" class="inline-block mt-4 bg-dep-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">Update Your LinkedIn →</a>
+  </div>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30 no-print">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function saveProgress() {
+    const checks = document.querySelectorAll('.week-checkbox');
+    const completed = Array.from(checks).filter(c => c.checked).length;
+    const total = checks.length;
+    const progress = (completed / total) * 100;
+
+    localStorage.setItem('dep-pathway-progress', JSON.stringify(
+      Array.from(checks).map(c => c.checked)
+    ));
+
+    document.getElementById('progress-fill').style.width = progress + '%';
+    document.getElementById('progress-text').textContent = Math.round(progress) + '%';
+    document.getElementById('completed-count').textContent = completed;
+
+    // Show completion message when all checked
+    const msg = document.getElementById('completion-message');
+    if (completed === total) {
+      msg.classList.remove('hidden');
+    } else {
+      msg.classList.add('hidden');
+    }
+  }
+
+  window.onload = () => {
+    const saved = JSON.parse(localStorage.getItem('dep-pathway-progress') || '[]');
+    const checks = document.querySelectorAll('.week-checkbox');
+    checks.forEach((c, i) => { c.checked = saved[i] === true; });
+    saveProgress();
+  };
+</script>
+
+</body>
+</html>

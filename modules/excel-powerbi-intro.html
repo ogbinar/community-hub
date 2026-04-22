@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel & Power BI Intro — AI-Augmented Learning | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    .sun-motif { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ffffff' opacity='0.06'/%3E%3Cline x1='50' y1='8' x2='50' y2='25' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='50' y1='75' x2='50' y2='92' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='8' y1='50' x2='25' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='75' y1='50' x2='92' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='20.3' y1='20.3' x2='32.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='67.5' y1='67.5' x2='79.7' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='79.7' y1='20.3' x2='67.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='32.5' y1='67.5' x2='20.3' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3C/svg%3E"); background-size: 120px 120px; }
+    .banig-divider { height: 8px; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(212,145,11,0.2) 8px, rgba(212,145,11,0.2) 16px); }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(30,58,95,0.15); }
+    code { font-family: 'Courier New', monospace; }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#resources" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Resources</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Module Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Module 3 of 3</span>
+      <span class="text-dep-slate/60">•</span>
+      <span>AI-Augmented Learning</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Excel & Power BI Intro</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Learn to interrogate AI-generated Excel formulas and Power BI DAX measures. Understand the difference between Google Sheets and Excel, and why AI often confuses the two.</p>
+
+    <!-- YouTube Embed -->
+    <div class="mt-8 rounded-xl overflow-hidden shadow-lg aspect-video max-w-4xl">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/jIGFrn6es0w" title="Excel & Power BI Intro Module" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <p class="text-sm text-dep-slate mt-3">📺 Watch the 5-minute module video above, then follow along with each section below.</p>
+  </section>
+
+  <!-- Section 1: Concept Explanation -->
+  <section id="concept" class="mb-10">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      Concept Explanation
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <p class="text-dep-charcoal leading-relaxed mb-4"><strong>Important distinction:</strong> 49.7% of our community uses Google Sheets, but employers expect Excel proficiency (71.3%). AI often confuses the two — and the formulas are different!</p>
+
+      <h3 class="font-semibold text-dep-blue mb-2">Excel vs Google Sheets: Key Differences</h3>
+      <table class="w-full border-collapse rounded-lg overflow-hidden my-4">
+        <thead class="bg-dep-blue text-white">
+          <tr><th class="p-3 text-left">Function</th><th class="p-3 text-left">Excel</th><th class="p-3 text-left">Google Sheets</th></tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="bg-white border-b"><td class="p-3 font-mono">XLOOKUP</td><td class="p-3">✅ Supported</td><td class="p-3 text-dep-coral font-semibold">❌ NOT supported</td></tr>
+          <tr class="bg-dep-lightgold/30 border-b"><td class="p-3 font-mono">VLOOKUP</td><td class="p-3">✅ Supported</td><td class="p-3">✅ Supported</td></tr>
+          <tr class="bg-white border-b"><td class="p-3 font-mono">QUERY()</td><td class="p-3 text-dep-coral font-semibold">❌ NOT supported</td><td class="p-3">✅ Supported</td></tr>
+          <tr class="bg-dep-lightgold/30 border-b"><td class="p-3 font-mono">Pivot Tables</td><td class="p-3">Native feature</td><td class="p-3">Native feature</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="font-semibold text-dep-blue mb-2 mt-6">Power BI & DAX Basics</h3>
+      <p class="text-dep-charcoal leading-relaxed mb-4">DAX (Data Analysis Expressions) is the formula language for Power BI. It's similar to Excel formulas but works on entire columns, not individual cells.</p>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold my-4">
+        <pre><code># Basic DAX measure
+Total Sales = SUM(Sales[Amount])</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: AI-Generated Answer -->
+  <section id="ai-answer" class="mb-10">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-3.5 8C14.5 15.5 12 18 12 18s-2.5-2.5-3.5-5C7 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><line x1="12" y1="22" x2="12" y2="20"/></svg>
+      AI-Generated Answer (What ChatGPT/Copilot Would Output)
+    </h2>
+    <div class="bg-dep-lightgold p-6 rounded-xl border-l-4 border-dep-gold">
+      <p class="text-sm text-dep-slate mb-3 font-medium">Here's what an AI would generate if asked: "Write a formula to look up customer names from a table based on customer ID."</p>
+
+      <div class="bg-white rounded-lg p-4 mb-4 relative group">
+        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <pre><code># AI-generated formula (Excel)
+=XLOOKUP(A2, CustomerID[CustomerID], CustomerID[Name])</code></pre>
+      </div>
+
+      <p class="text-sm text-dep-slate">This looks correct for Excel. But what if you're using Google Sheets? Let's find out.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Where AI Gets It Wrong -->
+  <section id="where-ai-wrong" class="mb-10">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      Where AI Gets It Wrong
+    </h2>
+    <div class="bg-red-50 p-6 rounded-xl border-l-4 border-dep-coral">
+      <p class="text-dep-charcoal leading-relaxed mb-4"><strong>This formula has three common pitfalls that AI often misses:</strong></p>
+
+      <ol class="space-y-3 text-dep-charcoal">
+        <li class="flex gap-3">
+          <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">1</span>
+          <div><strong>XLOOKUP doesn't work in Google Sheets.</strong> If you're using Google Sheets (49.7% of our community), this formula will return a #NAME? error. Use VLOOKUP or QUERY() instead.</div>
+        </li>
+        <li class="flex gap-3">
+          <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">2</span>
+          <div><strong>No handling of #N/A errors.</strong> If the customer ID doesn't exist, XLOOKUP returns #N/A. Wrap it in IFNA() to show a friendly message instead.</div>
+        </li>
+        <li class="flex gap-3">
+          <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">3</span>
+          <div><strong>DAX measure context matters.</strong> If this DAX formula is used in a Power BI report with date filters, it won't respect the filter context unless you use CALCULATE(). AI rarely explains this.</div>
+        </li>
+      </ol>
+
+      <div class="bg-white rounded-lg p-4 mt-4">
+        <pre><code># Fixed version for Google Sheets
+=IFNA(VLOOKUP(A2, CustomerID!A:B, 2, FALSE), "Customer not found")
+
+# Fixed version for DAX (respects filter context)
+Total Sales = CALCULATE(SUM(Sales[Amount]))</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Practitioner Validation -->
+  <section id="practitioner-validation" class="mb-10">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.35-9.5"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      How a Practitioner Validates This Formula
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <p class="text-dep-charcoal leading-relaxed mb-4">Before trusting any AI-generated Excel/DAX formula, practitioners follow these validation steps:</p>
+
+      <ol class="space-y-3 text-dep-charcoal">
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span><div><strong>Identify the platform.</strong> Is this Excel or Google Sheets? The formula syntax differs significantly.</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div><strong>Test with known data.</strong> Enter a few rows of known input/output and verify the formula produces correct results.</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span><div><strong>Test edge cases.</strong> What happens with empty cells? Duplicate IDs? Text vs number mismatches?</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span><div><strong>Check error handling.</strong> Does the formula show #N/A, #VALUE!, or a friendly message?</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span><div><strong>For DAX: verify filter context.</strong> Does the measure respond to slicers, date filters, and row context correctly?</div></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">📺 YouTube Video</h3>
+        <p class="text-sm text-dep-slate mb-3">5-minute video covering Excel vs Sheets and Power BI basics.</p>
+        <span class="text-dep-gold font-semibold text-sm">Watch →</span>
+      </a>
+      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">📂 GitHub Gist</h3>
+        <p class="text-sm text-dep-slate mb-3">Sample datasets, Excel templates, and Power BI .pbix files.</p>
+        <span class="text-dep-gold font-semibold text-sm">View Files →</span>
+      </a>
+      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">💬 Discord Q&A</h3>
+        <p class="text-sm text-dep-slate mb-3">Post your questions in the #excel-powerbi thread. Mentors respond within 24 hours.</p>
+        <span class="text-dep-gold font-semibold text-sm">Join Thread →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Completion CTA -->
+  <section class="mb-12 bg-dep-lightgold rounded-xl p-8 border-l-4 border-dep-gold">
+    <h3 class="text-lg font-bold text-dep-blue mb-2">🎉 Congratulations! You've completed all 3 modules.</h3>
+    <p class="text-dep-slate mb-4">You now know how to interrogate AI-generated SQL, Python, and Excel/DAX code. Share your completion badge on LinkedIn!</p>
+    <a href="../pathway/index.html" class="inline-block bg-dep-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">Continue to Pathway →</a>
+  </section>
+
+  <!-- Navigation Between Modules -->
+  <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <a href="python-fundamentals.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">← Previous Module</a>
+    <div class="flex items-center gap-2 text-sm">
+      <span class="bg-dep-gold/20 text-dep-blue rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">1</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold/20 text-dep-blue rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">2</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">3</span>
+    </div>
+    <a href="../pathway/index.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Complete Modules →</a>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function copyCode(btn) {
+    const code = btn.parentElement.querySelector('code').textContent;
+    navigator.clipboard.writeText(code);
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  }
+</script>
+
+</body>
+</html>
