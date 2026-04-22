@@ -1,262 +1,156 @@
-# SPEC: Data Engineering Pilipinas — Community Hub MVP
+# SPEC: Data Engineering Pilipinas — Community Hub MVP (Full Phased Roadmap)
 
 ## Overview
 
-Build a **single-page, HTML + Tailwind CSS** prototype of the DEP Community Hub. The page serves as a landing hub that surfaces three core features for Students and Job Seekers (55.7% of the community), who are the primary launch audience.
+Build a **single-page, HTML + Tailwind CSS** prototype of the DEP Community Hub that surfaces all features across three implementation phases. The page serves as both a landing hub and a public roadmap for the community.
 
-The prototype is **not a full application** — it is a static, functional landing page that demonstrates the user experience and structure of the MVP. It should be deployable to GitHub Pages with zero dependencies beyond CDN-hosted Tailwind.
-
----
-
-## 1. Target Audience
-
-| Segment | Share | Why They're First |
-|---|---|---|
-| Students | 34.5% (n=642) | 81.6% want upskilling; 65.8% use AI daily for study |
-| Job Seekers | 21.2% (n=394) | 86.9% want upskilling — highest motivation-to-enroll ratio |
-
-## 2. Core Features to Surface
-
-### Feature A: AI-Augmented Learning Modules (Score: 9.3/10)
-- Three short modules: SQL Basics, Python Fundamentals, Excel/Power BI Intro
-- Each module = 5-min YouTube video + GitHub Gist code examples + Discord Q&A thread
-- Structure: Concept → AI-generated answer → "Where AI gets it wrong" → Practitioner validation
-
-### Feature B: Career Shifter DA/DE Pathway (Score: 9.0/10)
-- 8-week structured sprint with weekly milestones
-- Week 1-2: SQL + Excel/Power Query | Week 3-4: Power BI + DAX | Week 5-6: Python pandas | Week 7-8: Cloud deployment + GitHub portfolio
-- Discord accountability check-ins; DEP-branded completion badge
-
-### Feature C: LinkedIn Profile Optimizer (Score: 8.7/10)
-- Interactive checklist for optimizing LinkedIn profiles for data roles
-- AI-assisted section writing prompts (copy-paste, no API needed in MVP)
-- Before/after examples + optional Discord office hours
+All insights are grounded in the **DEP State of the Community Survey 2026** (n=1,861 respondents).
 
 ---
 
-## 3. Page Structure & Sections
+## Target Audience by Phase
 
-The single page should contain these sections in order:
+| Phase | Primary Users | Share | Rationale |
+|---|---|---|---|
+| Phase 1 | Students + Job Seekers | 55.7% | Largest segment; highest motivation-to-enroll ratio |
+| Phase 2 | Career Shifters + Data Professionals | 39.2% | Close the skill gap; address salary bottleneck |
+| Phase 3 | Content Creators + Overseas Filipinos + Corporate Pros | ~12% | Network effects, hiring pipelines, async collaboration |
+
+---
+
+## Complete Feature Roadmap (All 40+ Features)
+
+### Phase 1: MVP Launch (Months 1–3) — High Impact, High Adoption, High Sustainability
+**Score range: 8.7–9.3/10 | Focus: Foundation for Students + Job Seekers**
+
+| # | Feature | Persona | Score | Description |
+|---|---|---|---|---|
+| 1 | **AI-Augmented Learning Modules** | Maya (Student) | 9.3 | YouTube-first interactive lessons teaching "how to interrogate AI outputs" — concept → AI answer → "Where AI gets it wrong" → practitioner validation |
+| 2 | **Career Shifter DA/DE Pathway** | Lia (Career Shifter) | 9.0 | 8-week structured sprint: Wk1-2 SQL + Excel, Wk3-4 Power BI + DAX, Wk5-6 Python pandas, Wk7-8 Cloud + GitHub portfolio. Discord accountability cohorts. |
+| 3 | **Time-Bound Mentorship Matching** | David (Corporate Pro) | 8.7 | ADPList-style booking: mentors commit to specific timeframes (e.g., first Thursday monthly), mentees book 30-min sessions on specific topics |
+
+### Phase 2: Scale (Months 4–6) — High Impact, Medium Adoption
+**Score range: 8.3–8.7/10 | Focus: Expanding toolkit for Analysts + Engineers**
+
+| # | Feature | Persona | Score | Description |
+|---|---|---|---|---|
+| 4 | **LinkedIn Profile Optimizer** | Jose (Job Seeker) | 8.7 | Interactive checklist: project-rich GitHub linking, certification badges, skill endorsements, headline optimization. AI-assisted content generation. |
+| 5 | **Multi-Tool Fluency Map** | Rico (Data Analyst) | 8.3 | Visual roadmap: Power BI → Looker Studio → Python tools. Addresses ₱75k–₱100k bottleneck; data shows ₱100k+ earners show multi-tool fluency. |
+| 6 | **Git/GitHub Adoption Guide** | Kai (Data Engineer) | 8.3 | Step-by-step guide for DEs to adopt version control (only 48.8% use it). Covers: GitHub basics, branching strategies, commit conventions, PR workflows. |
+
+### Phase 3: Expand (Months 7–12) — High Impact + Supporting Features
+**Score range: 6.5–8.8/10 | Focus: Deepening expertise + network effects**
+
+#### Tier A: High Impact (8.0+)
+| # | Feature | Persona | Score | Description |
+|---|---|---|---|---|
+| 7 | **Power BI Gap Closer** | Lia (Career Shifter) | 8.8 | Targeted module closing the 25-point gap between Shifters (43.9%) and Pros (69.1%). YouTube-first + Discord Q&A. |
+| 8 | **DAX Portfolio Project** | Jose (Job Seeker) | 8.2 | End-to-end DAX project template: data model design, measures, time intelligence, dashboard visualization. Closes 2.2% vs 29.1% gap. |
+| 9 | **AI Workflow Interview Prep** | Rico (Data Analyst) | 8.2 | Module teaching how to articulate AI workflow in interviews: "I use Copilot for query generation, Claude for documentation review." |
+| 10 | **Remote Mentorship Board** | Ana (Overseas Filipino) | 8.2 | Async mentorship platform: recorded videos, async Q&A, scheduled video calls across timezones. Addresses 83.5% Metro Manila/Luzon concentration. |
+
+#### Tier B: Useful Many (7.5–8.0)
+| # | Feature | Persona | Score | Description |
+|---|---|---|---|---|
+| 11 | **DAX Micro-Lessons** | Maya (Student) | 8.0 | Bite-sized YouTube videos (5 min each): calculated columns, measures, time intelligence. Hands-on exercises with sample dataset. |
+| 12 | **Draw.io Architecture Template Library** | Kai (Data Engineer) | 8.0 | Pre-built templates: ETL pipelines, data lakes, cloud deployments, CI/CD workflows. Addresses 35.4% Draw.io usage gap. |
+| 13 | **GitHub Portfolio Showcase Guide** | Kai (Data Engineer) | 8.0 | One-page guide: README templates, project organization, documentation standards, LinkedIn integration tips. |
+| 14 | **DAX Signal Gap Course** | Lia (Career Shifter) | 8.0 | Focused module on highest-signal gap: 29.1% Pros vs 6.2% Shifters. DAX functions, calculated columns, measures, time intelligence. |
+| 15 | **AI Study Workflow Guide** | Maya (Student) | 7.8 | One-page PDF: "Deep Learning via AI" — how to use ChatGPT/Gemini/Copilot for debugging, explaining concepts, reviewing code. |
+| 16 | **Portfolio Builder Template** | Jose (Job Seeker) | 7.8 | Notion/Google Sites template: project showcase, GitHub integration, certifications display, LinkedIn optimizer checklist. |
+| 17 | **"Decision to Shift" Support Framework** | Lia (Career Shifter) | 7.8 | Self-assessment quiz, skill gap analysis, personalized learning plan, mentor matching. Addresses 62.5% actively weighing their shift. |
+| 18 | **Hiring Pipeline Connector** | David (Corporate Pro) | 7.8 | Job posting board + candidate screening checklist + referral tracking. Addresses hiring friction (48.3% earn ≤₱35k). |
+| 19 | **Creator Spotlight Platform** | Sandy (Content Creator) | 7.8 | Monthly feature highlighting top community creators: interview, project showcase, cross-promotion links. Addresses 24.6% YouTube awareness gap. |
+| 20 | **YouTube Content Calendar** | Sandy (Content Creator) | 7.8 | Shared calendar showing upcoming topics, creator assignments, collaboration opportunities. Prevents overlap; encourages cross-promotion. |
+| 21 | **Local to Cloud Bridge Curriculum** | Lia (Career Shifter) | 7.5 | Module teaching: local Python/SQL → cloud deployment (AWS/Azure/GCP) → monitoring → visualization in Looker Studio. Addresses GCP 60.7% vs AWS 25.8%/Azure 31.5% mismatch. |
+| 22 | **Cloud Deployment Bootcamp** | Kai (Data Engineer) | 7.8 | Hands-on module: Docker basics, cloud VM setup, CI/CD pipelines, monitoring. Addresses 19.5% VM usage gap and 12.2% workstation gap. |
+
+#### Tier C: Supporting Features (6.0–7.5)
+| # | Feature | Persona | Score | Description |
+|---|---|---|---|---|
+| 23 | **Cloud Certification Guide** | Rico (Data Analyst) | 7.8 | Roadmap for AWS Solutions Architect and Azure Data Engineer certifications. Study plan, free resources, exam tips. |
+| 24 | **Laptop-Only Project Templates** | Maya (Student) | 7.5 | Pre-configured Jupyter notebooks + Python scripts that run on standard laptops (8GB RAM). No Docker/Spark. Focus on pandas, SQL, Power BI exports. |
+| 25 | **Salary Band Progression Tracker** | Rico (Data Analyst) | 7.5 | Interactive tool showing what skills differentiate between salary bands. SQL (76.9% at ₱100k+), Python (73.6%), Tableau (38.0%). |
+| 26 | **AI-Assisted Coding Toolkit** | Kai (Data Engineer) | 7.5 | Guide to GitHub Copilot (16.5%), Cursor (12.7%), Databricks assistant (10.1%). Setup instructions, prompt engineering tips, validation best practices. |
+| 27 | **Async Collaboration Tools** | Ana (Overseas Filipino) | 7.5 | Platform for overseas members to contribute: code reviews, documentation updates, content creation, project management. Timezone-aware scheduling. |
+| 28 | **Language/Cultural Bridge Guide** | Ana (Overseas Filipino) | 7.5 | One-page guide: cultural context tips, language resources, community norms overview for overseas members engaging with English-heavy/Taglish content. |
+| 29 | **Free Credential Tracker** | Jose (Job Seeker) | 7.0 | Dashboard showing which free certifications are most valuable: Google Analytics (7.7%), Microsoft Learn (8.6%), GCP Skills Boost (2.3%). |
+| 30 | **Content Repurposing Toolkit** | Sandy (Content Creator) | 7.0 | Templates for turning one piece of content into multiple formats: YouTube → LinkedIn → GitHub README → Discord announcement → Twitter thread. |
+| 31 | **Creator Analytics Dashboard** | Sandy (Content Creator) | 7.5 | Simple dashboard: view counts, engagement rates, top-performing content. YouTube API integration, GitHub repo stats, LinkedIn profile views. |
+| 32 | **Career Shifter Mentorship Board** | David (Corporate Pro) | 8.5 | Dedicated board connecting Shifters with Professionals: skill matching, availability calendar, session tracking. Overlaps with #3 Time-Bound Mentorship. |
+| 33 | **Cross-Promotion Network** | Sandy (Content Creator) | 8.2 | Directory of community creators with YouTube channels, GitHub repos, LinkedIn profiles. Enables collaboration and mutual promotion. |
+| 34 | **Structured Giving-Back Framework** | David (Corporate Pro) | 7.5 | Guide teaching Corporate Pros how to give back: monthly mentoring, quarterly webinars, annual workshops. Time commitment estimates + impact tracking. |
+| 35 | **Overseas Hiring Connector** | Ana (Overseas Filipino) | 7.8 | Tool connecting overseas Filipinos with local talent for remote roles. Job posting board, candidate screening checklist, visa/work authorization guidance. |
+| 36 | **Global Contributor Network** | Ana (Overseas Filipino) | 7.0 | Directory of overseas community members with skills, availability, interests. Enables remote collaboration, guest speaking, panel participation. |
+
+#### Tier D: Low Impact / Overlaps (6.0–6.5)
+| # | Feature | Persona | Score | Notes |
+|---|---|---|---|---|
+| 37 | **Personalized Learning Path Generator** | Maya (Student) | 6.5 | Interactive tool for customized plans. Overlaps with AI-Augmented Learning Modules (#1). |
+| 38 | **"Master One BI Tool" Validation Tool** | Rico (Data Analyst) | 6.5 | Why one tool is right for entry-level. Overlaps with Multi-Tool Fluency Map (#5). |
+| 39 | **Mentor Impact Dashboard** | David (Corporate Pro) | 6.5 | Shows mentee progress, session completion rates, career advancement outcomes. Requires technical setup. |
+| 40 | **Job Application Tracker** | Jose (Job Seeker) | 6.0 | Simple spreadsheet template. Low impact; overlaps with LinkedIn Profile Optimizer (#4). |
+
+---
+
+## Page Structure & Sections
 
 ### Section 1 — Hero / Header
-- Background: deep blue (#1e3a5f) with subtle sun motif watermark (8-ray abstracted SVG, ~5% opacity)
 - Title: "Data Engineering Pilipinas — Community Hub"
-  - Color: white, large and bold
-- Subtitle/tagline: "Free, structured learning for Filipinos transitioning into data careers"
-  - Color: warm off-white (#faf8f5) with slightly relaxed line-height
-- Primary CTA button: "Join First Cohort" — sun gold background (#d4910b), dark text, rounded corners
-  - Hover: slight scale up + shadow increase
-- Secondary link: "Explore the Hub →" — white text with underline on hover
-  - Scrolls to features section
-- Decorative accent: thin sun gold horizontal line beneath title (32px wide)
-- Layout: centered vertically and horizontally; text left-aligned on mobile, centered on desktop
+- Subtitle: "Free, structured learning for Filipinos transitioning into data careers"
+- Primary CTA: "Join First Cohort" → scrolls to sign-up
+- Secondary link: "Explore the Hub →" → scrolls to features
+- Trust badges: YouTube-first delivery | Discord accountability | DEP-branded certification | AI as co-creator in curriculum
 
 ### Section 2 — Community Snapshot (Trust Bar)
-Background: warm white (#faf8f5) with very light gold wash (#fef3c7 at 15% opacity)
-Divider above section: thin decorative line with repeating diamond pattern (banig-inspired weave motif, sun gold at 20% opacity)
+4 stat cards: 40,000+ members | 96.6% PH-based | 80.8% use AI for study weekly | ₱35k → ₱100k+ mobility gap
 
-A horizontal stat bar of 4 cards in a grid (2x2 on mobile, 4-across on desktop):
+### Section 3 — Phase 1 Features (The Three Pillars)
+Three cards in a grid:
+1. **AI-Augmented Learning Modules** (9.3/10) — SQL, Python, Excel/Power BI intro modules
+2. **Career Shifter DA/DE Pathway** (9.0/10) — 8-week sprint with Discord accountability
+3. **LinkedIn Profile Optimizer** (8.7/10) — Interactive checklist + AI-assisted content generation
 
-**Card 1:** "40,000+" — large number in deep blue (#1e3a5f), label: "Community members"
-**Card 2:** "96.6%" — large number in deep blue, label: "Philippines-based"
-**Card 3:** "80.8%" — large number in deep blue, label: "Use AI for study weekly"
-**Card 4:** "₱35k → ₱100k+" — large number in coral red (#c0392b), label: "The mobility gap we're closing"
+### Section 4 — Phase 2 Features (Expanding the Toolkit)
+Two cards in a grid:
+4. **Multi-Tool Fluency Map** (8.3/10) — Power BI → Looker Studio → Python tools roadmap
+5. **Git/GitHub Adoption Guide** (8.3/10) — Step-by-step guide to close 48.8% version control gap
 
-Design note: Numbers are extra-large (text-5xl or similar), labels are small and muted. The ₱ symbol is prominent — this is the core problem statement.
+### Section 5 — How It Works (User Journey)
+6-step timeline: Watch → Read → Try → Ask → Get Feedback → Earn Badge
 
-### Section 3 — Features (The Three Pillars)
-Background: warm white (#faf8f5)
-Divider above section: thin decorative line with repeating diamond pattern
-Section heading: "Three pillars to close the mobility gap" — deep blue, centered
+### Section 6 — Full Roadmap (All Phases)
+Expandable accordion showing all three phases with every feature, score, and survey validation. Phase 1 is expanded by default; Phase 2 and 3 are collapsible.
 
-Three cards in a grid layout (1-col on mobile, 3-col on desktop ≥768px), each representing one core feature:
+### Section 7 — Sign Up / Join Cohort
+Form: Name, Email, Role selector, "I want to learn" checkboxes (SQL, Python, Power BI, DAX, Cloud Deployment)
 
-**Card styling:** White background, rounded corners (rounded-xl), subtle shadow (shadow-md), hover: translateY(-2px) + shadow increase. Left border accent: sun gold (4px solid).
-
-**Card 1: AI-Augmented Learning Modules**
-- Icon: Sun gold SVG lightbulb or book icon at top-left of card
-- Title: "AI-Augmented Learning Modules" — deep blue, bold
-- Description: "Learn SQL, Python, and Power BI through AI-interrogated lessons — not passive videos"
-- Three module pills/tags (sun gold background with dark text): "SQL Basics", "Python Fundamentals", "Excel/Power BI Intro"
-- CTA button: Sun gold background, white text, rounded, "Start Learning →"
-
-**Card 2: Career Shifter DA/DE Pathway**
-- Icon: Sun gold SVG arrows-in-a-circle or roadmap icon
-- Title: "Career Shifter DA/DE Pathway" — deep blue, bold
-- Description: "8-week structured sprint with weekly milestones, Discord accountability, and a DEP-branded completion badge"
-- Timeline pills (deep blue background, white text): "Wk 1-2 SQL", "Wk 3-4 Power BI", "Wk 5-6 Python", "Wk 7-8 Cloud + Portfolio"
-- CTA button: Sun gold background, white text, rounded, "Join Cohort →"
-
-**Card 3: LinkedIn Profile Optimizer**
-- Icon: Sun gold SVG user-card or profile icon
-- Title: "LinkedIn Profile Optimizer" — deep blue, bold
-- Description: "Step-by-step checklist to build a project-rich LinkedIn profile that gets interview callbacks"
-- Checklist preview items (3 shown with checkmark icons): "Project-rich GitHub linking", "Certification badge display", "Headline optimization"
-- CTA button: Sun gold background, white text, rounded, "Get the Checklist →"
-
-### Section 4 — How It Works (User Journey)
-Background: deep blue (#1e3a5f) with subtle sun motif watermark (~5% opacity, white)
-Divider above section: decorative diamond pattern line
-Section heading: "How it works" — white, centered, large
-
-A horizontal timeline (6 steps, displayed as a flow on desktop, vertical stack on mobile):
-
-1. **Watch** — YouTube video (5-min module) — icon: play circle
-2. **Read** — GitHub Gist code examples — icon: file code
-3. **Try** — Exercises on your laptop — icon: laptop
-4. **Ask** — Post questions in Discord thread — icon: chat bubble
-5. **Get feedback** — Mentor response within 24 hours — icon: checkmark circle
-6. **Earn** — DEP-branded badge at completion — icon: medal/star
-
-Each step: white number circle (sun gold background) as the step indicator, white text description below it. Connector lines between steps in sun gold.
-
-### Section 5 — Sign Up / Join Cohort
-Background: warm white (#faf8f5) with very light gold wash
-Divider above section: decorative diamond pattern line
-Section heading: "Join the first cohort" — deep blue, centered, large
-Subheading (warm gray): "Free. No credit card needed. Built by Pinoys, for Pinoys."
-
-A simple form (non-functional, static) with fields:
-- Name (text input) — label above field, warm gray text
-- Email (email input) — label above field
-- Role selector (dropdown): Student / Job Seeker / Career Shifter / Data Professional / Other
-- "I want to learn" checkbox group with tag-style checkboxes: SQL / Python / Power BI / DAX / Cloud Deployment
-  - Checked boxes: sun gold background, white text
-  - Unchecked: light gray border, warm gray text
-- Submit button: large, centered, sun gold background (#d4910b), dark text (not white — contrast against gold), rounded, "Join First Cohort"
-- Microcopy beneath form: "We'll send you a Discord invite + Week 1 materials within 24 hours"
-
-### Section 6 — Footer
-Background: deep blue (#1e3a5f), white text
-Layout: 2-column on desktop (links left, credits right), single column on mobile
-
-Left side:
-- "Data Engineering Pilipinas" — white, bold
-- Links row: YouTube / Discord / GitHub / LinkedIn — sun gold color, hover: white
-- Small tagline beneath: "All tools are free and open-source."
-
-Right side:
-- "Built by the Data Engineering Pilipinas community"
-- Copyright notice: "© 2026 DEP Community. Survey compiled by Sandy G. Cabanes."
-- Subtle sun gold horizontal line as top border
+### Section 8 — Footer
+Links: YouTube, Discord, GitHub, LinkedIn. "Built by the Data Engineering Pilipinas community."
 
 ---
 
-## 4. Design Requirements
-
-### Visual Identity: Balancing DEP's Technical Cleanliness with Philippine Character
-
-The current DEP website (dataengineering.ph) is a **Quarto/Bootstrap-generated site** with:
-- Dark/light mode toggle
-- Very clean, academic, minimal aesthetic
-- Bootstrap Icons (bi-github, bi-facebook, bi-discord)
-- Neutral color treatment — mostly grays and blues from the Quarto theme
-- Left sidebar TOC navigation
-- No brand personality beyond "technical documentation"
-
-The Community Hub prototype should **preserve the clean technical foundation** while injecting **Philippine visual identity** that signals cultural belonging. The goal: it should feel like it belongs to the same ecosystem as dataengineering.ph, but with warmth and cultural specificity.
+## Design Requirements
 
 ### Color Palette
 | Role | Hex | Usage |
 |---|---|---|
-| Deep Blue (primary) | #1e3a5f | Hero background, navbar — replaces navy; inspired by Philippine waters, echoes the blue in the PH flag |
-| Sun Gold (accent) | #d4910b | CTA buttons, highlights, active states — warm gold inspired by sun rays of the PH flag |
-| Coral Red (secondary accent) | #c0392b | Badge elements, important callouts — subtle nod to the red in the PH flag, used sparingly for emphasis only |
-| Warm White | #faf8f5 | Card backgrounds, light sections — slightly warm off-white instead of pure white; feels more inviting |
-| Charcoal | #2d3748 | Body text — softer than pure black |
-| Light Gold (subtle) | #fef3c7 | Section backgrounds for accent sections — very light gold wash |
+| Deep Blue (primary) | #1e3a5f | Hero background, navbar |
+| Sun Gold (accent) | #d4910b | CTA buttons, highlights, Phase 1 badges |
+| Coral Red (secondary accent) | #c0392b | Badge elements, important callouts — used sparingly |
+| Warm White | #faf8f5 | Card backgrounds, light sections |
+| Charcoal | #2d3748 | Body text |
+| Light Gold (subtle) | #fef3c7 | Section backgrounds for accent sections |
 | Slate | #6b7a8d | Secondary text, muted labels |
 
-**Design principle:** Philippine colors are used as **accents**, not dominant. The primary visual language stays clean and technical (like dataengineering.ph); the PH elements provide warmth, identity, and emotional resonance.
+### Philippine Visual Elements
+1. **Sun motif** — subtle SVG watermark (~5% opacity) in hero and dark sections
+2. **Banig-inspired weave dividers** — thin decorative lines with repeating diamond pattern (sun gold at 20% opacity)
+3. **Warm color temperature** — warm whites and grays instead of cold corporate tones
+4. **Local microcopy** — "₱" prominently, "built by Pinoys, for Pinoys", references to local learning realities
 
-### Philippine Visual Elements to Incorporate
-
-1. **Sun motif — subtle SVG accent**
-   - A simplified 8-ray sun icon used as a decorative element in the hero section background or as a corner accent on feature cards
-   - NOT the full national flag emblem — just an abstracted, minimal geometric interpretation (clean lines, no detail)
-   - Renders as a very faint watermark pattern (~5-8% opacity) behind the hero section
-
-2. **Lacuna / weave-inspired border patterns**
-   - Subtle geometric border or divider between sections inspired by traditional Filipino weave patterns (banig/tapis geometry)
-   - Applied as a thin decorative line with repeating diamond/rhombus shapes between major sections
-   - Color: sun gold at 20% opacity — barely noticeable but adds texture
-
-3. **Warm color temperature**
-   - Avoid cold grays; shift toward warm neutrals (warm white, warm gray text)
-   - This small shift makes the page feel more approachable and less "corporate documentation"
-
-4. **Philippine context in microcopy**
-   - Use "₱" currency symbol prominently (already in spec)
-   - Microcopy that reflects local reality: "built by Pinoys, for Pinoys", "free — no credit card needed"
-   - References to local learning realities: "works on your laptop (8GB RAM+)", "no expensive tools required"
-
-### Typography
-- Font: Inter (loaded from Google Fonts CDN) as primary; system-ui as fallback
-  - Matches the clean, modern feel of dataengineering.ph while being slightly warmer
-- Headings: Bold/ExtraBold, 2xl-4xl scale
-- Body: Regular, base/sm scale with relaxed line-height (1.65 vs default 1.5) for warmth
-- CTAs: Semibold, title case (not all caps — feels more approachable than corporate)
-- Accent text (taglines, labels): Medium weight, slightly smaller, uppercase with letter-spacing
-
-### Layout Constraints
-- Fully responsive: mobile-first (stack vertically on <640px, grid on ≥640px)
-- Max content width: 1120px centered
-- Section padding: py-16 md:py-24
-- Card gap: gap-6
-- No JavaScript frameworks — vanilla HTML only
-- Navbar: fixed top, dark blue background with white text (matching dataengineering.ph's dark navbar style)
-
-### Interactivity (Minimal JS)
-- Smooth scroll for anchor links (CTA buttons → section targets)
-- Mobile hamburger menu toggle (single function, <10 lines)
-- Form does not submit anywhere — purely visual prototype
-- Hover states on cards: subtle lift effect (translateY(-2px) + shadow increase)
-
----
-
-## 5. Technical Constraints
-
-- **Single file** (index.html) or at most two files (index.html + tailwind via CDN)
-- **Tailwind CSS via CDN** — no build step, no npm, no bundler
-- **Google Fonts CDN** — Inter font family loaded from Google Fonts (only dependency beyond Tailwind)
-- **No backend** — form is static/visual only
-- **No images required** — use inline SVG icons (heroicons or custom sun motif) for visual elements
-- **Deployable to GitHub Pages** as a static site
-
----
-
-## 6. Success Criteria
-
-The MVP prototype should:
-1. Render correctly on mobile and desktop
-2. Surface all three core features with clear descriptions and CTAs
-3. Reflect the survey-grounded design principles (YouTube-first, Discord accountability, DEP branding)
-4. Be deployable to GitHub Pages with zero configuration beyond pushing the file
-5. Load fast — only Tailwind CDN + Google Fonts as external dependencies
-6. Feel visually connected to dataengineering.ph's clean aesthetic while having distinct Philippine warmth and cultural identity
-
----
-
-## 7. Out of Scope (Explicitly Excluded)
-
-1. No backend, no database, no authentication
-2. No actual YouTube/Discord/GitHub integrations
-3. No dark/light mode toggle
-4. No analytics tracking
-5. No multi-page navigation — single page only
-6. No animations beyond smooth scroll and hover states
-7. No full national flag imagery or political symbolism — Philippine elements are subtle, abstracted, and professional
-
----
-
-## 8. File Structure
-
-```
-community-hub/
-├── SPEC.md                    ← this file
-├── INDEX.md                   ← project index (existing)
-├── ideate-results.md          ← feature prioritization (existing)
-├── prototype-design-plan.md   ← design proposal (existing)
-└── public/
-    └── index.html             ← MVP prototype (to be built)
-```
+### Technical Constraints
+- Single file (index.html), Tailwind CSS via CDN
+- Google Fonts CDN — Inter font family
+- No backend, no images required, deployable to GitHub Pages
+- Inline SVG icons only

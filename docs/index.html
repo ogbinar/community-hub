@@ -4,16 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Engineering Pilipinas — Community Hub</title>
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind config for custom colors -->
   <script>
     tailwind.config = {
       theme: {
@@ -27,727 +21,311 @@
             'dep-lightgold': '#fef3c7',
             'dep-slate': '#6b7a8d',
           },
-          fontFamily: {
-            'inter': ['Inter', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
         },
       },
     };
   </script>
-
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-
-    /* Smooth scroll */
     html { scroll-behavior: smooth; }
-
-    /* Sun motif watermark pattern */
-    .sun-motif {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ffffff' opacity='0.06'/%3E%3Cline x1='50' y1='8' x2='50' y2='25' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='50' y1='75' x2='50' y2='92' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='8' y1='50' x2='25' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='75' y1='50' x2='92' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='20.3' y1='20.3' x2='32.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='67.5' y1='67.5' x2='79.7' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='79.7' y1='20.3' x2='67.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='32.5' y1='67.5' x2='20.3' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3C/svg%3E");
-      background-size: 120px 120px;
-    }
-
-    /* Banig-inspired diamond pattern divider */
-    .banig-divider {
-      height: 8px;
-      background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 8px,
-        rgba(212, 145, 11, 0.2) 8px,
-        rgba(212, 145, 11, 0.2) 16px
-      );
-    }
-
-    /* Card hover lift */
-    .card-hover {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(30, 58, 95, 0.15);
-    }
-
-    /* Timeline connector line */
-    .timeline-connector {
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      width: 40px;
-      height: 2px;
-      background-color: #d4910b;
-    }
-
-    /* Mobile timeline vertical connector */
-    @media (max-width: 768px) {
-      .timeline-connector {
-        top: 100%;
-        left: 50%;
-        width: 2px;
-        height: 30px;
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Custom checkbox style */
-    .custom-checkbox:checked {
-      background-color: #d4910b;
-      border-color: #d4910b;
-    }
-
-    /* Hamburger menu animation */
-    .hamburger-line {
-      transition: all 0.3s ease;
-    }
+    .sun-motif { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ffffff' opacity='0.06'/%3E%3Cline x1='50' y1='8' x2='50' y2='25' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='50' y1='75' x2='50' y2='92' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='8' y1='50' x2='25' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='75' y1='50' x2='92' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='20.3' y1='20.3' x2='32.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='67.5' y1='67.5' x2='79.7' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='79.7' y1='20.3' x2='67.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='32.5' y1='67.5' x2='20.3' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3C/svg%3E"); background-size: 120px 120px; }
+    .banig-divider { height: 8px; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(212,145,11,0.2) 8px, rgba(212,145,11,0.2) 16px); }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(30,58,95,0.15); }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .accordion-content.open { max-height: 4000px; }
+    .accordion-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .accordion-chevron.rotated { transform: rotate(180deg); }
   </style>
 </head>
-
 <body class="bg-dep-warm text-dep-charcoal font-inter">
 
-  <!-- ========== NAVBAR ========== -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo / Brand -->
-        <a href="#hero" class="flex items-center gap-2 text-white font-bold text-lg">
-          <!-- Small sun icon -->
-          <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-          <span>Data Engineering Pilipinas</span>
-        </a>
-
-        <!-- Desktop nav links -->
-        <div class="hidden md:flex items-center gap-6">
-          <a href="#features" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Features</a>
-          <a href="#how-it-works" class="text-white/80 hover:text-dep-gold transition-colors text-sm">How It Works</a>
-          <a href="#roadmap" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Roadmap</a>
-          <a href="#signup" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Join Cohort</a>
-          <div class="flex items-center gap-3 ml-2">
-            <!-- GitHub -->
-            <a href="https://github.com/DataEngineeringPilipinas" target="_blank" rel="noopener" class="text-white/70 hover:text-dep-gold transition-colors" aria-label="GitHub">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.438 9.8 8.205 11.385.6.113.828-.258.828-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.389-1.336-1.756-1.336-1.756-1.089-.745.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.997.108-.776.42-1.305 1.005-1.607-1.738-.196-3.569-.869-3.569-3.868 0-.854.306-1.745.826-2.398-.083-.203-.36-1.138.078-2.37 0 0 .75-.24 2.45.914a8.48 8.48 0 012.205-.295c.748 0 1.47.063 2.205.295 1.7-1.154 2.45-.914 2.45-.914.438 1.232.162 2.167.08 2.37.52.653.826 1.544.826 2.398 0 2.997-1.83 3.666-3.578 3.858.281.242.532.733.532 1.48 0 1.068-.01 1.93-.01 2.198 0 .32.224.693.835.578C20.563 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <!-- Discord -->
-            <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="text-white/70 hover:text-dep-gold transition-colors" aria-label="Discord">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515c-.165-.017-.33.09-.408.243l-.243.488a14.25 14.25 0 00-4.32 0l-.243-.488a.467.467 0 00-.408-.243A19.791 19.791 0 003.683 4.37a.467.467 0 00-.21.263C1.52 8.21 1.15 12.006 1.42 15.743c.013.195.152.356.342.42l2.61 1.015a.468.468 0 00.42-.036l.33-.263a14.37 14.37 0 004.59 0l.33.263a.468.468 0 00.42.036l2.61-1.015a.468.468 0 00.342-.42c.28-3.743-.09-7.533-2.05-11.11a.467.467 0 00-.21-.263zM8.46 13.33c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06zm6.12 0c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06z"/></svg>
-            </a>
-          </div>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="#hero" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">Data Engineering Pilipinas</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#features" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Features</a>
+        <a href="#how-it-works" class="text-white/80 hover:text-dep-gold transition-colors text-sm">How It Works</a>
+        <a href="#roadmap" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Roadmap</a>
+        <a href="#signup" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Join Cohort</a>
+        <div class="flex items-center gap-3 ml-2">
+          <a href="https://github.com/DataEngineeringPilipinas" target="_blank" rel="noopener" class="text-white/70 hover:text-dep-gold transition-colors" aria-label="GitHub"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.438 9.8 8.205 11.385.6.113.828-.258.828-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.389-1.336-1.756-1.336-1.756-1.089-.745.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.997.108-.776.42-1.305 1.005-1.607-1.738-.196-3.569-.869-3.569-3.868 0-.854.306-1.745.826-2.398-.083-.203-.36-1.138.078-2.37 0 0 .75-.24 2.45.914a8.48 8.48 0 012.205-.295c.748 0 1.47.063 2.205.295 1.7-1.154 2.45-.914 2.45-.914.438 1.232.162 2.167.08 2.37.52.653.826 1.544.826 2.398 0 2.997-1.83 3.666-3.578 3.858.281.242.532.733.532 1.48 0 1.068-.01 1.93-.01 2.198 0 .32.224.693.835.578C20.563 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="text-white/70 hover:text-dep-gold transition-colors" aria-label="Discord"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515c-.165-.017-.33.09-.408.243l-.243.488a14.25 14.25 0 00-4.32 0l-.243-.488a.467.467 0 00-.408-.243A19.791 19.791 0 003.683 4.37a.467.467 0 00-.21.263C1.52 8.21 1.15 12.006 1.42 15.743c.013.195.152.356.342.42l2.61 1.015a.468.468 0 00.42-.036l.33-.263a14.37 14.37 0 004.59 0l.33.263a.468.468 0 00.42.036l2.61-1.015a.468.468 0 00.342-.42c.28-3.743-.09-7.533-2.05-11.11a.467.467 0 00-.21-.263zM8.46 13.33c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06zm6.12 0c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06z"/></svg></a>
         </div>
-
-        <!-- Mobile hamburger -->
-        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
-          <svg class="w-6 h-6" id="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
       </div>
+      <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <a href="#features" class="block text-white/80 hover:text-dep-gold py-2 text-sm">Features</a>
+      <a href="#how-it-works" class="block text-white/80 hover:text-dep-gold py-2 text-sm">How It Works</a>
+      <a href="#roadmap" class="block text-white/80 hover:text-dep-gold py-2 text-sm">Roadmap</a>
+      <a href="#signup" class="block text-white/80 hover:text-dep-gold py-2 text-sm">Join Cohort</a>
+    </div>
+  </div>
+</nav>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden md:hidden pb-4">
-        <a href="#features" class="block text-white/80 hover:text-dep-gold py-2 text-sm">Features</a>
-        <a href="#how-it-works" class="block text-white/80 hover:text-dep-gold py-2 text-sm">How It Works</a>
-        <a href="#roadmap" class="block text-white/80 hover:text-dep-gold py-2 text-sm">Roadmap</a>
-        <a href="#signup" class="block text-white/80 hover:text-dep-gold py-2 text-sm">Join Cohort</a>
-        <div class="flex items-center gap-4 mt-3">
-          <a href="https://github.com/DataEngineeringPilipinas" target="_blank" rel="noopener" class="text-white/70 hover:text-dep-gold transition-colors" aria-label="GitHub">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.438 9.8 8.205 11.385.6.113.828-.258.828-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.389-1.336-1.756-1.336-1.756-1.089-.745.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.997.108-.776.42-1.305 1.005-1.607-1.738-.196-3.569-.869-3.569-3.868 0-.854.306-1.745.826-2.398-.083-.203-.36-1.138.078-2.37 0 0 .75-.24 2.45.914a8.48 8.48 0 012.205-.295c.748 0 1.47.063 2.205.295 1.7-1.154 2.45-.914 2.45-.914.438 1.232.162 2.167.08 2.37.52.653.826 1.544.826 2.398 0 2.997-1.83 3.666-3.578 3.858.281.242.532.733.532 1.48 0 1.068-.01 1.93-.01 2.198 0 .32.224.693.835.578C20.563 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="text-white/70 hover:text-dep-gold transition-colors" aria-label="Discord">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515c-.165-.017-.33.09-.408.243l-.243.488a14.25 14.25 0 00-4.32 0l-.243-.488a.467.467 0 00-.408-.243A19.791 19.791 0 003.683 4.37a.467.467 0 00-.21.263C1.52 8.21 1.15 12.006 1.42 15.743c.013.195.152.356.342.42l2.61 1.015a.468.468 0 00.42-.036l.33-.263a14.37 14.37 0 004.59 0l.33.263a.468.468 0 00.42.036l2.61-1.015a.468.468 0 00.342-.42c.28-3.743-.09-7.533-2.05-11.11a.467.467 0 00-.21-.263zM8.46 13.33c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06zm6.12 0c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06z"/></svg>
-          </a>
+<section id="hero" class="relative bg-dep-blue min-h-[90vh] flex items-center justify-center pt-16 sun-motif">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="w-32 h-1 bg-dep-gold rounded-full mx-auto mb-8"></div>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">Data Engineering Pilipinas<br/><span class="text-dep-gold text-2xl sm:text-3xl md:text-4xl font-bold mt-2 block">Community Hub</span></h1>
+    <p class="text-lg sm:text-xl text-dep-warm/90 max-w-2xl mx-auto mb-10 leading-relaxed">Free, structured learning for Filipinos transitioning into data careers. No expensive tools. No credit card needed. Just real skills, built by Pinoys, for Pinoys.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#signup" class="bg-dep-gold hover:bg-yellow-600 text-dep-charcoal font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg text-base">Join First Cohort</a>
+      <a href="#features" class="text-white/90 hover:text-white underline underline-offset-4 transition-colors text-base">Explore the Hub →</a>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-6 mt-12 text-white/70 text-sm">
+      <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>YouTube-first delivery</span>
+      <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Discord accountability</span>
+      <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>DEP-branded certification</span>
+      <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>AI as co-creator</span>
+    </div>
+  </div>
+</section>
+
+<div class="banig-divider"></div>
+
+<section id="snapshot" class="bg-dep-lightgold/30 py-16 md:py-24">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-4">The Community. The Gap. The Goal.</h2>
+    <p class="text-center text-dep-slate max-w-xl mx-auto mb-12 text-base">Based on the DEP State of the Community Survey 2026 (n=1,861)</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-gold"><p class="text-4xl md:text-5xl font-extrabold text-dep-blue mb-2">40,000+</p><p class="text-sm text-dep-slate uppercase tracking-wider font-medium">Community Members</p></div>
+      <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-gold"><p class="text-4xl md:text-5xl font-extrabold text-dep-blue mb-2">96.6%</p><p class="text-sm text-dep-slate uppercase tracking-wider font-medium">Philippines-Based</p></div>
+      <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-gold"><p class="text-4xl md:text-5xl font-extrabold text-dep-blue mb-2">80.8%</p><p class="text-sm text-dep-slate uppercase tracking-wider font-medium">Use AI for Study Weekly</p></div>
+      <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-coral"><p class="text-3xl md:text-5xl font-extrabold text-dep-coral mb-2">₱35k → ₱100k+</p><p class="text-sm text-dep-slate uppercase tracking-wider font-medium">The Mobility Gap We're Closing</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="banig-divider"></div>
+
+<section id="features" class="bg-dep-warm py-16 md:py-24">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Phase 1: Three Pillars to Close the Mobility Gap</h2>
+    <p class="text-center text-dep-slate max-w-xl mx-auto mb-6 text-base">Structured, free learning paths designed for students and job seekers</p>
+    <div class="flex items-center justify-center gap-3 mb-8"><span class="inline-flex items-center gap-1.5 bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Months 1–3</span><span class="text-dep-slate/60 text-xs">Launching now</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
+        <svg class="w-10 h-10 text-dep-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-3.5 8C14.5 15.5 12 18 12 18s-2.5-2.5-3.5-5C7 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><line x1="12" y1="22" x2="12" y2="20"/></svg>
+        <h3 class="text-xl font-bold text-dep-blue mb-3">AI-Augmented Learning Modules</h3>
+        <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">Learn SQL, Python, and Power BI through AI-interrogated lessons — not passive videos.</p>
+        <div class="flex flex-wrap gap-2 mb-6"><span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">SQL Basics</span><span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Python Fundamentals</span><span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Excel / Power BI Intro</span></div>
+        <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">Start Learning →</a>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
+        <svg class="w-10 h-10 text-dep-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        <h3 class="text-xl font-bold text-dep-blue mb-3">Career Shifter DA/DE Pathway</h3>
+        <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">8-week structured sprint with weekly milestones, Discord accountability, and a DEP-branded completion badge.</p>
+        <div class="flex flex-wrap gap-2 mb-6"><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 1-2 SQL</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 3-4 Power BI</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 5-6 Python</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 7-8 Cloud + Portfolio</span></div>
+        <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">Join Cohort →</a>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
+        <svg class="w-10 h-10 text-dep-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <h3 class="text-xl font-bold text-dep-blue mb-3">LinkedIn Profile Optimizer</h3>
+        <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">Step-by-step checklist to build a project-rich LinkedIn profile that gets interview callbacks.</p>
+        <ul class="space-y-2 mb-6"><li class="flex items-center gap-2 text-sm text-dep-slate"><svg class="w-4 h-4 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Project-rich GitHub linking</li><li class="flex items-center gap-2 text-sm text-dep-slate"><svg class="w-4 h-4 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Certification badge display</li><li class="flex items-center gap-2 text-sm text-dep-slate"><svg class="w-4 h-4 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>Headline optimization</li></ul>
+        <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">Get the Checklist →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banig-divider"></div>
+
+<section id="phase2" class="bg-dep-warm py-16 md:py-24">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Phase 2: Expanding the Toolkit</h2>
+    <p class="text-center text-dep-slate max-w-xl mx-auto mb-6 text-base">New features for data analysts, data engineers, and job seekers building their portfolio</p>
+    <div class="flex items-center justify-center gap-3 mb-8"><span class="inline-flex items-center gap-1.5 bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Months 4–6</span><span class="text-dep-slate/60 text-xs">In development</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
+        <svg class="w-10 h-10 text-dep-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <h3 class="text-xl font-bold text-dep-blue mb-3">Multi-Tool Fluency Map</h3>
+        <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">Visual roadmap showing how to progress from Power BI → Looker Studio → Python tools. Addresses Rico's ₱75k–₱100k bottleneck.</p>
+        <div class="flex flex-wrap gap-2 mb-6"><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Power BI</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Looker Studio</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Python</span></div>
+        <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">View Roadmap →</a>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
+        <svg class="w-10 h-10 text-dep-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><line x1="12" y1="15" x2="12" y2="9"/></svg>
+        <h3 class="text-xl font-bold text-dep-blue mb-3">Git/GitHub Adoption Guide</h3>
+        <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">Step-by-step guide for DEs to adopt version control (only 48.8% currently use it). Covers branching strategies, commit conventions, PR workflows.</p>
+        <div class="flex flex-wrap gap-2 mb-6"><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">GitHub Basics</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Branching</span><span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">PR Workflows</span></div>
+        <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">Start Guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banig-divider"></div>
+
+<section id="how-it-works" class="relative bg-dep-blue py-16 md:py-24 sun-motif">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-white font-bold text-2xl md:text-3xl mb-2">How It Works</h2>
+    <p class="text-center text-white/70 max-w-xl mx-auto mb-14 text-base">Your path from beginner to job-ready in 8 weeks</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div class="text-center"><div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg"><span class="text-white font-bold text-lg">1</span></div><svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg><h4 class="text-white font-semibold text-sm mb-1">Watch</h4><p class="text-white/60 text-xs">YouTube video (5-min)</p></div>
+      <div class="text-center"><div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg"><span class="text-white font-bold text-lg">2</span></div><svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><h4 class="text-white font-semibold text-sm mb-1">Read</h4><p class="text-white/60 text-xs">GitHub Gist examples</p></div>
+      <div class="text-center"><div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg"><span class="text-white font-bold text-lg">3</span></div><svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg><h4 class="text-white font-semibold text-sm mb-1">Try</h4><p class="text-white/60 text-xs">Exercises on your laptop</p></div>
+      <div class="text-center"><div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg"><span class="text-white font-bold text-lg">4</span></div><svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><h4 class="text-white font-semibold text-sm mb-1">Ask</h4><p class="text-white/60 text-xs">Post questions in Discord</p></div>
+      <div class="text-center"><div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg"><span class="text-white font-bold text-lg">5</span></div><svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.35-9.5"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h4 class="text-white font-semibold text-sm mb-1">Get Feedback</h4><p class="text-white/60 text-xs">Mentor response within 24hrs</p></div>
+      <div class="text-center"><div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg"><span class="text-white font-bold text-lg">6</span></div><svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="7"/><polyline points="8 12 10 14 12 10 14 14 16 12"/></svg><h4 class="text-white font-semibold text-sm mb-1">Earn Badge</h4><p class="text-white/60 text-xs">DEP-branded completion badge</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="banig-divider"></div>
+
+<section id="roadmap" class="bg-dep-warm py-16 md:py-24">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Complete Implementation Roadmap</h2>
+    <p class="text-center text-dep-slate max-w-xl mx-auto mb-10 text-base">All 40+ features organized by phase, score, and target persona — based on the DEP State of the Community Survey 2026 (n=1,861)</p>
+
+    <!-- PHASE 1 ACCORDION -->
+    <div class="mb-4">
+      <button class="accordion-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleAccordion('phase1-content', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold text-dep-charcoal font-bold text-sm px-3 py-1 rounded-full">Phase 1</span><span class="text-dep-blue font-semibold text-lg">Months 1–3 — MVP Launch</span></div>
+        <svg class="accordion-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="phase1-content" class="accordion-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <p class="text-sm text-dep-slate mb-4">Score: 8.7–9.3/10 | Focus: Students + Job Seekers (55.7% of community)</p>
+          <div class="space-y-4">
+            <div class="border-b border-gray-100 pb-3 flex items-start gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span><div><div class="flex items-center gap-2 mb-1"><span class="text-dep-blue font-semibold">AI-Augmented Learning Modules</span><span class="bg-dep-gold/10 text-dep-blue text-xs px-2 py-0.5 rounded-full font-medium">9.3/10</span></div><p class="text-sm text-dep-slate leading-relaxed">YouTube-first interactive lessons teaching "how to interrogate AI outputs" — concept → AI answer → "Where AI gets it wrong" → practitioner validation.</p><p class="text-xs text-dep-slate/70 mt-1"><em>Persona: Maya (Student) | 65.8% use AI daily for study</em></p></div></div>
+            <div class="border-b border-gray-100 pb-3 flex items-start gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div><div class="flex items-center gap-2 mb-1"><span class="text-dep-blue font-semibold">Career Shifter DA/DE Pathway</span><span class="bg-dep-gold/10 text-dep-blue text-xs px-2 py-0.5 rounded-full font-medium">9.0/10</span></div><p class="text-sm text-dep-slate leading-relaxed">8-week structured sprint: Wk1-2 SQL + Excel, Wk3-4 Power BI + DAX, Wk5-6 Python pandas, Wk7-8 Cloud + GitHub portfolio. Discord accountability cohorts.</p><p class="text-xs text-dep-slate/70 mt-1"><em>Persona: Lia (Career Shifter) | 58.5% have NO computing degree</em></p></div></div>
+            <div class="border-b border-gray-100 pb-3 flex items-start gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span><div><div class="flex items-center gap-2 mb-1"><span class="text-dep-blue font-semibold">Time-Bound Mentorship Matching</span><span class="bg-dep-gold/10 text-dep-blue text-xs px-2 py-0.5 rounded-full font-medium">8.7/10</span></div><p class="text-sm text-dep-slate leading-relaxed">ADPList-style booking: mentors commit to specific timeframes (e.g., first Thursday monthly), mentees book 30-min sessions on specific topics.</p><p class="text-xs text-dep-slate/70 mt-1"><em>Persona: David (Corporate Pro) | 15.1% willing to mentor</em></p></div></div>
+          </div>
         </div>
       </div>
     </div>
-  </nav>
 
-  <!-- ========== SECTION 1: HERO ========== -->
-  <section id="hero" class="relative bg-dep-blue min-h-[90vh] flex items-center justify-center pt-16 sun-motif">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <!-- Decorative sun gold line -->
-      <div class="w-32 h-1 bg-dep-gold rounded-full mx-auto mb-8"></div>
-
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-        Data Engineering Pilipinas
-        <br />
-        <span class="text-dep-gold text-2xl sm:text-3xl md:text-4xl font-bold mt-2 block">Community Hub</span>
-      </h1>
-
-      <p class="text-lg sm:text-xl text-dep-warm/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Free, structured learning for Filipinos transitioning into data careers.
-        No expensive tools. No credit card needed. Just real skills, built by Pinoys, for Pinoys.
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#signup" class="bg-dep-gold hover:bg-yellow-600 text-dep-charcoal font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg text-base">
-          Join First Cohort
-        </a>
-        <a href="#features" class="text-white/90 hover:text-white underline underline-offset-4 transition-colors text-base">
-          Explore the Hub →
-        </a>
-      </div>
-
-      <!-- Trust badges -->
-      <div class="flex flex-wrap items-center justify-center gap-6 mt-12 text-white/70 text-sm">
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          YouTube-first delivery
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Discord accountability
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          DEP-branded certification
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          AI as co-creator in curriculum
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== BANIG DIVIDER ========== -->
-  <div class="banig-divider"></div>
-
-  <!-- ========== SECTION 2: COMMUNITY SNAPSHOT ========== -->
-  <section id="snapshot" class="bg-dep-lightgold/30 py-16 md:py-24">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-4">The Community. The Gap. The Goal.</h2>
-      <p class="text-center text-dep-slate max-w-xl mx-auto mb-12 text-base">
-        Based on the DEP State of the Community Survey 2026 (n=1,861)
-      </p>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Card 1 -->
-        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-gold">
-          <p class="text-4xl md:text-5xl font-extrabold text-dep-blue mb-2">40,000+</p>
-          <p class="text-sm text-dep-slate uppercase tracking-wider font-medium">Community Members</p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-gold">
-          <p class="text-4xl md:text-5xl font-extrabold text-dep-blue mb-2">96.6%</p>
-          <p class="text-sm text-dep-slate uppercase tracking-wider font-medium">Philippines-Based</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-gold">
-          <p class="text-4xl md:text-5xl font-extrabold text-dep-blue mb-2">80.8%</p>
-          <p class="text-sm text-dep-slate uppercase tracking-wider font-medium">Use AI for Study Weekly</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover border-l-4 border-dep-coral">
-          <p class="text-3xl md:text-5xl font-extrabold text-dep-coral mb-2">₱35k → ₱100k+</p>
-          <p class="text-sm text-dep-slate uppercase tracking-wider font-medium">The Mobility Gap We're Closing</p>
+    <!-- PHASE 2 ACCORDION -->
+    <div class="mb-4">
+      <button class="accordion-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleAccordion('phase2-content', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-sm px-3 py-1 rounded-full">Phase 2</span><span class="text-dep-blue font-semibold text-lg">Months 4–6 — Scale</span></div>
+        <svg class="accordion-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="phase2-content" class="accordion-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-blue mt-0">
+          <p class="text-sm text-dep-slate mb-4">Score: 8.3–8.7/10 | Focus: Data Analysts + Engineers</p>
+          <div class="space-y-4">
+            <div class="border-b border-gray-100 pb-3 flex items-start gap-3"><span class="bg-dep-blue/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span><div><div class="flex items-center gap-2 mb-1"><span class="text-dep-blue font-semibold">LinkedIn Profile Optimizer</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full font-medium">8.7/10</span></div><p class="text-sm text-dep-slate leading-relaxed">Interactive checklist: project-rich GitHub linking, certification badges, skill endorsements, headline optimization. AI-assisted content generation.</p><p class="text-xs text-dep-slate/70 mt-1"><em>Persona: Jose (Job Seeker) | 74.4% use LinkedIn for job discovery</em></p></div></div>
+            <div class="border-b border-gray-100 pb-3 flex items-start gap-3"><span class="bg-dep-blue/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span><div><div class="flex items-center gap-2 mb-1"><span class="text-dep-blue font-semibold">Multi-Tool Fluency Map</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full font-medium">8.3/10</span></div><p class="text-sm text-dep-slate leading-relaxed">Visual roadmap: Power BI → Looker Studio → Python tools. Addresses ₱75k–₱100k bottleneck; data shows ₱100k+ earners show multi-tool fluency.</p><p class="text-xs text-dep-slate/70 mt-1"><em>Persona: Rico (Data Analyst) | 9.1% stuck at ₱75k–₱100k bottleneck</em></p></div></div>
+            <div class="border-b border-gray-100 pb-3 flex items-start gap-3"><span class="bg-dep-blue/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">6</span><div><div class="flex items-center gap-2 mb-1"><span class="text-dep-blue font-semibold">Git/GitHub Adoption Guide</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full font-medium">8.3/10</span></div><p class="text-sm text-dep-slate leading-relaxed">Step-by-step guide for DEs to adopt version control (only 48.8% use it). Covers: GitHub basics, branching strategies, commit conventions, PR workflows.</p><p class="text-xs text-dep-slate/70 mt-1"><em>Persona: Kai (Data Engineer) | Only 48.8% of DEs use version control</em></p></div></div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ========== BANIG DIVIDER ========== -->
-  <div class="banig-divider"></div>
+    <!-- PHASE 3 ACCORDION -->
+    <div class="mb-4">
+      <button class="accordion-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleAccordion('phase3-content', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-slate/20 text-dep-slate font-bold text-sm px-3 py-1 rounded-full">Phase 3</span><span class="text-dep-blue font-semibold text-lg">Months 7–12 — Expand</span></div>
+        <svg class="accordion-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="phase3-content" class="accordion-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-slate/30 mt-0">
+          <p class="text-sm text-dep-slate mb-4">Score: 6.5–8.8/10 | Focus: Deepening expertise + network effects</p>
 
-  <!-- ========== SECTION 3: FEATURES (THE THREE PILLARS) ========== -->
-  <section id="features" class="bg-dep-warm py-16 md:py-24">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Phase 1: Three Pillars to Close the Mobility Gap</h2>
-      <p class="text-center text-dep-slate max-w-xl mx-auto mb-6 text-base">
-        Structured, free learning paths designed for students and job seekers
-      </p>
-      <div class="flex items-center justify-center gap-3 mb-8">
-        <span class="inline-flex items-center gap-1.5 bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Months 1–3</span>
-        <span class="text-dep-slate/60 text-xs">Launching now</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Card 1: AI-Augmented Learning Modules -->
-        <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
-          <div class="mb-4">
-            <svg class="w-10 h-10 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-3.5 8C14.5 15.5 12 18 12 18s-2.5-2.5-3.5-5C7 14.5 5 12 5 9a7 7 0 0 1 7-7z"/>
-              <line x1="12" y1="22" x2="12" y2="20"/>
-            </svg>
+          <h4 class="text-dep-blue font-semibold text-sm mb-3 mt-2">Tier A: High Impact (8.0+)</h4>
+          <div class="space-y-3 mb-6">
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">7</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Power BI Gap Closer</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Targeted module closing the 25-point gap between Shifters (43.9%) and Pros (69.1%). YouTube-first + Discord Q&A.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">8</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">DAX Portfolio Project</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.2/10</span></div><p class="text-xs text-dep-slate mt-0.5">End-to-end DAX project: data model design, measures, time intelligence, dashboard visualization. Closes 2.2% vs 29.1% gap.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">9</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">AI Workflow Interview Prep</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.2/10</span></div><p class="text-xs text-dep-slate mt-0.5">Module teaching how to articulate AI workflow in interviews: "I use Copilot for query generation, Claude for documentation review."</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">10</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Remote Mentorship Board</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.2/10</span></div><p class="text-xs text-dep-slate mt-0.5">Async mentorship platform: recorded videos, async Q&A, scheduled video calls across timezones.</p></div></div>
           </div>
-          <h3 class="text-xl font-bold text-dep-blue mb-3">AI-Augmented Learning Modules</h3>
-          <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">
-            Learn SQL, Python, and Power BI through AI-interrogated lessons — not passive videos. Each module follows: concept → AI answer → "Where AI gets it wrong" → practitioner validation.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">SQL Basics</span>
-            <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Python Fundamentals</span>
-            <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Excel / Power BI Intro</span>
+
+          <h4 class="text-dep-blue font-semibold text-sm mb-3">Tier B: Useful Many (7.5–8.0)</h4>
+          <div class="space-y-3 mb-6">
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">11</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">DAX Micro-Lessons</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Bite-sized YouTube videos (5 min each): calculated columns, measures, time intelligence.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">12</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Draw.io Architecture Template Library</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Pre-built templates: ETL pipelines, data lakes, cloud deployments, CI/CD workflows.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">13</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">GitHub Portfolio Showcase Guide</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">One-page guide: README templates, project organization, documentation standards.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">14</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">DAX Signal Gap Course</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Focused module on highest-signal gap: 29.1% Pros vs 6.2% Shifters.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">15</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">AI Study Workflow Guide</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">One-page PDF: "Deep Learning via AI" — how to use ChatGPT/Gemini/Copilot for debugging and reviewing code.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">16</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Portfolio Builder Template</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Notion/Google Sites template: project showcase, GitHub integration, certifications display.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">17</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">"Decision to Shift" Support Framework</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Self-assessment quiz, skill gap analysis, personalized learning plan, mentor matching.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">18</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Hiring Pipeline Connector</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Job posting board + candidate screening checklist + referral tracking.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">19</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Creator Spotlight Platform</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Monthly feature highlighting top community creators: interview, project showcase, cross-promotion links.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">20</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">YouTube Content Calendar</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Shared calendar showing upcoming topics, creator assignments, collaboration opportunities.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">21</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Local to Cloud Bridge Curriculum</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Module teaching: local Python/SQL → cloud deployment (AWS/Azure/GCP) → monitoring → visualization.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">22</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Cloud Deployment Bootcamp</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Hands-on module: Docker basics, cloud VM setup, CI/CD pipelines, monitoring.</p></div></div>
           </div>
-          <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">
-            Start Learning →
-          </a>
+
+          <h4 class="text-dep-blue font-semibold text-sm mb-3">Tier C: Supporting Features (6.0–7.5)</h4>
+          <div class="space-y-3">
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">23</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Cloud Certification Guide</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Roadmap for AWS Solutions Architect and Azure Data Engineer certifications.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">24</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Laptop-Only Project Templates</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Pre-configured Jupyter notebooks + Python scripts that run on 8GB RAM laptops.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">25</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Salary Band Progression Tracker</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Interactive tool showing what skills differentiate between salary bands.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">26</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">AI-Assisted Coding Toolkit</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Guide to GitHub Copilot (16.5%), Cursor (12.7%), Databricks assistant (10.1%).</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">27</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Async Collaboration Tools</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Platform for overseas members to contribute: code reviews, documentation, content creation.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">28</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Language/Cultural Bridge Guide</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">One-page guide for overseas members engaging with English-heavy/Taglish content.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">29</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Free Credential Tracker</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Dashboard showing which free certifications are most valuable.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">30</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Content Repurposing Toolkit</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Templates for turning one piece of content into multiple formats: YouTube → LinkedIn → GitHub README.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">31</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Creator Analytics Dashboard</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Simple dashboard: view counts, engagement rates, top-performing content.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">32</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Career Shifter Mentorship Board</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Dedicated board connecting Shifters with Professionals: skill matching, availability calendar.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">33</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Cross-Promotion Network</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">8.2/10</span></div><p class="text-xs text-dep-slate mt-0.5">Directory of community creators with YouTube channels, GitHub repos, LinkedIn profiles.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">34</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Structured Giving-Back Framework</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Guide teaching Corporate Pros how to give back: monthly mentoring, quarterly webinars.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">35</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Overseas Hiring Connector</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.8/10</span></div><p class="text-xs text-dep-slate mt-0.5">Tool connecting overseas Filipinos with local talent for remote roles.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">36</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Global Contributor Network</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">7.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Directory of overseas community members with skills, availability, interests.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">37</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Personalized Learning Path Generator</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">6.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Interactive tool for customized plans. Overlaps with AI-Augmented Learning Modules.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">38</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">"Master One BI Tool" Validation Tool</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">6.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Why one tool is right for entry-level. Overlaps with Multi-Tool Fluency Map.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">39</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Mentor Impact Dashboard</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">6.5/10</span></div><p class="text-xs text-dep-slate mt-0.5">Shows mentee progress, session completion rates, career advancement outcomes.</p></div></div>
+            <div class="border-b border-gray-100 pb-2 flex items-start gap-3"><span class="bg-dep-blue/10 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">40</span><div><div class="flex items-center gap-2"><span class="text-dep-blue font-semibold text-sm">Job Application Tracker</span><span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-0.5 rounded-full">6.0/10</span></div><p class="text-xs text-dep-slate mt-0.5">Simple spreadsheet template. Low impact; overlaps with LinkedIn Profile Optimizer.</p></div></div>
+          </div>
         </div>
-
-        <!-- Card 2: Career Shifter DA/DE Pathway -->
-        <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
-          <div class="mb-4">
-            <svg class="w-10 h-10 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"/>
-              <path d="M12 5l7 7-7 7"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-dep-blue mb-3">Career Shifter DA/DE Pathway</h3>
-          <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">
-            8-week structured sprint with weekly milestones, Discord accountability, and a DEP-branded completion badge. Designed for career shifters with no computing degree.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 1-2 SQL</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 3-4 Power BI</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 5-6 Python</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Wk 7-8 Cloud + Portfolio</span>
-          </div>
-          <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">
-            Join Cohort →
-          </a>
-        </div>
-
-        <!-- Card 3: LinkedIn Profile Optimizer -->
-        <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
-          <div class="mb-4">
-            <svg class="w-10 h-10 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-dep-blue mb-3">LinkedIn Profile Optimizer</h3>
-          <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">
-            Step-by-step checklist to build a project-rich LinkedIn profile that gets interview callbacks. Includes AI-assisted section writing prompts and before/after examples.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm text-dep-slate">
-              <svg class="w-4 h-4 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              Project-rich GitHub linking
-            </li>
-            <li class="flex items-center gap-2 text-sm text-dep-slate">
-              <svg class="w-4 h-4 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              Certification badge display
-            </li>
-            <li class="flex items-center gap-2 text-sm text-dep-slate">
-              <svg class="w-4 h-4 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              Headline optimization
-            </li>
-          </ul>
-          <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">
-            Get the Checklist →
-          </a>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========== BANIG DIVIDER ==========
   <div class="banig-divider"></div>
 
-  <!-- ========== SECTION 3B: PHASE 2 FEATURES ==========
-  <section id="phase2" class="bg-dep-warm py-16 md:py-24">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Phase 2: Expanding the Toolkit</h2>
-      <p class="text-center text-dep-slate max-w-xl mx-auto mb-6 text-base">
-        New features for data analysts, data engineers, and job seekers building their portfolio
-      </p>
-      <div class="flex items-center justify-center gap-3 mb-8">
-        <span class="inline-flex items-center gap-1.5 bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Months 4–6</span>
-        <span class="text-dep-slate/60 text-xs">In development</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- Card 4: Multi-Tool Fluency Map -->
-        <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
-          <div class="mb-4">
-            <svg class="w-10 h-10 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="7" height="7" rx="1"/>
-              <rect x="14" y="3" width="7" height="7" rx="1"/>
-              <rect x="3" y="14" width="7" height="7" rx="1"/>
-              <rect x="14" y="14" width="7" height="7" rx="1"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-dep-blue mb-3">Multi-Tool Fluency Map</h3>
-          <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">
-            Visual roadmap showing how to progress from Power BI → Looker Studio → Python tools. Addresses Rico's ₱75k–₱100k bottleneck — the data shows ₱100k+ earners show multi-tool fluency.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Power BI</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Looker Studio</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Python</span>
-          </div>
-          <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">
-            View Roadmap →
-          </a>
-        </div>
-
-        <!-- Card 5: Git/GitHub Adoption Guide -->
-        <div class="bg-white rounded-xl shadow-md p-8 card-hover border-l-4 border-dep-gold flex flex-col">
-          <div class="mb-4">
-            <svg class="w-10 h-10 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="18" r="3"/>
-              <circle cx="6" cy="6" r="3"/>
-              <circle cx="18" cy="6" r="3"/>
-              <line x1="12" y1="15" x2="12" y2="9"/>
-              <line x1="9.5" y1="7.5" x2="7.5" y2="8.5"/>
-              <line x1="14.5" y1="7.5" x2="16.5" y2="8.5"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-dep-blue mb-3">Git/GitHub Adoption Guide</h3>
-          <p class="text-dep-slate text-sm leading-relaxed mb-5 flex-grow">
-            Step-by-step guide for DEs to adopt version control (only 48.8% currently use it). Covers: GitHub basics, branching strategies, commit conventions, PR workflows, and portfolio showcase tips.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">GitHub Basics</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Branching</span>
-            <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">PR Workflows</span>
-          </div>
-          <a href="#signup" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors inline-flex items-center gap-1">
-            Start Guide →
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== BANIG DIVIDER ========== -->
-  <div class="banig-divider"></div>
-
-  <!-- ========== SECTION 4: HOW IT WORKS ========== -->
-  <section id="how-it-works" class="relative bg-dep-blue py-16 md:py-24 sun-motif">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center text-white font-bold text-2xl md:text-3xl mb-2">How It Works</h2>
-      <p class="text-center text-white/70 max-w-xl mx-auto mb-14 text-base">Your path from beginner to job-ready in 8 weeks</p>
-
-      <!-- Timeline steps -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-
-        <!-- Step 1 -->
-        <div class="text-center relative">
-          <div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg">
-            <span class="text-white font-bold text-lg">1</span>
-          </div>
-          <svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"/>
-          </svg>
-          <h4 class="text-white font-semibold text-sm mb-1">Watch</h4>
-          <p class="text-white/60 text-xs">YouTube video (5-min module)</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="text-center relative">
-          <div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg">
-            <span class="text-white font-bold text-lg">2</span>
-          </div>
-          <svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-          </svg>
-          <h4 class="text-white font-semibold text-sm mb-1">Read</h4>
-          <p class="text-white/60 text-xs">GitHub Gist code examples</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="text-center relative">
-          <div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg">
-            <span class="text-white font-bold text-lg">3</span>
-          </div>
-          <svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
-          <h4 class="text-white font-semibold text-sm mb-1">Try</h4>
-          <p class="text-white/60 text-xs">Exercises on your laptop</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="text-center relative">
-          <div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg">
-            <span class="text-white font-bold text-lg">4</span>
-          </div>
-          <svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-          <h4 class="text-white font-semibold text-sm mb-1">Ask</h4>
-          <p class="text-white/60 text-xs">Post questions in Discord</p>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="text-center relative">
-          <div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg">
-            <span class="text-white font-bold text-lg">5</span>
-          </div>
-          <svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.35-9.5"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          <h4 class="text-white font-semibold text-sm mb-1">Get Feedback</h4>
-          <p class="text-white/60 text-xs">Mentor response within 24hrs</p>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="text-center relative">
-          <div class="w-14 h-14 rounded-full bg-dep-gold flex items-center justify-center mx-auto mb-3 shadow-lg">
-            <span class="text-white font-bold text-lg">6</span>
-          </div>
-          <svg class="w-6 h-6 text-dep-gold mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="7"/>
-            <polyline points="8 12 10 14 12 10 14 14 16 12"/>
-          </svg>
-          <h4 class="text-white font-semibold text-sm mb-1">Earn Badge</h4>
-          <p class="text-white/60 text-xs">DEP-branded completion badge</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== BANIG DIVIDER ========== -->
-  <div class="banig-divider"></div>
-
-  <!-- ========== BANIG DIVIDER ========== -->
-  <div class="banig-divider"></div>
-
-  <!-- ========== SECTION 4B: ROADMAP ========== -->
-  <section id="roadmap" class="bg-dep-warm py-16 md:py-24">
-    <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Implementation Roadmap</h2>
-      <p class="text-center text-dep-slate max-w-xl mx-auto mb-12 text-base">
-        Our phased approach to closing the ₱35k → ₱100k+ mobility gap
-      </p>
-
-      <!-- Phase 1 -->
-      <div class="mb-10">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-dep-gold text-dep-charcoal font-bold text-sm px-3 py-1 rounded-full">Phase 1</span>
-          <span class="text-dep-blue font-semibold text-lg">Months 1–3 — MVP Launch</span>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-sm text-dep-charcoal">
-              <svg class="w-5 h-5 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              <span><strong>AI-Augmented Learning Modules</strong> (9.3/10) — YouTube-first delivery; Discord Q&A threads</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-charcoal">
-              <svg class="w-5 h-5 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              <span><strong>Career Shifter DA/DE Pathway</strong> (9.0/10) — 8-week sprint format; volunteer-taught live sessions</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-charcoal">
-              <svg class="w-5 h-5 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              <span><strong>Time-Bound Mentorship Matching</strong> (8.7/10) — ADPList-style booking system</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Phase 2 -->
-      <div class="mb-10">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-dep-blue/10 text-dep-blue font-bold text-sm px-3 py-1 rounded-full">Phase 2</span>
-          <span class="text-dep-blue font-semibold text-lg">Months 4–6 — Scale</span>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-blue">
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-sm text-dep-charcoal">
-              <svg class="w-5 h-5 text-dep-blue flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              <span><strong>LinkedIn Profile Optimizer</strong> (8.7/10) — Interactive checklist + AI-assisted content generation</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-charcoal">
-              <svg class="w-5 h-5 text-dep-blue flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              <span><strong>Multi-Tool Fluency Map</strong> (8.3/10) — Visual roadmap for the ₱75k–₱100k bottleneck</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-charcoal">
-              <svg class="w-5 h-5 text-dep-blue flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-              <span><strong>Git/GitHub Adoption Guide</strong> (8.3/10) — Step-by-step guide to close the 48.8% gap</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Phase 3 -->
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-dep-slate/20 text-dep-slate font-bold text-sm px-3 py-1 rounded-full">Phase 3</span>
-          <span class="text-dep-blue font-semibold text-lg">Months 7–12 — Expand</span>
-        </div>
-        <div class="bg-white/60 rounded-xl p-6 border-l-4 border-dep-slate/30">
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-sm text-dep-slate">
-              <svg class="w-5 h-5 text-dep-slate/60 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
-              <span><strong>Power BI Gap Closer</strong> (8.8/10) — Targeted module closing the 25-point gap</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-slate">
-              <svg class="w-5 h-5 text-dep-slate/60 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
-              <span><strong>DAX Portfolio Project</strong> (8.2/10) — End-to-end project to close the 2.2% vs 29.1% gap</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-slate">
-              <svg class="w-5 h-5 text-dep-slate/60 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
-              <span><strong>AI Workflow Interview Prep</strong> (8.2/10) — Articulating AI workflow in interviews</span>
-            </li>
-            <li class="flex items-start gap-2 text-sm text-dep-slate">
-              <svg class="w-5 h-5 text-dep-slate/60 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>
-              <span><strong>Remote Mentorship Board</strong> (8.2/10) — Async mentorship for overseas members</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========== BANIG DIVIDER ========== -->
-  <div class="banig-divider"></div>
-
-  <!-- ========== SECTION 5: SIGN UP ========== -->
+  <!-- SIGN UP -->
   <section id="signup" class="bg-dep-lightgold/30 py-16 md:py-24">
     <div class="max-w-[640px] mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-center text-dep-blue font-bold text-2xl md:text-3xl mb-2">Join the First Cohort</h2>
-      <p class="text-center text-dep-gold/80 max-w-md mx-auto mb-1 text-sm font-medium">
-        Phase 1: AI-Augmented Learning • Career Shifter Pathway • LinkedIn Optimizer
-      </p>
-      <p class="text-center text-dep-slate max-w-md mx-auto mb-10 text-base">
-        Free. No credit card needed. Built by Pinoys, for Pinoys.
-      </p>
-
+      <p class="text-center text-dep-gold/80 max-w-md mx-auto mb-1 text-sm font-medium">Phase 1: AI-Augmented Learning • Career Shifter Pathway • LinkedIn Optimizer</p>
+      <p class="text-center text-dep-slate max-w-md mx-auto mb-10 text-base">Free. No credit card needed. Built by Pinoys, for Pinoys.</p>
       <form class="space-y-6" onsubmit="event.preventDefault(); alert('This is a prototype — form does not submit anywhere.');">
-
-        <!-- Name -->
-        <div>
-          <label for="name" class="block text-sm font-medium text-dep-slate mb-1.5">Name</label>
-          <input id="name" type="text" placeholder="Your full name" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-dep-gold/50 focus:border-dep-gold transition-colors text-dep-charcoal placeholder:text-gray-400" />
-        </div>
-
-        <!-- Email -->
-        <div>
-          <label for="email" class="block text-sm font-medium text-dep-slate mb-1.5">Email</label>
-          <input id="email" type="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-dep-gold/50 focus:border-dep-gold transition-colors text-dep-charcoal placeholder:text-gray-400" />
-        </div>
-
-        <!-- Role -->
-        <div>
-          <label for="role" class="block text-sm font-medium text-dep-slate mb-1.5">Your Role</label>
-          <select id="role" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-dep-gold/50 focus:border-dep-gold transition-colors text-dep-charcoal">
-            <option value="">Select your role...</option>
-            <option value="student">Student</option>
-            <option value="job-seeker">Job Seeker</option>
-            <option value="career-shifter">Career Shifter</option>
-            <option value="data-professional">Data Professional</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <!-- I want to learn -->
-        <div>
-          <label class="block text-sm font-medium text-dep-slate mb-3">I want to learn...</label>
-          <div class="flex flex-wrap gap-2">
-            <label class="inline-flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-dep-gold focus:ring-dep-gold accent-dep-gold" />
-              <span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">SQL</span>
-            </label>
-            <label class="inline-flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-dep-gold focus:ring-dep-gold accent-dep-gold" />
-              <span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Python</span>
-            </label>
-            <label class="inline-flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-dep-gold focus:ring-dep-gold accent-dep-gold" />
-              <span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Power BI</span>
-            </label>
-            <label class="inline-flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-dep-gold focus:ring-dep-gold accent-dep-gold" />
-              <span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">DAX</span>
-            </label>
-            <label class="inline-flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-dep-gold focus:ring-dep-gold accent-dep-gold" />
-              <span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Cloud Deployment</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Submit -->
-        <div class="pt-2">
-          <button type="submit" class="w-full bg-dep-gold hover:bg-yellow-600 text-dep-charcoal font-semibold py-3.5 px-8 rounded-lg transition-colors shadow-lg text-base">
-            Join First Cohort
-          </button>
-        </div>
-
+        <div><label for="name" class="block text-sm font-medium text-dep-slate mb-1.5">Name</label><input id="name" type="text" placeholder="Your full name" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-dep-gold/50 focus:border-dep-gold transition-colors text-dep-charcoal placeholder:text-gray-400" /></div>
+        <div><label for="email" class="block text-sm font-medium text-dep-slate mb-1.5">Email</label><input id="email" type="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-dep-gold/50 focus:border-dep-gold transition-colors text-dep-charcoal placeholder:text-gray-400" /></div>
+        <div><label for="role" class="block text-sm font-medium text-dep-slate mb-1.5">Your Role</label><select id="role" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-dep-gold/50 focus:border-dep-gold transition-colors text-dep-charcoal"><option value="">Select your role...</option><option value="student">Student</option><option value="job-seeker">Job Seeker</option><option value="career-shifter">Career Shifter</option><option value="data-professional">Data Professional</option><option value="other">Other</option></select></div>
+        <div><label class="block text-sm font-medium text-dep-slate mb-3">I want to learn...</label><div class="flex flex-wrap gap-2"><label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-dep-gold" /><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">SQL</span></label><label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-dep-gold" /><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Python</span></label><label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-dep-gold" /><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Power BI</span></label><label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-dep-gold" /><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">DAX</span></label><label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-dep-gold" /><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Cloud Deployment</span></label></div></div>
+        <div class="pt-2"><button type="submit" class="w-full bg-dep-gold hover:bg-yellow-600 text-dep-charcoal font-semibold py-3.5 px-8 rounded-lg transition-colors shadow-lg text-base">Join First Cohort</button></div>
       </form>
-
-      <p class="text-center text-dep-slate/70 text-sm mt-6">
-        We'll send you a Discord invite + Week 1 materials within 24 hours.
-      </p>
+      <p class="text-center text-dep-slate/70 text-sm mt-6">We'll send you a Discord invite + Week 1 materials within 24 hours.</p>
     </div>
   </section>
 
-  <!-- ========== SECTION 6: FOOTER ========== -->
+  <!-- FOOTER -->
   <footer class="bg-dep-blue py-12 border-t-2 border-dep-gold/30">
     <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-
-        <!-- Left -->
         <div>
           <p class="text-white font-bold text-lg mb-2">Data Engineering Pilipinas</p>
-          <div class="flex items-center gap-4 mb-3">
-            <a href="https://youtube.com" target="_blank" rel="noopener" class="text-dep-gold hover:text-white transition-colors text-sm flex items-center gap-1.5">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.705 3.5 12 3.5 12 3.5s-7.705 0-9.378.549A3.016 3.016 0 0 0 .502 6.186C0 8.075 0 12 0 12s0 3.925.502 5.814a3.016 3.016 0 0 0 2.122 2.136C4.295 20.5 12 20.5 12 20.5s7.705 0 9.378-.549a3.016 3.016 0 0 0 2.122-2.136C24 15.925 24 12 24 12s0-3.925-.502-5.814zM9.645 15.51V8.49L15.818 12l-6.173 3.51z"/></svg>
-              YouTube
-            </a>
-            <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="text-dep-gold hover:text-white transition-colors text-sm flex items-center gap-1.5">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515c-.165-.017-.33.09-.408.243l-.243.488a14.25 14.25 0 00-4.32 0l-.243-.488a.467.467 0 00-.408-.243A19.791 19.791 0 003.683 4.37a.467.467 0 00-.21.263C1.52 8.21 1.15 12.006 1.42 15.743c.013.195.152.356.342.42l2.61 1.015a.468.468 0 00.42-.036l.33-.263a14.37 14.37 0 004.59 0l.33.263a.468.468 0 00.42.036l2.61-1.015a.468.468 0 00.342-.42c.28-3.743-.09-7.533-2.05-11.11a.467.467 0 00-.21-.263zM8.46 13.33c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06zm6.12 0c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06z"/></svg>
-              Discord
-            </a>
-            <a href="https://github.com/DataEngineeringPilipinas" target="_blank" rel="noopener" class="text-dep-gold hover:text-white transition-colors text-sm flex items-center gap-1.5">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.438 9.8 8.205 11.385.6.113.828-.258.828-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.389-1.336-1.756-1.336-1.756-1.089-.745.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.997.108-.776.42-1.305 1.005-1.607-1.738-.196-3.569-.869-3.569-3.868 0-.854.306-1.745.826-2.398-.083-.203-.36-1.138.078-2.37 0 0 .75-.24 2.45.914a8.48 8.48 0 012.205-.295c.748 0 1.47.063 2.205.295 1.7-1.154 2.45-.914 2.45-.914.438 1.232.162 2.167.08 2.37.52.653.826 1.544.826 2.398 0 2.997-1.83 3.666-3.578 3.858.281.242.532.733.532 1.48 0 1.068-.01 1.93-.01 2.198 0 .32.224.693.835.578C20.563 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
+          <div class="flex items-center gap-4 mb-3"><a href="https://youtube.com" target="_blank" rel="noopener" class="text-dep-gold hover:text-white transition-colors text-sm flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.705 3.5 12 3.5 12 3.5s-7.705 0-9.378.549A3.016 3.016 0 0 0 .502 6.186C0 8.075 0 12 0 12s0 3.925.502 5.814a3.016 3.016 0 0 0 2.122 2.136C4.295 20.5 12 20.5 12 20.5s7.705 0 9.378-.549a3.016 3.016 0 0 0 2.122-2.136C24 15.925 24 12 24 12s0-3.925-.502-5.814zM9.645 15.51V8.49L15.818 12l-6.173 3.51z"/></svg>YouTube</a><a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="text-dep-gold hover:text-white transition-colors text-sm flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515c-.165-.017-.33.09-.408.243l-.243.488a14.25 14.25 0 00-4.32 0l-.243-.488a.467.467 0 00-.408-.243A19.791 19.791 0 003.683 4.37a.467.467 0 00-.21.263C1.52 8.21 1.15 12.006 1.42 15.743c.013.195.152.356.342.42l2.61 1.015a.468.468 0 00.42-.036l.33-.263a14.37 14.37 0 004.59 0l.33.263a.468.468 0 00.42.036l2.61-1.015a.468.468 0 00.342-.42c.28-3.743-.09-7.533-2.05-11.11a.467.467 0 00-.21-.263zM8.46 13.33c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06zm6.12 0c-1.09 0-1.98-.92-1.98-2.06 0-1.14.87-2.06 1.98-2.06 1.11 0 1.99.93 1.98 2.06 0 1.14-.87 2.06-1.98 2.06z"/></svg>Discord</a><a href="https://github.com/DataEngineeringPilipinas" target="_blank" rel="noopener" class="text-dep-gold hover:text-white transition-colors text-sm flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.438 9.8 8.205 11.385.6.113.828-.258.828-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.389-1.336-1.756-1.336-1.756-1.089-.745.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.997.108-.776.42-1.305 1.005-1.607-1.738-.196-3.569-.869-3.569-3.868 0-.854.306-1.745.826-2.398-.083-.203-.36-1.138.078-2.37 0 0 .75-.24 2.45.914a8.48 8.48 0 012.205-.295c.748 0 1.47.063 2.205.295 1.7-1.154 2.45-.914 2.45-.914.438 1.232.162 2.167.08 2.37.52.653.826 1.544.826 2.398 0 2.997-1.83 3.666-3.578 3.858.281.242.532.733.532 1.48 0 1.068-.01 1.93-.01 2.198 0 .32.224.693.835.578C20.563 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a></div>
           <p class="text-white/60 text-sm">All tools are free and open-source.</p>
         </div>
-
-        <!-- Right -->
-        <div class="text-right">
-          <p class="text-white/80 text-sm">Built by the Data Engineering Pilipinas community</p>
-          <p class="text-white/50 text-xs mt-1.5">© 2026 DEP Community. Survey compiled by Sandy G. Cabanes.</p>
-        </div>
-
+        <div class="text-right"><p class="text-white/80 text-sm">Built by the Data Engineering Pilipinas community</p><p class="text-white/50 text-xs mt-1.5">© 2026 DEP Community. Survey compiled by Sandy G. Cabanes.</p></div>
       </div>
     </div>
   </footer>
 
-  <!-- ========== MOBILE MENU TOGGLE ========== -->
   <script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
+    function toggleAccordion(id, btn) {
+      const content = document.getElementById(id);
+      const chevron = btn.querySelector('.accordion-chevron');
+      content.classList.toggle('open');
+      chevron.classList.toggle('rotated');
+    }
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
-
 </body>
 </html>
