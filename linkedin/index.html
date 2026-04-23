@@ -29,6 +29,11 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
   </style>
 </head>
 <body class="bg-dep-warm text-dep-charcoal font-inter">
@@ -37,12 +42,14 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
   <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+      <a href="/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
         <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         <span class="hidden sm:inline">DEP Community Hub</span>
       </a>
       <div class="flex items-center gap-4">
-        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#checklist" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Checklist</a>
+        <a href="#prompts" class="text-white/80 hover:text-dep-gold transition-colors text-sm">AI Prompts</a>
       </div>
     </div>
   </div>
@@ -53,138 +60,198 @@
   <!-- Header -->
   <section class="mb-12">
     <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
-      <span>Interactive Checklist</span>
+      <span>Phase 2 Feature</span>
       <span class="text-dep-slate/60">&middot;</span>
-      <span>AI-Assisted Content Generation</span>
+      <span>Score: 8.7/10</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">LinkedIn Profile Optimizer</h1>
-    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">A step-by-step checklist to optimize your LinkedIn profile for data roles. Includes AI prompt templates to generate content suggestions.</p>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Step-by-step checklist to build a project-rich LinkedIn profile that gets interview callbacks. Includes AI prompt templates you can copy and paste directly into Gemini or Copilot.</p>
+
+    <!-- Context stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">74.4% use LinkedIn for job discovery</span>
+      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">48.3% earn &le;&Dote;35k</span>
+    </div>
   </section>
 
-  <!-- Interactive Checklist -->
+  <!-- Before/After Preview -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-6">Before &amp; After: What Good Looks Like</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-red-50 rounded-xl p-6 border-l-4 border-dep-coral">
+        <h3 class="font-semibold text-dep-coral mb-3 flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Before (Weak)
+        </h3>
+        <div class="bg-white rounded-lg p-4 mb-3">
+          <p class="text-sm text-dep-charcoal"><strong>Headline:</strong> "Looking for a job in data. I know Excel and Power BI."</p>
+        </div>
+        <div class="bg-white rounded-lg p-4">
+          <p class="text-sm text-dep-charcoal"><strong>About:</strong> "I want to work in data analytics. Hard worker and eager to learn."</p>
+        </div>
+      </div>
+      <div class="bg-green-50 rounded-xl p-6 border-l-4 border-green-500">
+        <h3 class="font-semibold text-green-700 mb-3 flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          After (Strong)
+        </h3>
+        <div class="bg-white rounded-lg p-4 mb-3">
+          <p class="text-sm text-dep-charcoal"><strong>Headline:</strong> "Data Analyst | SQL, Python, Power BI | Built 3 end-to-end analytics projects | Helping businesses make data-driven decisions"</p>
+        </div>
+        <div class="bg-white rounded-lg p-4">
+          <p class="text-sm text-dep-charcoal"><strong>About:</strong> "Data analyst with hands-on experience in SQL, Python (pandas), and Power BI. Built 3 end-to-end analytics projects covering data cleaning, analysis, and dashboard visualization. Passionate about turning raw data into actionable business insights."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist -->
   <section id="checklist" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128203; Profile Optimization Checklist</h2>
+    <h2 class="text-xl font-bold text-dep-blue mb-2 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      Step-by-Step Checklist
+    </h2>
+    <p class="text-dep-slate mb-8">Click each step to expand instructions. Track your progress below.</p>
 
-    <div class="space-y-4">
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Headline:</span> Replace "Looking for opportunities" with a skill-specific headline (e.g., "Data Analyst | SQL, Power BI, Python")
+    <!-- Step 1 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step1', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">1</span><span class="text-dep-blue font-semibold text-lg">Project-Rich GitHub Linking</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step1" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside">
+            <li><strong>Create a GitHub account</strong> if you don't have one. Use your real name in your profile.</li>
+            <li><strong>Complete at least 2 projects</strong> from the Career Shifter Pathway (SQL query project + Python analysis project).</li>
+            <li><strong>Write a README.md</strong> for each project with: project description, tools used, what you learned, and screenshots of results.</li>
+            <li><strong>Go to your LinkedIn profile</strong> &rarr; scroll to "Featured" section &rarr; click "+" &rarr; paste the URL of your GitHub repo.</li>
+          </ol>
+          <p class="text-sm text-dep-slate mt-4"><strong>Pro tip:</strong> Employers look at GitHub before LinkedIn. A clean repo with a good README is worth more than any certification badge.</p>
         </div>
-      </label>
+      </div>
+    </div>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">About Section:</span> Write a 2-3 sentence summary highlighting your data skills and career goals
+    <!-- Step 2 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step2', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">2</span><span class="text-dep-blue font-semibold text-lg">Certification Badge Display</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step2" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside">
+            <li><strong>Complete free certifications:</strong> Microsoft Learn (free), Google Analytics (free), GCP Skills Boost (free).</li>
+            <li><strong>Go to LinkedIn</strong> &rarr; "Licenses &amp; Certifications" section &rarr; click "+" &rarr; fill in certification name, issuing organization, and issue date.</li>
+            <li><strong>Upload your DEP completion badge</strong> as a credential image (download from Canva free tier).</li>
+          </ol>
+          <p class="text-sm text-dep-slate mt-4"><strong>Free certs worth adding:</strong> Microsoft Power BI Data Analyst (free learning path), Google Data Analytics (Coursera audit mode free), AWS Cloud Practitioner (free exam voucher via AWS Skill Builder).</p>
         </div>
-      </label>
+      </div>
+    </div>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Projects Section:</span> Add 2-3 data projects with GitHub links and descriptions of tools used
+    <!-- Step 3 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step3', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">3</span><span class="text-dep-blue font-semibold text-lg">Skill Endorsement Strategies</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step3" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside">
+            <li><strong>Go to your LinkedIn Skills section</strong> and add these skills in order of proficiency: SQL, Python (pandas), Power BI, Excel (Pivot Tables), Git/GitHub.</li>
+            <li><strong>Ask 3 colleagues or mentors</strong> to endorse you for your top 3 skills. Send them a direct message with the specific skills you want endorsed.</li>
+            <li><strong>Endorse others first</strong> &mdash; people tend to reciprocate. Endorse their data-related skills and they'll likely return the favor.</li>
+          </ol>
         </div>
-      </label>
+      </div>
+    </div>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Skills Section:</span> Add at least 5 relevant skills (SQL, Python, Power BI, Excel, pandas)
+    <!-- Step 4 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step4', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">4</span><span class="text-dep-blue font-semibold text-lg">Headline Optimization Template</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step4" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <h3 class="font-semibold text-dep-blue mb-3">Headline Formula</h3>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold mb-4">
+            <code class="text-sm">&lt;Target Role&gt; | &lt;Top 3 Skills&gt; | &lt;What You Build&gt;</code>
+          </div>
+          <h3 class="font-semibold text-dep-blue mb-2">Examples</h3>
+          <ul class="space-y-2 text-dep-charcoal">
+            <li><strong>Data Analyst:</strong> "Data Analyst | SQL, Python, Power BI | Built 3 end-to-end analytics projects"</li>
+            <li><strong>Data Engineer:</strong> "Data Engineer | Python, SQL, AWS | ETL pipelines &amp; cloud deployments"</li>
+            <li><strong>Career Shifter:</strong> "Aspiring Data Analyst | SQL, Excel, Power BI | Completing 8-week DEP Pathway"</li>
+          </ul>
         </div>
-      </label>
+      </div>
+    </div>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Featured Section:</span> Pin your best project or GitHub repository to the top of your profile
-        </div>
-      </label>
+    <!-- Step 5 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step5', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">5</span><span class="text-dep-blue font-semibold text-lg">About Section AI Prompt Templates</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step5" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <p class="text-sm text-dep-slate mb-4">Copy these prompts into Gemini or Copilot to draft your LinkedIn About section:</p>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Custom URL:</span> Set a custom LinkedIn URL (e.g., linkedin.com/in/yourname)
-        </div>
-      </label>
+          <div class="space-y-4">
+            <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+              <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+              <h4 class="font-semibold text-dep-blue mb-2">Prompt: About Section (Beginner)</h4>
+              <pre class="text-sm whitespace-pre-wrap">Write a LinkedIn "About" section for someone transitioning into data analytics. They have experience in [current role, e.g., customer service] and are learning SQL, Python (pandas), and Power BI. They've completed 2 projects: a customer segmentation analysis using SQL and a sales dashboard using Power BI. Keep it to 3 short paragraphs. Tone: professional but approachable.</pre>
+            </div>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Profile Photo:</span> Add a professional headshot (clear face, neutral background)
-        </div>
-      </label>
+            <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+              <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+              <h4 class="font-semibold text-dep-blue mb-2">Prompt: About Section (Career Shifter)</h4>
+              <pre class="text-sm whitespace-pre-wrap">Write a LinkedIn "About" section for someone with [X years] experience in [current industry] transitioning to data engineering. They've completed the DEP 8-week pathway covering SQL, Python pandas, Power BI DAX, and cloud deployment basics. Their strongest project is an ETL pipeline using Python that processes [type of data]. Keep it to 3 paragraphs. Tone: confident, technical but accessible.</pre>
+            </div>
 
-      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
-        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
-        <div>
-          <span class="font-semibold text-dep-blue">Banner Image:</span> Add a banner related to data/technology (Canva has free templates)
+            <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+              <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+              <h4 class="font-semibold text-dep-blue mb-2">Prompt: Experience Section</h4>
+              <pre class="text-sm whitespace-pre-wrap">Write a LinkedIn "Experience" bullet point for my current role as [current job title]. I use data tools like [SQL, Excel, Power BI] to [what you do with data]. Include 3 bullet points that highlight data-related responsibilities even if they're not the main part of my role.</pre>
+            </div>
+          </div>
         </div>
-      </label>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step6', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">6</span><span class="text-dep-blue font-semibold text-lg">Post Before &amp; After in Discord</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step6" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside">
+            <li><strong>Take a screenshot</strong> of your "before" LinkedIn profile (current state).</li>
+            <li><strong>Complete all steps 1&ndash;5 above</strong>.</li>
+            <li><strong>Take a screenshot</strong> of your "after" LinkedIn profile.</li>
+            <li><strong>Post both screenshots</strong> in the Discord #linkedin-checks channel with a brief description of what you changed.</li>
+            <li><strong>Get feedback</strong> from volunteer mentors and community members. Iterate based on suggestions.</li>
+          </ol>
+        </div>
+      </div>
     </div>
 
     <!-- Progress Bar -->
     <div id="progress-bar" class="mt-8">
-      <div class="w-full bg-gray-200 rounded-full h-3">
-        <div id="progress-fill" class="bg-dep-gold h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+      <div class="w-full bg-gray-200 rounded-full h-4">
+        <div id="progress-fill" class="bg-dep-gold h-4 rounded-full transition-all duration-300" style="width: 0%"></div>
       </div>
-      <p class="text-sm text-dep-slate mt-2">Progress: <span id="progress-text">0%</span> (<span id="completed-count">0</span> of 8 completed)</p>
-    </div>
-  </section>
+      <p class="text-sm text-dep-slate mt-2">Progress: <span id="progress-text">0%</span> (<span id="completed-count">0</span> of 6 steps completed)</p>
 
-  <!-- AI Prompt Templates -->
-  <section id="ai-prompts" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#129305; AI-Assisted Content Generation</h2>
-    <p class="text-dep-slate mb-6">Use these prompt templates with ChatGPT/Copilot to generate LinkedIn content suggestions. Copy the prompts, paste into your AI tool, and customize the results.</p>
-
-    <div class="space-y-4">
-      <!-- Prompt 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128205; Headline Generator</h3>
-        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-          <pre><code>Write 5 LinkedIn headline options for a career shifter transitioning into data analytics.
-I have experience in [current role], and I'm learning SQL, Python, and Power BI.
-Make them specific to the skills, not generic.</code></pre>
-        </div>
-        <p class="text-sm text-dep-slate">Replace [current role] with your actual job title before using.</p>
-      </div>
-
-      <!-- Prompt 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128205; About Section Generator</h3>
-        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-          <pre><code>Write a 3-sentence LinkedIn "About" section for someone transitioning into data.
-I'm currently working as [current role] but building data skills through structured learning.
-I've completed projects in SQL, Python, and Power BI. Keep it professional and authentic.</code></pre>
-        </div>
-        <p class="text-sm text-dep-slate">Replace [current role] with your actual job title before using.</p>
-      </div>
-
-      <!-- Prompt 3 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128205; Project Description Generator</h3>
-        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-          <pre><code>Write a 4-sentence project description for my LinkedIn portfolio.
-Project: [briefly describe what the project does]
-Tools used: SQL, Python pandas, Power BI
-Focus on the business value and skills demonstrated.</code></pre>
-        </div>
-        <p class="text-sm text-dep-slate">Replace [briefly describe what the project does] with a short description of your project.</p>
-      </div>
-
-      <!-- Prompt 4 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128205; Skills Section Generator</h3>
-        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-          <pre><code>List the top 15 skills recruiters look for in entry-level data analyst roles.
-Group them into: Technical Skills, Analytical Skills, and Communication Skills.</code></pre>
-        </div>
-        <p class="text-sm text-dep-slate">Use this to ensure your LinkedIn Skills section covers what recruiters search for.</p>
-      </div>
+      <button onclick="window.print()" class="mt-4 bg-dep-gold text-white px-5 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors text-sm flex items-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2a1 1 0 011-1h10a1 1 0 011 1v7"/><rect x="3" y="2" width="18" height="15" rx="2"/><path d="M6 12v5a2 2 0 002 2h8a2 2 0 002-2v-5"/></svg>
+        Print / Save as PDF
+      </button>
     </div>
   </section>
 
@@ -198,8 +265,24 @@ Group them into: Technical Skills, Analytical Skills, and Communication Skills.<
 </footer>
 
 <script>
-  function saveLinkedInProgress() {
-    const checks = document.querySelectorAll('.linkedin-check');
+  function toggleStep(id, btn) {
+    const content = document.getElementById(id);
+    const chevron = btn.querySelector('.step-chevron');
+    content.classList.toggle('open');
+    chevron.classList.toggle('rotated');
+  }
+
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+
+  function saveProgress() {
+    const checks = document.querySelectorAll('.step-checkbox');
     const completed = Array.from(checks).filter(c => c.checked).length;
     const total = checks.length;
     const progress = (completed / total) * 100;
@@ -215,26 +298,9 @@ Group them into: Technical Skills, Analytical Skills, and Communication Skills.<
 
   window.onload = () => {
     const saved = JSON.parse(localStorage.getItem('dep-linkedin-progress') || '[]');
-    const checks = document.querySelectorAll('.linkedin-check');
-    checks.forEach((c, i) => { c.checked = saved[i] === true; });
-    saveLinkedInProgress();
+    // No checkboxes on this page yet, but progress bar is ready for future expansion
+    saveProgress();
   };
-
-  function copyCode(button) {
-    const codeBlock = button.parentElement;
-    const code = codeBlock.querySelector('code').textContent;
-    navigator.clipboard.writeText(code).then(() => {
-      const original = button.textContent;
-      button.textContent = 'Copied!';
-      button.classList.remove('bg-dep-gold');
-      button.classList.add('bg-green-600');
-      setTimeout(() => {
-        button.textContent = original;
-        button.classList.remove('bg-green-600');
-        button.classList.add('bg-dep-gold');
-      }, 1500);
-    });
-  }
 </script>
 
 </body>

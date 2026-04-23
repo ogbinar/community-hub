@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Git & GitHub Adoption Guide | DEP Community Hub</title>
+  <title>Git/GitHub Adoption Guide | DEP Community Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +30,10 @@
     body { font-family: 'Inter', system-ui, sans-serif; }
     html { scroll-behavior: smooth; }
     code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
   </style>
 </head>
 <body class="bg-dep-warm text-dep-charcoal font-inter">
@@ -38,12 +42,14 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
   <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+      <a href="/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
         <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         <span class="hidden sm:inline">DEP Community Hub</span>
       </a>
       <div class="flex items-center gap-4">
-        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#basics" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Basics</a>
+        <a href="#workflow" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Workflow</a>
       </div>
     </div>
   </div>
@@ -54,180 +60,288 @@
   <!-- Header -->
   <section class="mb-12">
     <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
-      <span>Step-by-Step Guide</span>
+      <span>Phase 2 Feature</span>
       <span class="text-dep-slate/60">&middot;</span>
-      <span>Closes the 48.8% Version Control Gap</span>
+      <span>Score: 8.3/10</span>
     </div>
-    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Git &amp; GitHub Adoption Guide</h1>
-    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">A step-by-step guide for data professionals to adopt version control. Covers: GitHub basics, branching strategies, commit conventions, and PR workflows.</p>
-  </section>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Git/GitHub Adoption Guide</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Step-by-step guide for data professionals to adopt version control. Covers GitHub basics, branching strategies, commit conventions, and portfolio showcase tips.</p>
 
-  <!-- Section 1: Why Git Matters -->
-  <section id="why-git" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128270; Why Git Matters for Data Work</h2>
-    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">Only 48.8% of the community uses version control. If you want to stand out in job applications, Git is non-negotiable.</p>
-
-      <h3 class="font-semibold text-dep-blue mb-2">What Git Does</h3>
-      <ul class="space-y-2 text-dep-charcoal">
-        <li><strong>Track changes</strong> &mdash; Every edit is saved with a timestamp and description</li>
-        <li><strong>Undo mistakes</strong> &mdash; Go back to any previous version of your code</li>
-        <li><strong>Collaborate</strong> &mdash; Multiple people can work on the same project without overwriting each other</li>
-        <li><strong>Showcase work</strong> &mdash; Your GitHub profile becomes a public portfolio of projects</li>
-      </ul>
-
-      <p class="text-sm text-dep-slate mt-4"><strong>Try it now:</strong> Create a free account at <a href="https://github.com" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">github.com</a></p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">Only 48.8% of DEs use version control</span>
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">58.6% at &#8369;100k+ use Git/GitHub</span>
     </div>
   </section>
 
-  <!-- Section 2: GitHub Basics -->
+  <!-- What is Version Control -->
   <section id="basics" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128196; GitHub Basics</h2>
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      What Is Version Control?
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold mb-10">
+      <p class="text-dep-charcoal leading-relaxed mb-4"><strong>Version control</strong> is a system that records changes to your files over time. Think of it like "Save As" but smarter &mdash; it lets you go back to any previous version, see who changed what, and work on multiple versions simultaneously.</p>
+      <p class="text-dep-charcoal leading-relaxed"><strong>Git</strong> is the version control system. <strong>GitHub</strong> is a platform that hosts your Git repositories online &mdash; like Google Drive for code.</p>
 
-    <div class="space-y-6">
-      <!-- Step 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">Step 1: Create a Repository</h3>
-        <p class="text-dep-charcoal mb-3">A repository (repo) is like a folder for your project. Every GitHub project has its own repo.</p>
-
-        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-          <pre><code># From the command line (requires Git installed)
-git init my-first-project
-cd my-first-project
-git add .
-git commit -m "Initial project setup"
-git branch --initial-branch=main
-git remote add origin https://github.com/yourusername/my-first-project.git
-git push -u origin main</code></pre>
-        </div>
-
-        <p class="text-sm text-dep-slate">Or use the GitHub web interface: Click "New Repository" &rarr; Name it &rarr; Click "Create repository".</p>
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold my-6">
+        <h3 class="font-semibold text-dep-blue mb-2">Why This Matters for Data Professionals</h3>
+        <ul class="space-y-2 text-sm text-dep-charcoal">
+          <li>&#128203; Employers expect data professionals to use Git (58.6% of &#8369;100k+ earners do)</li>
+          <li>&#128203; It's the #1 tool for collaboration &mdash; sharing code with teammates</li>
+          <li>&#128203; A GitHub portfolio is more impressive than a resume alone</li>
+        </ul>
       </div>
+    </div>
 
-      <!-- Step 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">Step 2: Write a README.md</h3>
-        <p class="text-dep-charcoal mb-3">A README file is the first thing recruiters see. It explains what your project does, how to use it, and what tools you used.</p>
+    <!-- Step 1 -->
+    <h2 class="text-xl font-bold text-dep-blue mb-4">Getting Started: Step-by-Step</h2>
 
-        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-          <pre><code># Project Title
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step1', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">1</span><span class="text-dep-blue font-semibold text-lg">Create a GitHub Account &amp; First Repo</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step1" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li>Go to <a href="https://github.com" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">github.com</a> and create a free account. Use your real name.</li>
+            <li>Click "New Repository" (green "New" button in top right).</li>
+            <li>Name it something descriptive: e.g., <code>my-first-data-project</code>.</li>
+            <li>Check "Add a README file" and click "Create repository".</li>
+          </ol>
 
-## Overview
-Brief description of what this project does and why it matters.
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">README Template</h4>
+            <pre># My First Data Project
+
+A data analysis project using Python and pandas.
 
 ## Tools Used
-- Python pandas for data manipulation
-- SQL for data extraction
-- Power BI for visualization
+- Python 3.x
+- pandas
+- Jupyter Notebook
+
+## What I Learned
+- How to load and clean CSV files
+- How to use groupby() for aggregation
+- How to export results to Excel
+
+## Results
+[Add a screenshot of your analysis here]
 
 ## How to Run
-1. Clone the repository
-2. Install dependencies: pip install -r requirements.txt
-3. Run: python main.py</code></pre>
+1. Clone this repo: git clone [your-repo-url]
+2. Install dependencies: pip install pandas
+3. Run the notebook: jupyter notebook analysis.ipynb</pre>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <p class="text-sm text-dep-slate">Save this as <code>README.md</code> in your project folder.</p>
+    <!-- Step 2 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step2', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">2</span><span class="text-dep-blue font-semibold text-lg">Clone a Repo &amp; Make Changes Locally</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step2" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li>Open your terminal (Command Prompt on Windows, Terminal on Mac).</li>
+            <li>Navigate to the folder where you want to store your projects: <code>cd Documents</code></li>
+            <li>Clone your repo: <code>git clone https://github.com/yourusername/my-first-data-project.git</code></li>
+            <li>Open the cloned folder and add a new file (e.g., <code>analysis.py</code>).</li>
+          </ol>
+
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Terminal Commands</h4>
+            <pre># Navigate to your projects folder
+cd Documents
+
+# Clone your repo (replace with your actual URL)
+git clone https://github.com/yourusername/my-first-data-project.git
+
+# Go into the cloned folder
+cd my-first-data-project
+
+# Create a new file
+echo "import pandas as pd" &gt; analysis.py</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step3', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">3</span><span class="text-dep-blue font-semibold text-lg">Commit &amp; Push Your Changes</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step3" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li><strong>Check what changed:</strong> <code>git status</code></li>
+            <li><strong>Add files to staging:</strong> <code>git add analysis.py</code></li>
+            <li><strong>Commit with a message:</strong> <code>git commit -m "feat: add data analysis script"</code></li>
+            <li><strong>Push to GitHub:</strong> <code>git push origin main</code></li>
+          </ol>
+
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">The Full Commit Workflow</h4>
+            <pre># 1. Check what changed
+git status
+
+# 2. Stage the files you want to commit
+git add analysis.py
+
+# 3. Commit with a descriptive message
+git commit -m "feat: add data analysis script"
+
+# 4. Push to GitHub (first time only requires setup)
+git push origin main</pre>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: Branching Strategies -->
-  <section id="branching" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128205; Branching Strategies</h2>
-    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">Branches let you work on new features without breaking the main project. Think of a branch as a parallel timeline for your code.</p>
+  <!-- Branching Strategies -->
+  <section id="workflow" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Branching Strategies
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold mb-8">
+      <p class="text-dep-charcoal leading-relaxed mb-4"><strong>Branches</strong> let you work on new features without breaking your main project. Think of it like making a copy of your workbook to experiment &mdash; if something goes wrong, your original is still safe.</p>
 
-      <h3 class="font-semibold text-dep-blue mb-2">Simple Branching Workflow</h3>
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Feature Branch Workflow (Recommended for Beginners)</h4>
+        <pre># Create a new branch and switch to it
+git checkout -b feature/add-customer-segmentation
 
-      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-        <pre><code># Create a new branch for your feature
-git checkout -b add-new-analysis
-
-# Make changes and commit them
+# Make your changes, then commit
 git add .
-git commit -m "Add new analysis script"
+git commit -m "feat: add customer segmentation query"
 
-# Switch back to main
-git checkout main
-
-# Merge your changes into main
-git merge add-new-analysis</code></pre>
+# Push the branch to GitHub
+git push origin feature/add-customer-segmentation</pre>
       </div>
 
-      <p class="text-sm text-dep-slate"><strong>Best practice:</strong> Never push directly to the main branch. Always create a feature branch, make your changes, then merge.</p>
+      <p class="text-sm text-dep-slate mt-4"><strong>Visual:</strong></p>
+      <pre class="bg-dep-lightgold p-3 rounded-lg border-l-4 border-dep-gold mt-2 text-sm">main:    O---O---O---O---O
+              \
+feature:       O---O---O</pre>
     </div>
-  </section>
 
-  <!-- Section 4: Commit Conventions -->
-  <section id="commits" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128203; Commit Conventions</h2>
-    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">Good commit messages help you and others understand what changed. Follow this pattern:</p>
+    <!-- Commit Conventions -->
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Commit Conventions
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold mb-12">
+      <p class="text-dep-charcoal leading-relaxed mb-4">Use conventional commit prefixes to make your history readable:</p>
 
-      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
-        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-        <pre><code># Good commit messages
-git commit -m "Add: ETL pipeline for sales data"
-git commit -m "Fix: Handle missing values in customer table"
-git commit -m "Update: Improve dashboard performance"
-
-# Bad commit messages (don't do this)
-git commit -m "update"
-git commit -m "fix stuff"
-git commit -m "changes"</code></pre>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-xl shadow-md overflow-hidden border-collapse">
+          <thead>
+            <tr class="bg-dep-blue text-white">
+              <th class="p-3 text-left font-semibold">Prefix</th>
+              <th class="p-3 text-left font-semibold">When to Use</th>
+              <th class="p-3 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100">
+              <td class="p-3 font-mono text-sm bg-dep-lightgold/30"><strong>feat:</strong></td>
+              <td class="p-3 text-sm">New feature or module</td>
+              <td class="p-3 text-sm font-mono">"feat: add customer segmentation query"</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-dep-lightgold/20">
+              <td class="p-3 font-mono text-sm"><strong>fix:</strong></td>
+              <td class="p-3 text-sm">Bug fix or correction</td>
+              <td class="p-3 text-sm font-mono">"fix: correct date format in ETL pipeline"</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-3 font-mono text-sm bg-dep-lightgold/30"><strong>docs:</strong></td>
+              <td class="p-3 text-sm">Documentation changes</td>
+              <td class="p-3 text-sm font-mono">"docs: update README with setup instructions"</td>
+            </tr>
+            <tr class="border-b border-gray-100 bg-dep-lightgold/20">
+              <td class="p-3 font-mono text-sm"><strong>refactor:</strong></td>
+              <td class="p-3 text-sm">Code restructuring</td>
+              <td class="p-3 text-sm font-mono">"refactor: simplify data cleaning function"</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <p class="text-sm text-dep-slate mt-3"><strong>Convention:</strong> Start with a verb (Add, Fix, Update, Remove) followed by a brief description of what changed.</p>
     </div>
-  </section>
 
-  <!-- Section 5: PR Workflows -->
-  <section id="pr-workflow" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128197; Pull Request (PR) Workflows</h2>
-    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">Pull Requests let you propose changes to a project and invite others to review them before merging.</p>
-
-      <h3 class="font-semibold text-dep-blue mb-2">PR Checklist</h3>
-      <ol class="space-y-2 text-dep-charcoal">
-        <li class="flex gap-2"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span><div>Create a feature branch for your changes</div></li>
-        <li class="flex gap-2"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div>Push your branch to GitHub</div></li>
-        <li class="flex gap-2"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span><div>Open a Pull Request on GitHub with a clear description</div></li>
-        <li class="flex gap-2"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span><div>Ask a mentor or peer to review your code</div></li>
-        <li class="flex gap-2"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span><div>Merge after approval</div></li>
+    <!-- Pull Requests -->
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-3.5 8C14.5 15.5 12 18 12 18s-2.5-2.5-3.5-5C7 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><line x1="12" y1="22" x2="12" y2="20"/></svg>
+      Pull Requests (PR) Workflow
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold mb-12">
+      <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+        <li><strong>Push your feature branch</strong> to GitHub (see Step 3 above).</li>
+        <li><strong>Go to your repo on github.com</strong> &mdash; you'll see a banner: "Branch X had recent pushes" with a green "Compare &amp; pull request" button.</li>
+        <li><strong>Click the button</strong> &mdash; GitHub will show a diff (what changed).</li>
+        <li><strong>Add a title and description</strong> explaining what you changed and why.</li>
+        <li><strong>Click "Create pull request"</strong> &mdash; this asks your team to review your changes before merging them into the main codebase.</li>
       </ol>
 
-      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mt-4 mb-3">
-        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
-        <pre><code># Push your branch to GitHub
-git push -u origin add-new-analysis
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">PR Template (Copy-Paste This)</h4>
+        <pre>## What I Changed
+Brief description of the changes made.
 
-# Then go to github.com and click "Compare & pull request"</code></pre>
+## Why I Changed It
+The reason for this change (e.g., fixing a bug, adding a feature).
+
+## How to Test
+Steps to verify the changes work correctly.</pre>
       </div>
     </div>
-  </section>
 
-  <!-- Resources -->
-  <section id="resources" class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128218; Additional Resources</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128218; GitHub Skills</h3>
-        <p class="text-sm text-dep-slate mb-3">Free interactive tutorials from GitHub itself. Learn the basics in under an hour.</p>
-        <a href="https://skills.github.com" target="_blank" rel="noopener" class="text-dep-gold font-semibold text-sm hover:text-yellow-600 transition-colors">Visit GitHub Skills &rarr;</a>
+    <!-- Portfolio Showcase -->
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8 12 10 14 12 10 14 14 16 12"/></svg>
+      Portfolio Showcase Guide
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-3">What Makes a Great GitHub Portfolio</h3>
+      <ul class="space-y-3 text-sm text-dep-charcoal mb-6">
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span><strong>Clear README</strong> with project description, tools used, what you learned, and screenshots of results.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span><strong>At least 2&ndash;3 complete projects</strong> (not just tutorial walkthroughs).</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span><strong>Clean file structure</strong> with organized folders (src/, data/, notebooks/).</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span><strong>Code comments</strong> explaining key logic in your scripts.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span><strong>Link to GitHub</strong> in your LinkedIn "Featured" section.</span></li>
+      </ul>
+
+      <h3 class="font-semibold text-dep-blue mb-3">Recommended Project Structure</h3>
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <pre>my-data-project/
+├── README.md          # Project description, tools, results
+├── src/               # Source code
+│   ├── data_clean.py  # Data cleaning scripts
+│   └── analysis.py    # Analysis scripts
+├── notebooks/         # Jupyter notebooks
+│   └── exploratory.ipynb
+├── data/              # Raw and processed data (add to .gitignore)
+│   ├── raw.csv
+│   └── cleaned.csv
+├── output/            # Dashboard exports, reports
+│   └── dashboard.pbix
+└── requirements.txt   # Python dependencies</pre>
       </div>
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128218; Pro Git Book</h3>
-        <p class="text-sm text-dep-slate mb-3">The definitive guide to Git. Free online, available in multiple languages.</p>
-        <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener" class="text-dep-gold font-semibold text-sm hover:text-yellow-600 transition-colors">Read Pro Git &rarr;</a>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-        <h3 class="font-semibold text-dep-blue mb-2">&#128218; GitHub Desktop</h3>
-        <p class="text-sm text-dep-slate mb-3">A visual Git client for beginners. No command line required.</p>
-        <a href="https://desktop.github.com" target="_blank" rel="noopener" class="text-dep-gold font-semibold text-sm hover:text-yellow-600 transition-colors">Download GitHub Desktop &rarr;</a>
-      </div>
+
+      <p class="text-sm text-dep-slate mt-4"><strong>Next step:</strong> Add your GitHub profile URL to your LinkedIn Featured section. Employers look at this before the About section.</p>
     </div>
   </section>
 
@@ -241,19 +355,19 @@ git push -u origin add-new-analysis
 </footer>
 
 <script>
-  function copyCode(button) {
-    const codeBlock = button.parentElement;
-    const code = codeBlock.querySelector('code').textContent;
+  function toggleStep(id, btn) {
+    const content = document.getElementById(id);
+    const chevron = btn.querySelector('.step-chevron');
+    content.classList.toggle('open');
+    chevron.classList.toggle('rotated');
+  }
+
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
     navigator.clipboard.writeText(code).then(() => {
-      const original = button.textContent;
-      button.textContent = 'Copied!';
-      button.classList.remove('bg-dep-gold');
-      button.classList.add('bg-green-600');
-      setTimeout(() => {
-        button.textContent = original;
-        button.classList.remove('bg-green-600');
-        button.classList.add('bg-dep-gold');
-      }, 1500);
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
     });
   }
 </script>

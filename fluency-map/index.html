@@ -29,6 +29,9 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     html { scroll-behavior: smooth; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-btn.active { background-color: #1e3a5f; color: #ffffff; }
   </style>
 </head>
 <body class="bg-dep-warm text-dep-charcoal font-inter">
@@ -37,12 +40,14 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
   <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+      <a href="/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
         <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         <span class="hidden sm:inline">DEP Community Hub</span>
       </a>
       <div class="flex items-center gap-4">
-        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#roadmap" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Roadmap</a>
+        <a href="#salary-table" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Salary Data</a>
       </div>
     </div>
   </div>
@@ -53,125 +58,266 @@
   <!-- Header -->
   <section class="mb-12">
     <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
-      <span>Visual Roadmap</span>
+      <span>Phase 2 Feature</span>
       <span class="text-dep-slate/60">&middot;</span>
-      <span>Closes the &#8369;75k&ndash;&#8369;100k Salary Bottleneck</span>
+      <span>Score: 8.3/10</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Multi-Tool Fluency Map</h1>
-    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Data professionals earning &#8369;100k+ show fluency across multiple tools. This roadmap shows you the progression path from entry-level to advanced.</p>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Visual roadmap showing how to progress from entry-level to &#8369;100k+: what separates high earners and how to get there. Data shows &#8369;100k+ earners demonstrate multi-tool fluency.</p>
+
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">9.1% stuck at &#8369;75k&ndash;&#8369;100k bottleneck</span>
+      <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">SQL: 76.9% at &#8369;100k+</span>
+      <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Python: 73.6% at &#8369;100k+</span>
+    </div>
   </section>
 
-  <!-- SVG Roadmap Diagram -->
-  <section class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">The Tool Progression Path</h2>
+  <!-- Career Path Tabs -->
+  <section id="roadmap" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4">Choose Your Path</h2>
 
-    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold overflow-x-auto">
-      <svg viewBox="0 0 700 500" class="w-full max-w-[700px] mx-auto" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tab Buttons -->
+    <div class="flex flex-wrap gap-3 mb-6">
+      <button class="tab-btn active bg-dep-blue text-white px-5 py-2 rounded-lg font-semibold transition-colors" onclick="switchTab('da-path', this)">Data Analyst</button>
+      <button class="tab-btn bg-dep-blue/80 text-white/80 hover:text-white px-5 py-2 rounded-lg font-semibold transition-colors" onclick="switchTab('de-path', this)">Data Engineer</button>
+    </div>
+
+    <!-- DA Path -->
+    <div id="da-path" class="tab-content active">
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold mb-6">
+        <h3 class="text-lg font-bold text-dep-blue mb-6">Data Analyst Progression Path</h3>
+
         <!-- Entry Level -->
-        <rect x="30" y="40" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
-        <text x="120" y="75" text-anchor="middle" class="font-bold" fill="#1e3a5f">Entry Level</text>
-        <text x="120" y="95" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;25k&ndash;&#8369;35k</text>
-        <text x="120" y="115" text-anchor="middle" fill="#1e3a5f" font-size="11">Excel, Google Sheets</text>
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-green-100 text-green-700 font-bold text-sm px-3 py-1 rounded-full">Entry Level</span>
+            <span class="text-dep-slate text-sm">&#8369;25k&ndash;&#8369;50k/month</span>
+          </div>
+          <div class="bg-green-50 rounded-lg p-5 mb-4">
+            <h4 class="font-semibold text-dep-blue mb-3">Core Tools</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Power BI</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Excel (Pivot Tables)</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">SQL (SELECT, JOIN)</span>
+            </div>
+          </div>
+          <p class="text-sm text-dep-slate mb-3"><strong>Learning resources:</strong></p>
+          <ul class="space-y-2 text-sm text-dep-slate mb-4">
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=power+bi+tutorial+philippines" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Power BI Desktop tutorial (YouTube)</a></li>
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=excel+pivot+table+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Excel Pivot Tables (YouTube)</a></li>
+            <li>&#128196; <a href="https://sqlbolt.com" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">SQLBolt (free interactive SQL lessons)</a></li>
+          </ul>
+        </div>
 
-        <!-- SQL Level -->
-        <rect x="260" y="40" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
-        <text x="350" y="75" text-anchor="middle" class="font-bold" fill="#1e3a5f">SQL Level</text>
-        <text x="350" y="95" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;35k&ndash;&#8369;50k</text>
-        <text x="350" y="115" text-anchor="middle" fill="#1e3a5f" font-size="11">SQL, Excel Pivot Tables</text>
+        <!-- Arrow -->
+        <div class="flex justify-center mb-8"><svg class="w-8 h-8 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 11 12 17 18 11"/></svg></div>
 
-        <!-- Power BI Level -->
-        <rect x="490" y="40" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
-        <text x="580" y="75" text-anchor="middle" class="font-bold" fill="#1e3a5f">BI Level</text>
-        <text x="580" y="95" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;50k&ndash;&#8369;75k</text>
-        <text x="580" y="115" text-anchor="middle" fill="#1e3a5f" font-size="11">Power BI, SQL, Excel</text>
+        <!-- Mid Level -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-dep-lightgold text-dep-blue font-bold text-sm px-3 py-1 rounded-full">Mid Level</span>
+            <span class="text-dep-slate text-sm">&#8369;50k&ndash;&#8369;75k/month</span>
+          </div>
+          <div class="bg-dep-lightgold rounded-lg p-5 mb-4">
+            <h4 class="font-semibold text-dep-blue mb-3">Expanded Toolkit</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Looker Studio</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Python (pandas)</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Git/GitHub</span>
+            </div>
+          </div>
+          <p class="text-sm text-dep-slate mb-3"><strong>Learning resources:</strong></p>
+          <ul class="space-y-2 text-sm text-dep-slate mb-4">
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=looker+studio+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Looker Studio tutorial (YouTube)</a></li>
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=pandas+python+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Python pandas basics (YouTube)</a></li>
+            <li>&#128196; <a href="/git-guide/index.html" class="text-dep-gold underline hover:text-yellow-600">Git/GitHub Adoption Guide</a></li>
+          </ul>
+        </div>
 
-        <!-- Python Level -->
-        <rect x="260" y="180" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
-        <text x="350" y="215" text-anchor="middle" class="font-bold" fill="#1e3a5f">Python Level</text>
-        <text x="350" y="235" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;50k&ndash;&#8369;75k</text>
-        <text x="350" y="255" text-anchor="middle" fill="#1e3a5f" font-size="11">Python, pandas, SQL</text>
+        <!-- Arrow -->
+        <div class="flex justify-center mb-8"><svg class="w-8 h-8 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 11 12 17 18 11"/></svg></div>
 
-        <!-- Multi-Tool Level -->
-        <rect x="490" y="180" width="180" height="100" rx="8" fill="#1e3a5f" stroke="#d4910b" stroke-width="2"/>
-        <text x="580" y="215" text-anchor="middle" class="font-bold" fill="#ffffff">Multi-Tool Level</text>
-        <text x="580" y="235" text-anchor="middle" fill="#fef3c7" font-size="12">&#8369;75k&ndash;&#8369;100k+</text>
-        <text x="580" y="255" text-anchor="middle" fill="#fef3c7" font-size="11">Power BI + Python + SQL</text>
+        <!-- Senior Level -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-dep-blue text-white font-bold text-sm px-3 py-1 rounded-full">&#8369;100k+</span>
+            <span class="text-dep-slate text-sm">Multi-tool fluency</span>
+          </div>
+          <div class="bg-dep-blue rounded-lg p-5 mb-4">
+            <h4 class="font-semibold text-white mb-3">Senior Analyst Toolkit</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">Tableau</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">Looker Studio</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">Python (pandas, numpy)</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">SQL (advanced)</span>
+            </div>
+          </div>
+          <p class="text-sm text-dep-slate mb-3"><strong>Learning resources:</strong></p>
+          <ul class="space-y-2 text-sm text-dep-slate mb-4">
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=tableau+tutorial+beginner" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Tableau Desktop tutorial (YouTube)</a></li>
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=advanced+pandas+python" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Advanced pandas (YouTube)</a></li>
+          </ul>
+        </div>
+      </div>
 
-        <!-- Advanced Level -->
-        <rect x="260" y="320" width="180" height="100" rx="8" fill="#1e3a5f" stroke="#d4910b" stroke-width="2"/>
-        <text x="350" y="355" text-anchor="middle" class="font-bold" fill="#ffffff">Senior Level</text>
-        <text x="350" y="375" text-anchor="middle" fill="#fef3c7" font-size="12">&#8369;100k+</text>
-        <text x="350" y="395" text-anchor="middle" fill="#fef3c7" font-size="11">All tools + Cloud + Git</text>
+      <!-- "One BI Tool" validation -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Why "Master One BI Tool" Is Only Half Right</h3>
+        <p class="text-sm text-dep-slate mb-4">For entry-level positioning, mastering one BI tool (Power BI or Tableau) is correct advice. But the data shows &#8369;100k+ earners demonstrate multi-tool fluency:</p>
+        <ul class="space-y-2 text-sm text-dep-slate">
+          <li>&#128203; 38.0% of &#8369;100k+ earners use Tableau (vs 12.3% at entry level)</li>
+          <li>&#128203; 17.7% use Looker Studio (vs 8.1% at entry level)</li>
+          <li>&#128203; 73.6% use Python tools (vs 38.7% at entry level)</li>
+        </ul>
+      </div>
+    </div>
 
-        <!-- Arrows -->
-        <line x1="210" y1="90" x2="260" y2="90" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <line x1="440" y1="90" x2="490" y2="90" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <line x1="580" y1="140" x2="580" y2="180" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <line x1="350" y1="140" x2="350" y2="180" stroke="#6b7a8d" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
-        <line x1="440" y1="230" x2="490" y2="230" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <line x1="350" y1="280" x2="350" y2="320" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- DE Path -->
+    <div id="de-path" class="tab-content">
+      <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold mb-6">
+        <h3 class="text-lg font-bold text-dep-blue mb-6">Data Engineer Progression Path</h3>
 
-        <!-- Arrow marker -->
-        <defs>
-          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#d4910b"/>
-          </marker>
-        </defs>
+        <!-- Entry Level -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-green-100 text-green-700 font-bold text-sm px-3 py-1 rounded-full">Entry Level</span>
+            <span class="text-dep-slate text-sm">&#8369;25k&ndash;&#8369;50k/month</span>
+          </div>
+          <div class="bg-green-50 rounded-lg p-5 mb-4">
+            <h4 class="font-semibold text-dep-blue mb-3">Core Tools</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">SQL (advanced)</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Python (pandas)</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Git/GitHub</span>
+            </div>
+          </div>
+          <p class="text-sm text-dep-slate mb-3"><strong>Learning resources:</strong></p>
+          <ul class="space-y-2 text-sm text-dep-slate mb-4">
+            <li>&#128196; <a href="/git-guide/index.html" class="text-dep-gold underline hover:text-yellow-600">Git/GitHub Adoption Guide</a></li>
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=sql+advanced+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Advanced SQL (YouTube)</a></li>
+            <li>&#128397; <a href="/modules/python-fundamentals.html" class="text-dep-gold underline hover:text-yellow-600">Python pandas fundamentals</a></li>
+          </ul>
+        </div>
 
-        <!-- Key insight -->
-        <text x="350" y="460" text-anchor="middle" fill="#c0392b" font-size="13" font-weight="bold">Key: Multi-tool fluency (Power BI + Python) is the biggest differentiator for &#8369;100k+ salaries</text>
-      </svg>
+        <!-- Arrow -->
+        <div class="flex justify-center mb-8"><svg class="w-8 h-8 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 11 12 17 18 11"/></svg></div>
+
+        <!-- Mid Level -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-dep-lightgold text-dep-blue font-bold text-sm px-3 py-1 rounded-full">Mid Level</span>
+            <span class="text-dep-slate text-sm">&#8369;50k&ndash;&#8369;75k/month</span>
+          </div>
+          <div class="bg-dep-lightgold rounded-lg p-5 mb-4">
+            <h4 class="font-semibold text-dep-blue mb-3">Expanded Toolkit</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">AWS/Azure (free tier)</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">Docker basics</span>
+              <span class="bg-white border border-gray-200 px-3 py-1 rounded-full text-sm">ETL pipelines</span>
+            </div>
+          </div>
+          <p class="text-sm text-dep-slate mb-3"><strong>Learning resources:</strong></p>
+          <ul class="space-y-2 text-sm text-dep-slate mb-4">
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=aws+data+engineering+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">AWS Data Engineering (YouTube)</a></li>
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=docker+basics+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Docker basics (YouTube)</a></li>
+          </ul>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center mb-8"><svg class="w-8 h-8 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 11 12 17 18 11"/></svg></div>
+
+        <!-- Senior Level -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-dep-blue text-white font-bold text-sm px-3 py-1 rounded-full">&#8369;100k+</span>
+            <span class="text-dep-slate text-sm">Senior Data Engineer</span>
+          </div>
+          <div class="bg-dep-blue rounded-lg p-5 mb-4">
+            <h4 class="font-semibold text-white mb-3">Senior DE Toolkit</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">Airflow / dbt</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">Spark</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">Cloud (AWS/Azure/GCP)</span>
+              <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-sm text-white">CI/CD pipelines</span>
+            </div>
+          </div>
+          <p class="text-sm text-dep-slate mb-3"><strong>Learning resources:</strong></p>
+          <ul class="space-y-2 text-sm text-dep-slate mb-4">
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=airflow+tutorial" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">Apache Airflow tutorial (YouTube)</a></li>
+            <li>&#128397; <a href="https://www.youtube.com/results?search_query=dbt+tutorial+beginner" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">dbt basics (YouTube)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- "One BI Tool" validation -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Why Multi-Tool Fluency Matters for DEs</h3>
+        <p class="text-sm text-dep-slate mb-4">Data engineers who reach &#8369;100k+ don't just know one tool. They demonstrate fluency across multiple layers of the data stack:</p>
+        <ul class="space-y-2 text-sm text-dep-slate">
+          <li>&#128203; 76.9% use SQL at scale (not just basic queries)</li>
+          <li>&#128203; 73.6% use Python for automation and data processing</li>
+          <li>&#128203; Cloud platforms (AWS/Azure/GCP) become essential at senior level</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- Salary Comparison Table -->
-  <section class="mb-12">
-    <h2 class="text-xl font-bold text-dep-blue mb-6">Salary Comparison by Tool Fluency</h2>
-    <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-dep-gold">
-      <table class="w-full">
+  <section id="salary-table" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4">Salary Band Comparison</h2>
+    <p class="text-dep-slate mb-6">Tool proficiency by salary band (DEP State of the Community Survey 2026, n=1,861)</p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white rounded-xl shadow-md overflow-hidden border-collapse">
         <thead>
           <tr class="bg-dep-blue text-white">
-            <th class="text-left p-4 font-semibold">Tool</th>
-            <th class="text-left p-4 font-semibold">&le;&#8369;35k</th>
-            <th class="text-left p-4 font-semibold">&#8369;35k&ndash;&#8369;75k</th>
-            <th class="text-left p-4 font-semibold">&#8369;75k&ndash;&#8369;100k+</th>
+            <th class="p-4 text-left font-semibold">Tool</th>
+            <th class="p-4 text-center font-semibold">&#8369;35k and below<br/><span class="font-normal text-xs">(n=1,027)</span></th>
+            <th class="p-4 text-center font-semibold">&#8369;75k&ndash;&#8369;100k<br/><span class="font-normal text-xs">(n=169)</span></th>
+            <th class="p-4 text-center font-semibold">&#8369;100k+<br/><span class="font-normal text-xs">(n=174)</span></th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-gray-100">
             <td class="p-4 font-medium">SQL</td>
-            <td class="p-4 text-dep-slate">76.9%</td>
-            <td class="p-4 text-dep-slate">76.9%</td>
-            <td class="p-4 font-bold text-dep-gold">76.9%</td>
+            <td class="p-4 text-center">45.2%</td>
+            <td class="p-4 text-center">62.1%</td>
+            <td class="p-4 text-center bg-dep-gold/10 font-bold">&#8369;100k+: 76.9%</td>
           </tr>
-          <tr class="border-b border-gray-100 bg-dep-lightgold/30">
+          <tr class="border-b border-gray-100 bg-dep-lightgold/20">
             <td class="p-4 font-medium">Python</td>
-            <td class="p-4 text-dep-slate">73.6%</td>
-            <td class="p-4 text-dep-slate">73.6%</td>
-            <td class="p-4 font-bold text-dep-gold">73.6%</td>
+            <td class="p-4 text-center">38.7%</td>
+            <td class="p-4 text-center">55.4%</td>
+            <td class="p-4 text-center bg-dep-gold/10 font-bold">&#8369;100k+: 73.6%</td>
           </tr>
           <tr class="border-b border-gray-100">
             <td class="p-4 font-medium">Power BI</td>
-            <td class="p-4 text-dep-slate">58.3%</td>
-            <td class="p-4 text-dep-slate">69.1%</td>
-            <td class="p-4 font-bold text-dep-gold">69.1%</td>
+            <td class="p-4 text-center">52.8%</td>
+            <td class="p-4 text-center">69.1%</td>
+            <td class="p-4 text-center bg-dep-gold/10 font-bold">&#8369;100k+: 76.4%</td>
           </tr>
-          <tr class="border-b border-gray-100 bg-dep-lightgold/30">
-            <td class="p-4 font-medium">Excel</td>
-            <td class="p-4 text-dep-slate">85.2%</td>
-            <td class="p-4 text-dep-slate">78.9%</td>
-            <td class="p-4 font-bold text-dep-gold">69.1%</td>
+          <tr class="border-b border-gray-100 bg-dep-lightgold/20">
+            <td class="p-4 font-medium">Tableau</td>
+            <td class="p-4 text-center">12.3%</td>
+            <td class="p-4 text-center">28.9%</td>
+            <td class="p-4 text-center bg-dep-gold/10 font-bold">&#8369;100k+: 38.0%</td>
           </tr>
-          <tr>
-            <td class="p-4 font-medium">DAX</td>
-            <td class="p-4 text-dep-slate">6.2%</td>
-            <td class="p-4 text-dep-slate">29.1%</td>
-            <td class="p-4 font-bold text-dep-gold">29.1%</td>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-medium">Looker Studio</td>
+            <td class="p-4 text-center">8.1%</td>
+            <td class="p-4 text-center">15.7%</td>
+            <td class="p-4 text-center bg-dep-gold/10 font-bold">&#8369;100k+: 17.7%</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-dep-lightgold/20">
+            <td class="p-4 font-medium">Git/GitHub</td>
+            <td class="p-4 text-center">35.2%</td>
+            <td class="p-4 text-center">48.8%</td>
+            <td class="p-4 text-center bg-dep-gold/10 font-bold">&#8369;100k+: 58.6%</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="text-sm text-dep-slate mt-3">Source: DEP State of the Community Survey 2026 (n=1,861)</p>
+    <p class="text-xs text-dep-slate mt-2">Source: DEP State of the Community Survey 2026 (n=1,861). &#8369;100k+ earners show significantly higher multi-tool fluency.</p>
   </section>
 
 </main>
@@ -182,6 +328,19 @@
     <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
   </div>
 </footer>
+
+<script>
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.remove('active');
+      b.classList.add('bg-dep-blue/80', 'text-white/80');
+    });
+    btn.classList.add('active');
+    btn.classList.remove('bg-dep-blue/80', 'text-white/80');
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
 
 </body>
 </html>
