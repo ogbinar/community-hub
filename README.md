@@ -26,56 +26,50 @@ The community hub is deployed to GitHub Pages:
 
 ## 📁 Project Structure
 
+All HTML files are located in the `docs/` folder, which is deployed to GitHub Pages.
+
 ```
 community-hub/
-├── docs/
-│   └── index.html              ← Main hub / landing page (entry point)
-├── modules/                    ← AI-Augmented Learning Modules
-│   ├── sql-basics.html         ← Module 1: SQL basics + AI pitfalls
-│   ├── python-fundamentals.html← Module 2: Python/pandas + AI pitfalls
-│   ├── excel-powerbi-intro.html← Module 3: Excel/Power BI + AI pitfalls
-│   ├── power-bi-gap.html       ← Power BI Gap Closer (8.8/10)
-│   ├── dax-portfolio.html      ← DAX Portfolio Project (8.2/10)
-│   ├── ai-interview-prep.html  ← AI Workflow Interview Prep (8.2/10)
-│   ├── remote-mentorship.html  ← Remote Mentorship Board (8.2/10)
-│   ├── dax-micro.html          ← DAX Micro-Lessons (8.0/10)
-│   ├── drawio-templates.html   ← Draw.io Architecture Templates (8.0/10)
-│   ├── github-showcase.html    ← GitHub Portfolio Showcase Guide (8.0/10)
-│   ├── dax-signal.html         ← DAX Signal Gap Course (8.0/10)
-│   ├── ai-study-workflow.html  ← AI Study Workflow Guide (7.8/10)
-│   ├── portfolio-builder.html  ← Portfolio Builder Template (7.8/10)
-│   ├── decision-shift.html     ← "Decision to Shift" Framework (7.8/10)
-│   ├── hiring.html             ← Hiring Pipeline Connector (7.8/10)
-│   ├── spotlight.html          ← Creator Spotlight Platform (7.8/10)
-│   ├── content-calendar.html   ← YouTube Content Calendar (7.8/10)
-│   ├── cloud-bridge.html       ← Local to Cloud Bridge Curriculum (7.5/10)
-│   ├── cloud-bootcamp.html     ← Cloud Deployment Bootcamp (7.8/10)
-│   ├── cert-guide.html         ← Cloud Certification Guide (7.8/10)
-│   ├── laptop-projects.html    ← Laptop-Only Project Templates (7.5/10)
-│   ├── salary-tracker.html     ← Salary Band Progression Tracker (7.5/10)
-│   ├── ai-coding-toolkit.html  ← AI-Assisted Coding Toolkit (7.5/10)
-│   ├── async-tools.html        ← Async Collaboration Tools (7.5/10)
-│   ├── culture-bridge.html     ← Language/Cultural Bridge Guide (7.5/10)
-│   ├── credential-tracker.html ← Free Credential Tracker (7.0/10)
-│   └── content-repurpose.html  ← Content Repurposing Toolkit (7.0/10)
-├── pathway/                    ← Career Shifter DA/DE Pathway
-│   ├── index.html              ← 8-week timeline overview
-│   └── checklist.html          ← Printable checklist with progress tracking
-├── mentorship/                 ← Time-Bound Mentorship Matching
-│   ├── index.html              ← Mentor directory + session topics + sign-up
-│   └── hiring.html             ← Hiring Pipeline Connector (job board)
-├── linkedin/                   ← LinkedIn Profile Optimizer
-│   └── index.html              ← Interactive checklist + AI prompt templates
-├── fluency-map/                ← Multi-Tool Fluency Map
-│   └── index.html              ← DA/DE career path tabs + salary comparison table
-├── git-guide/                  ← Git/GitHub Adoption Guide
-│   └── index.html              ← Step-by-step guide with code blocks
-├── creator/                    ← Creator Tools
-│   └── spotlight.html          ← Monthly featured creators + nomination template
-├── SPEC.md                     ← Full specification and roadmap
-├── IMPLEMENTATION-PLAN.md      ← Detailed implementation plan
-├── agent.md                    ← Design system spec for agents
-└── README.md                   ← This file
+├── docs/                          ← GitHub Pages source folder (deployed)
+│   ├── index.html                 ← Main hub / landing page (entry point)
+│   ├── modules/                   ← AI-Augmented Learning Modules
+│   │   ├── sql-basics.html        ← Module 1: SQL basics + AI pitfalls
+│   │   ├── python-fundamentals.html ← Module 2: Python/pandas + AI pitfalls
+│   │   ├── excel-powerbi-intro.html ← Module 3: Excel/Power BI + AI pitfalls
+│   │   ├── power-bi-gap.html      ← Power BI Gap Closer (8.8/10)
+│   │   ├── dax-portfolio.html     ← DAX Portfolio Project (8.2/10)
+│   │   ├── ai-interview-prep.html ← AI Workflow Interview Prep (8.2/10)
+│   │   ├── dax-micro.html         ← DAX Micro-Lessons (8.0/10)
+│   │   ├── drawio-templates.html  ← Draw.io Architecture Templates (8.0/10)
+│   │   ├── dax-signal.html        ← DAX Signal Gap Course (8.0/10)
+│   │   ├── ai-study-workflow.html ← AI Study Workflow Guide (7.8/10)
+│   │   ├── decision-shift.html    ← "Decision to Shift" Framework (7.8/10)
+│   │   ├── laptop-projects.html   ← Laptop-Only Project Templates (7.5/10)
+│   │   ├── cloud-bootcamp.html    ← Cloud Deployment Bootcamp (7.8/10)
+│   │   ├── async-tools.html       ← Async Collaboration Tools (7.5/10)
+│   │   ├── culture-bridge.html    ← Language/Cultural Bridge Guide (7.5/10)
+│   │   ├── credential-tracker.html ← Free Credential Tracker (7.0/10)
+│   │   ├── content-repurpose.html ← Content Repurposing Toolkit (7.0/10)
+│   │   ├── ai-coding-toolkit.html ← AI-Assisted Coding Toolkit (7.5/10)
+│   │   └── power-bi-gap.html      ← Power BI Gap Closer (8.8/10)
+│   ├── pathway/                   ← Career Shifter DA/DE Pathway
+│   │   ├── index.html             ← 8-week timeline overview
+│   │   └── checklist.html         ← Printable checklist with progress tracking
+│   ├── mentorship/                ← Time-Bound Mentorship Matching
+│   │   ├── index.html             ← Mentor directory + session topics + sign-up
+│   │   └── hiring.html            ← Hiring Pipeline Connector (job board)
+│   ├── linkedin/                  ← LinkedIn Profile Optimizer
+│   │   └── index.html             ← Interactive checklist + AI prompt templates
+│   ├── fluency-map/               ← Multi-Tool Fluency Map
+│   │   └── index.html             ← DA/DE career path tabs + salary comparison table
+│   ├── git-guide/                 ← Git/GitHub Adoption Guide
+│   │   └── index.html             ← Step-by-step guide with code blocks
+│   └── creator/                   ← Creator Tools
+│       └── spotlight.html         ← Monthly featured creators + nomination template
+├── SPEC.md                        ← Full specification and roadmap
+├── IMPLEMENTATION-PLAN.md         ← Detailed implementation plan
+├── agent.md                       ← Design system spec for agents
+└── README.md                      ← This file
 ```
 
 ---
