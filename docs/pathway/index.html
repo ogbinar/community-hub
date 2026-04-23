@@ -74,11 +74,13 @@
 
     <div class="space-y-6">
       <!-- Weeks 1-2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold week-accordion" onclick="this.querySelector('.week-content').classList.toggle('open'); const c=this.querySelector('.week-chevron'); c.style.transform=c.style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)';">
         <div class="flex items-center gap-3 mb-3">
           <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 1&ndash;2</span>
           <h3 class="text-lg font-semibold text-dep-blue">SQL Basics + Excel/Power Query</h3>
+        <svg class="week-chevron w-5 h-5 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
+      <div class="week-content open">
         <ul class="space-y-2 text-dep-charcoal mb-4">
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Learn SELECT, WHERE, JOIN, GROUP BY</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Master Excel formulas (VLOOKUP, Pivot Tables)</span></li>
@@ -92,16 +94,20 @@
       </div>
 
       <!-- Weeks 3-4 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold week-accordion" onclick="this.querySelector('.week-content').classList.toggle('open'); const c=this.querySelector('.week-chevron'); c.style.transform=c.style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)';">
         <div class="flex items-center gap-3 mb-3">
           <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 3&ndash;4</span>
           <h3 class="text-lg font-semibold text-dep-blue">Power BI Fundamentals + DAX Basics</h3>
+        <svg class="week-chevron w-5 h-5 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
+      <div class="week-content open">
         <ul class="space-y-2 text-dep-charcoal mb-4">
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Build your first Power BI dashboard</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Learn DAX measures (SUM, AVERAGE, CALCULATE)</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Build a dashboard from a sample dataset</span></li>
         </ul>
+        </div>
+      </div>
         <div class="flex flex-wrap gap-3 text-sm">
           <a href="/modules/excel-powerbi-intro.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128387; Module 3: Excel &amp; Power BI &rarr;</a>
           <span class="text-dep-slate/60">&middot;</span>
@@ -110,16 +116,20 @@
       </div>
 
       <!-- Weeks 5-6 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold week-accordion" onclick="this.querySelector('.week-content').classList.toggle('open'); const c=this.querySelector('.week-chevron'); c.style.transform=c.style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)';">
         <div class="flex items-center gap-3 mb-3">
           <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 5&ndash;6</span>
           <h3 class="text-lg font-semibold text-dep-blue">Python pandas + Data Manipulation</h3>
+        <svg class="week-chevron w-5 h-5 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
+      <div class="week-content open">
         <ul class="space-y-2 text-dep-charcoal mb-4">
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Load, filter, transform data with pandas</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Group, aggregate, merge datasets</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Analyze a real dataset and produce insights</span></li>
         </ul>
+        </div>
+      </div>
         <div class="flex flex-wrap gap-3 text-sm">
           <a href="/modules/python-fundamentals.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128387; Module 2: Python Fundamentals &rarr;</a>
           <span class="text-dep-slate/60">&middot;</span>
@@ -128,16 +138,20 @@
       </div>
 
       <!-- Weeks 7-8 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold week-accordion" onclick="this.querySelector('.week-content').classList.toggle('open'); const c=this.querySelector('.week-chevron'); c.style.transform=c.style.transform==='rotate(180deg)'?'rotate(0deg)':'rotate(180deg)';">
         <div class="flex items-center gap-3 mb-3">
           <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 7&ndash;8</span>
           <h3 class="text-lg font-semibold text-dep-blue">Cloud Deployment + GitHub Portfolio</h3>
+        <svg class="week-chevron w-5 h-5 text-dep-gold flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
+      <div class="week-content open">
         <ul class="space-y-2 text-dep-charcoal mb-4">
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Deploy your Python scripts to AWS/Azure free tier</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Set up GitHub portfolio with README templates</span></li>
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Complete portfolio + share on LinkedIn</span></li>
         </ul>
+        </div>
+      </div>
         <div class="flex flex-wrap gap-3 text-sm">
           <a href="/git-guide/index.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128196; GitHub Guide &rarr;</a>
           <span class="text-dep-slate/60">&middot;</span>
@@ -170,5 +184,50 @@
   </div>
 </footer>
 
+  <script>
+    // Pathway week accordion toggle
+    document.querySelectorAll('.week-accordion').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const chevron = this.querySelector('.week-chevron');
+        content.classList.toggle('open');
+        if (content.classList.contains('open')) {
+          chevron.style.transform = 'rotate(180deg)';
+        } else {
+          chevron.style.transform = '';
+        }
+      });
+    });
+
+    // Scroll progress indicator
+    const weeks = document.querySelectorAll('#weeks > .space-y-6 > div');
+    const progressBar = document.createElement('div');
+    progressBar.className = 'fixed top-20 left-1/2 -translate-x-1/2 z-40 bg-white rounded-full shadow-lg px-4 py-2 flex items-center gap-3 opacity-0 transition-opacity duration-300';
+    progressBar.innerHTML = '<span class="text-xs font-semibold text-dep-blue">Progress:</span><div class="w-32 bg-gray-200 rounded-full h-2"><div id="progress-fill" class="bg-dep-gold h-2 rounded-full transition-all" style="width: 0%"></div></div><span id="progress-text" class="text-xs text-dep-slate">0%</span>';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', function() {
+      let visible = 0;
+      weeks.forEach(function(w) {
+        const rect = w.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.75) visible++;
+      });
+      const pct = Math.round(visible / weeks.length * 100);
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('progress-text').textContent = pct + '%';
+      if (window.scrollY > 300) {
+        progressBar.style.opacity = '1';
+      } else {
+        progressBar.style.opacity = '0';
+      }
+    });
+  </script>
+
+  <style>
+    .week-accordion { cursor: pointer; }
+    .week-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .week-content.open { max-height: 4000px; }
+    .week-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+  </style>
 </body>
 </html>

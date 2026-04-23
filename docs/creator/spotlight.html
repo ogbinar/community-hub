@@ -227,5 +227,14 @@
   }
 </script>
 
+  <script>
+    const stb = document.createElement('button');
+    stb.innerHTML = '&#8593;';
+    stb.className = 'fixed bottom-6 right-6 w-10 h-10 rounded-full bg-dep-gold text-white shadow-lg opacity-0 transition-opacity duration-300 hover:bg-yellow-600 z-50 focus:outline-none';
+    stb.setAttribute('aria-label', 'Back to top');
+    document.body.appendChild(stb);
+    window.addEventListener('scroll', function() { stb.style.opacity = window.scrollY > 400 ? '1' : '0'; });
+    stb.addEventListener('click', function() { window.scrollTo({top: 0, behavior: 'smooth'}); });
+  </script>
 </body>
 </html>
