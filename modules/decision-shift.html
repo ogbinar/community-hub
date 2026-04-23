@@ -287,7 +287,15 @@
     }
 
     document.getElementById('plan-path').textContent = path;
-    document.getElementById('plan-modules').innerHTML = modules.map(m => `<li><a href="#" class="text-dep-gold underline hover:text-yellow-600">${m}</a></li>`).join('');
+    document.getElementById('plan-modules').innerHTML = modules.map(m => {
+      const links = {
+        'SQL Basics': '../modules/sql-basics.html',
+        'Excel/Power BI Intro': '../modules/excel-powerbi-intro.html',
+        'Python Fundamentals': '../modules/python-fundamentals.html',
+        'Career Shifter DA/DE Pathway': '../pathway/index.html'
+      };
+      return `<li><a href="${links[m] || '#'}" class="text-dep-gold underline hover:text-yellow-600">${m}</a></li>`;
+    }).join('');
     document.getElementById('plan-timeline-text').textContent = timeline;
 
     // Scroll to results
