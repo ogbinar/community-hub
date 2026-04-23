@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Tool Fluency Map | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Visual Roadmap</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Closes the &#8369;75k&ndash;&#8369;100k Salary Bottleneck</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Multi-Tool Fluency Map</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Data professionals earning &#8369;100k+ show fluency across multiple tools. This roadmap shows you the progression path from entry-level to advanced.</p>
+  </section>
+
+  <!-- SVG Roadmap Diagram -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-6">The Tool Progression Path</h2>
+
+    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold overflow-x-auto">
+      <svg viewBox="0 0 700 500" class="w-full max-w-[700px] mx-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Entry Level -->
+        <rect x="30" y="40" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
+        <text x="120" y="75" text-anchor="middle" class="font-bold" fill="#1e3a5f">Entry Level</text>
+        <text x="120" y="95" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;25k&ndash;&#8369;35k</text>
+        <text x="120" y="115" text-anchor="middle" fill="#1e3a5f" font-size="11">Excel, Google Sheets</text>
+
+        <!-- SQL Level -->
+        <rect x="260" y="40" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
+        <text x="350" y="75" text-anchor="middle" class="font-bold" fill="#1e3a5f">SQL Level</text>
+        <text x="350" y="95" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;35k&ndash;&#8369;50k</text>
+        <text x="350" y="115" text-anchor="middle" fill="#1e3a5f" font-size="11">SQL, Excel Pivot Tables</text>
+
+        <!-- Power BI Level -->
+        <rect x="490" y="40" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
+        <text x="580" y="75" text-anchor="middle" class="font-bold" fill="#1e3a5f">BI Level</text>
+        <text x="580" y="95" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;50k&ndash;&#8369;75k</text>
+        <text x="580" y="115" text-anchor="middle" fill="#1e3a5f" font-size="11">Power BI, SQL, Excel</text>
+
+        <!-- Python Level -->
+        <rect x="260" y="180" width="180" height="100" rx="8" fill="#fef3c7" stroke="#d4910b" stroke-width="2"/>
+        <text x="350" y="215" text-anchor="middle" class="font-bold" fill="#1e3a5f">Python Level</text>
+        <text x="350" y="235" text-anchor="middle" fill="#6b7a8d" font-size="12">&#8369;50k&ndash;&#8369;75k</text>
+        <text x="350" y="255" text-anchor="middle" fill="#1e3a5f" font-size="11">Python, pandas, SQL</text>
+
+        <!-- Multi-Tool Level -->
+        <rect x="490" y="180" width="180" height="100" rx="8" fill="#1e3a5f" stroke="#d4910b" stroke-width="2"/>
+        <text x="580" y="215" text-anchor="middle" class="font-bold" fill="#ffffff">Multi-Tool Level</text>
+        <text x="580" y="235" text-anchor="middle" fill="#fef3c7" font-size="12">&#8369;75k&ndash;&#8369;100k+</text>
+        <text x="580" y="255" text-anchor="middle" fill="#fef3c7" font-size="11">Power BI + Python + SQL</text>
+
+        <!-- Advanced Level -->
+        <rect x="260" y="320" width="180" height="100" rx="8" fill="#1e3a5f" stroke="#d4910b" stroke-width="2"/>
+        <text x="350" y="355" text-anchor="middle" class="font-bold" fill="#ffffff">Senior Level</text>
+        <text x="350" y="375" text-anchor="middle" fill="#fef3c7" font-size="12">&#8369;100k+</text>
+        <text x="350" y="395" text-anchor="middle" fill="#fef3c7" font-size="11">All tools + Cloud + Git</text>
+
+        <!-- Arrows -->
+        <line x1="210" y1="90" x2="260" y2="90" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="440" y1="90" x2="490" y2="90" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="580" y1="140" x2="580" y2="180" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="350" y1="140" x2="350" y2="180" stroke="#6b7a8d" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+        <line x1="440" y1="230" x2="490" y2="230" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="350" y1="280" x2="350" y2="320" stroke="#d4910b" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+        <!-- Arrow marker -->
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#d4910b"/>
+          </marker>
+        </defs>
+
+        <!-- Key insight -->
+        <text x="350" y="460" text-anchor="middle" fill="#c0392b" font-size="13" font-weight="bold">Key: Multi-tool fluency (Power BI + Python) is the biggest differentiator for &#8369;100k+ salaries</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Salary Comparison Table -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-6">Salary Comparison by Tool Fluency</h2>
+    <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-dep-gold">
+      <table class="w-full">
+        <thead>
+          <tr class="bg-dep-blue text-white">
+            <th class="text-left p-4 font-semibold">Tool</th>
+            <th class="text-left p-4 font-semibold">&le;&#8369;35k</th>
+            <th class="text-left p-4 font-semibold">&#8369;35k&ndash;&#8369;75k</th>
+            <th class="text-left p-4 font-semibold">&#8369;75k&ndash;&#8369;100k+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-medium">SQL</td>
+            <td class="p-4 text-dep-slate">76.9%</td>
+            <td class="p-4 text-dep-slate">76.9%</td>
+            <td class="p-4 font-bold text-dep-gold">76.9%</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-dep-lightgold/30">
+            <td class="p-4 font-medium">Python</td>
+            <td class="p-4 text-dep-slate">73.6%</td>
+            <td class="p-4 text-dep-slate">73.6%</td>
+            <td class="p-4 font-bold text-dep-gold">73.6%</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-medium">Power BI</td>
+            <td class="p-4 text-dep-slate">58.3%</td>
+            <td class="p-4 text-dep-slate">69.1%</td>
+            <td class="p-4 font-bold text-dep-gold">69.1%</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-dep-lightgold/30">
+            <td class="p-4 font-medium">Excel</td>
+            <td class="p-4 text-dep-slate">85.2%</td>
+            <td class="p-4 text-dep-slate">78.9%</td>
+            <td class="p-4 font-bold text-dep-gold">69.1%</td>
+          </tr>
+          <tr>
+            <td class="p-4 font-medium">DAX</td>
+            <td class="p-4 text-dep-slate">6.2%</td>
+            <td class="p-4 text-dep-slate">29.1%</td>
+            <td class="p-4 font-bold text-dep-gold">29.1%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-dep-slate mt-3">Source: DEP State of the Community Survey 2026 (n=1,861)</p>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+</body>
+</html>

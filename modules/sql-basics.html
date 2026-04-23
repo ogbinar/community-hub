@@ -29,10 +29,6 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     html { scroll-behavior: smooth; }
-    .sun-motif { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ffffff' opacity='0.06'/%3E%3Cline x1='50' y1='8' x2='50' y2='25' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='50' y1='75' x2='50' y2='92' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='8' y1='50' x2='25' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='75' y1='50' x2='92' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='20.3' y1='20.3' x2='32.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='67.5' y1='67.5' x2='79.7' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='79.7' y1='20.3' x2='67.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='32.5' y1='67.5' x2='20.3' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3C/svg%3E"); background-size: 120px 120px; }
-    .banig-divider { height: 8px; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(212,145,11,0.2) 8px, rgba(212,145,11,0.2) 16px); }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(30,58,95,0.15); }
     code { font-family: 'Courier New', monospace; }
   </style>
 </head>
@@ -60,18 +56,20 @@
   <section class="mb-12">
     <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
       <span>Module 1 of 3</span>
-      <span class="text-dep-slate/60">•</span>
+      <span class="text-dep-slate/60">&middot;</span>
       <span>AI-Augmented Learning</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">SQL Basics</h1>
-    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Learn how to interrogate AI-generated SQL answers — not just accept them. This module teaches you to spot where AI gets it wrong and how practitioners validate queries.</p>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Learn to interrogate AI-generated SQL answers &mdash; not just accept them. This module teaches you to spot where AI gets it wrong and how practitioners validate queries.</p>
 
-    <!-- YouTube Embed -->
-    <div class="mt-8 rounded-xl overflow-hidden shadow-lg aspect-video max-w-4xl">
-      <iframe class="w-full h-full" src="https://www.youtube.com/embed/jIGFrn6es0w" title="SQL Basics Module" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Video placeholder -->
+    <div class="mt-8 mb-4 p-6 bg-white rounded-xl shadow-md border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-2">&#128379; Module Video</h3>
+      <p class="text-sm text-dep-slate mb-3">The 5-minute SQL basics video will be hosted on the DEP YouTube channel. For now, follow along with the written guide below.</p>
+      <a href="https://www.youtube.com/results?search_query=data+engineering+pilipinas+sql" target="_blank" rel="noopener" class="inline-block bg-dep-gold text-white px-5 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors text-sm">Search DEP YouTube Channel &rarr;</a>
     </div>
 
-    <p class="text-sm text-dep-slate mt-3">📺 Watch the 5-minute module video above, then follow along with each section below.</p>
+    <p class="text-sm text-dep-slate mt-3">&#128214; Follow along with each section below. Copy code examples, run them in your own environment, and compare against AI output.</p>
   </section>
 
   <!-- Section 1: Concept Explanation -->
@@ -81,23 +79,27 @@
       Concept Explanation
     </h2>
     <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">SQL (Structured Query Language) is the language you use to talk to databases. Think of it like asking a question — you tell the database what data you want, and it gives you back exactly that.</p>
+      <p class="text-dep-charcoal leading-relaxed mb-4">SQL (Structured Query Language) is the language you use to talk to databases. Think of it like asking a question &mdash; you tell the database what data you want, and it gives you back exactly that.</p>
 
       <h3 class="font-semibold text-dep-blue mb-2">The Four Core Operations</h3>
       <ul class="space-y-2 text-dep-charcoal">
-        <li><strong>SELECT</strong> — Get data from a table (like asking "show me all customers")</li>
-        <li><strong>INSERT</strong> — Add new data (like "add this new customer")</li>
-        <li><strong>UPDATE</strong> — Change existing data (like "change this customer's email")</li>
-        <li><strong>DELETE</strong> — Remove data (like "remove this customer")</li>
+        <li><strong>SELECT</strong> &mdash; Get data from a table (like asking "show me all customers")</li>
+        <li><strong>INSERT</strong> &mdash; Add new data (like "add this new customer")</li>
+        <li><strong>UPDATE</strong> &mdash; Change existing data (like "change this customer's email")</li>
+        <li><strong>DELETE</strong> &mdash; Remove data (like "remove this customer")</li>
       </ul>
 
-      <p class="text-dep-charcoal leading-relaxed mt-4">For this module, we'll focus on <strong>SELECT</strong> — it's the most common operation and the one you'll use 90% of the time. The basic pattern is:</p>
+      <p class="text-dep-charcoal leading-relaxed mt-4">For this module, we'll focus on <strong>SELECT</strong> &mdash; it's the most common operation and the one you'll use 90% of the time. The basic pattern is:</p>
 
-      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold my-4">
-        <pre><code>SELECT column1, column2
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold my-4 relative">
+        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <pre><code>-- Basic SELECT query
+SELECT column1, column2
 FROM table_name
 WHERE condition = value;</code></pre>
       </div>
+
+      <p class="text-sm text-dep-slate mt-3"><strong>Try it yourself:</strong> Use <a href="https://sqliteonline.com" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">SQLiteOnline.com</a> (free, no install needed) to run the query above with your own data.</p>
     </div>
   </section>
 
@@ -108,9 +110,9 @@ WHERE condition = value;</code></pre>
       AI-Generated Answer (What ChatGPT/Copilot Would Output)
     </h2>
     <div class="bg-dep-lightgold p-6 rounded-xl border-l-4 border-dep-gold">
-      <p class="text-sm text-dep-slate mb-3 font-medium">Here's what an AI would generate if asked: "Write a SQL query to find all customers who spent more than ₱5000 in 2024."</p>
+      <p class="text-sm text-dep-slate mb-3 font-medium">Here's what an AI would generate if asked: "Write a SQL query to find all customers who spent more than &#8369;5000 in 2024."</p>
 
-      <div class="bg-white rounded-lg p-4 mb-4 relative group">
+      <div class="bg-white rounded-lg p-4 mb-4 relative">
         <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
         <pre><code>-- AI-generated query
 SELECT customer_id, customer_name, SUM(amount) as total_spent
@@ -118,7 +120,7 @@ FROM customers c
 JOIN orders o ON c.id = o.customer_id
 WHERE YEAR(order_date) = 2024
 GROUP BY customer_id, customer_name
-HAVING SUM(amount) > 5000;</code></pre>
+HAVING SUM(amount) &gt; 5000;</code></pre>
       </div>
 
       <p class="text-sm text-dep-slate">The AI provided a query that looks correct. But is it? Let's find out where it might be wrong.</p>
@@ -137,42 +139,45 @@ HAVING SUM(amount) > 5000;</code></pre>
       <ol class="space-y-3 text-dep-charcoal">
         <li class="flex gap-3">
           <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">1</span>
-          <div><strong>Bug: YEAR() is not standard SQL.</strong> It works in MySQL and SQL Server, but NOT in PostgreSQL or SQLite. A portable version would use:</div>
+          <div><strong>Bug: YEAR() is not standard SQL.</strong> It works in MySQL and SQL Server, but NOT in PostgreSQL or SQLite. A portable version would use date range comparison instead:</div>
         </li>
         <li class="flex gap-3">
           <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">2</span>
-          <div><strong>Bug: Missing alias for the JOIN.</strong> If both tables have an "id" column, the query will fail with an "ambiguous column" error.</div>
+          <div><strong>Bug: Missing alias for the JOIN.</strong> If both tables have an "id" column, the query will fail with an "ambiguous column" error unless you explicitly reference <code>c.id</code>.</div>
         </li>
         <li class="flex gap-3">
           <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">3</span>
-          <div><strong>Bug: SUM() without handling NULLs.</strong> If a customer has no orders, the JOIN will exclude them entirely (INNER JOIN). Use LEFT JOIN if you want to include all customers.</div>
+          <div><strong>Bug: INNER JOIN excludes customers with no orders.</strong> If you want ALL customers (even those who spent less than &#8369;5000 or have zero orders), use LEFT JOIN and filter after aggregation.</div>
         </li>
       </ol>
 
-      <div class="bg-white rounded-lg p-4 mt-4">
+      <div class="bg-white rounded-lg p-4 mt-4 relative">
+        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
         <pre><code>-- Fixed version (works across all databases)
 SELECT c.customer_id, c.customer_name, SUM(o.amount) as total_spent
 FROM customers c
 LEFT JOIN orders o ON c.id = o.customer_id
-WHERE o.order_date >= '2024-01-01' AND o.order_date < '2025-01-01'
+WHERE o.order_date &gt;= '2024-01-01' AND o.order_date &lt; '2025-01-01'
 GROUP BY c.customer_id, c.customer_name
-HAVING SUM(o.amount) > 5000;</code></pre>
+HAVING SUM(o.amount) &gt; 5000;</code></pre>
       </div>
+
+      <p class="text-sm text-dep-slate mt-3"><strong>Key takeaway:</strong> Always verify AI output against your specific database's documentation. Functions like YEAR(), DATE_FORMAT(), and GETDATE() are not portable.</p>
     </div>
   </section>
 
   <!-- Section 4: Practitioner Validation -->
-  <section id="practitioner-validation" class="mb-10">
+  <section id="validation" class="mb-10">
     <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
-      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.35-9.5"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      How a Practitioner Validates This Query
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      Practitioner Validation Checklist
     </h2>
     <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
       <p class="text-dep-charcoal leading-relaxed mb-4">Before trusting any AI-generated SQL, practitioners follow these validation steps:</p>
 
       <ol class="space-y-3 text-dep-charcoal">
         <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span><div><strong>Check database compatibility.</strong> Does the query use functions specific to one database? (YEAR(), DATE_FORMAT(), etc.)</div></div></li>
-        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div><strong>Test with a small dataset.</strong> Run the query against 10–20 rows first. Check if results match your expectations.</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div><strong>Test with a small dataset.</strong> Run the query against 10&ndash;20 rows first. Check if results match your expectations.</div></div></li>
         <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span><div><strong>Verify JOIN logic.</strong> Is it INNER or LEFT? Will you lose rows? Check the join condition for duplicates.</div></div></li>
         <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span><div><strong>Check GROUP BY matches SELECT.</strong> Every non-aggregated column in SELECT must appear in GROUP BY (SQL standard).</div></div></li>
         <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span><div><strong>Run EXPLAIN or execution plan.</strong> Is the query efficient? Are indexes being used?</div></div></li>
@@ -187,27 +192,27 @@ HAVING SUM(o.amount) > 5000;</code></pre>
       Resources
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
-        <h3 class="font-semibold text-dep-blue mb-2">📺 YouTube Video</h3>
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128397; YouTube Video</h3>
         <p class="text-sm text-dep-slate mb-3">5-minute video covering SQL SELECT basics with live demo.</p>
-        <span class="text-dep-gold font-semibold text-sm">Watch →</span>
-      </a>
-      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
-        <h3 class="font-semibold text-dep-blue mb-2">📂 GitHub Gist</h3>
+        <span class="text-dep-slate/60 text-sm">Coming soon to DEP YouTube channel</span>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; GitHub Gist</h3>
         <p class="text-sm text-dep-slate mb-3">Complete SQL exercises with sample dataset and answer key.</p>
-        <span class="text-dep-gold font-semibold text-sm">View Code →</span>
-      </a>
-      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
-        <h3 class="font-semibold text-dep-blue mb-2">💬 Discord Q&A</h3>
+        <span class="text-dep-slate/60 text-sm">Coming soon to DEP GitHub repo</span>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
         <p class="text-sm text-dep-slate mb-3">Post your questions in the #sql-basics thread. Mentors respond within 24 hours.</p>
-        <span class="text-dep-gold font-semibold text-sm">Join Thread →</span>
-      </a>
+        <span class="text-dep-slate/60 text-sm">Join DEP Discord to access threads</span>
+      </div>
     </div>
   </section>
 
   <!-- Navigation Between Modules -->
   <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
-    <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">← Previous Module</a>
+    <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&larr; Previous Module</a>
     <div class="flex items-center gap-2 text-sm">
       <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">1</span>
       <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
@@ -215,7 +220,7 @@ HAVING SUM(o.amount) > 5000;</code></pre>
       <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
       <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">3</span>
     </div>
-    <a href="python-fundamentals.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module →</a>
+    <a href="python-fundamentals.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
   </section>
 
 </main>
@@ -228,11 +233,20 @@ HAVING SUM(o.amount) > 5000;</code></pre>
 </footer>
 
 <script>
-  function copyCode(btn) {
-    const code = btn.parentElement.querySelector('code').textContent;
-    navigator.clipboard.writeText(code);
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy', 2000);
+  function copyCode(button) {
+    const codeBlock = button.parentElement;
+    const code = codeBlock.querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = button.textContent;
+      button.textContent = 'Copied!';
+      button.classList.remove('bg-dep-gold');
+      button.classList.add('bg-green-600');
+      setTimeout(() => {
+        button.textContent = original;
+        button.classList.remove('bg-green-600');
+        button.classList.add('bg-dep-gold');
+      }, 1500);
+    });
   }
 </script>
 

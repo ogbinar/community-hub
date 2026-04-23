@@ -29,10 +29,6 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     html { scroll-behavior: smooth; }
-    .sun-motif { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ffffff' opacity='0.06'/%3E%3Cline x1='50' y1='8' x2='50' y2='25' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='50' y1='75' x2='50' y2='92' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='8' y1='50' x2='25' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='75' y1='50' x2='92' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='20.3' y1='20.3' x2='32.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='67.5' y1='67.5' x2='79.7' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='79.7' y1='20.3' x2='67.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='32.5' y1='67.5' x2='20.3' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3C/svg%3E"); background-size: 120px 120px; }
-    .banig-divider { height: 8px; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(212,145,11,0.2) 8px, rgba(212,145,11,0.2) 16px); }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(30,58,95,0.15); }
     code { font-family: 'Courier New', monospace; }
   </style>
 </head>
@@ -60,14 +56,14 @@
   <section class="mb-12">
     <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
       <span>8-Week Structured Sprint</span>
-      <span class="text-dep-slate/60">•</span>
+      <span class="text-dep-slate/60">&middot;</span>
       <span>Career Shifter DA/DE Pathway</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Career Shifter DA/DE Pathway</h1>
     <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">An 8-week structured sprint for career shifters with no computing degree. Weekly milestones, Discord accountability, and a DEP-branded completion badge.</p>
     <div class="mt-4 flex flex-wrap gap-3">
       <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">58.5% have NO computing degree</span>
-      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">66.5% earn ≤₱35k</span>
+      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">66.5% earn &le;&#8369;35k</span>
       <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">86.3% want to upskill</span>
     </div>
   </section>
@@ -78,9 +74,9 @@
 
     <div class="space-y-6">
       <!-- Weeks 1-2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
         <div class="flex items-center gap-3 mb-3">
-          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 1–2</span>
+          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 1&ndash;2</span>
           <h3 class="text-lg font-semibold text-dep-blue">SQL Basics + Excel/Power Query</h3>
         </div>
         <ul class="space-y-2 text-dep-charcoal mb-4">
@@ -89,18 +85,16 @@
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Write 5 SQL queries against a sample dataset</span></li>
         </ul>
         <div class="flex flex-wrap gap-3 text-sm">
-          <a href="../modules/sql-basics.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">📺 Module 1: SQL Basics →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">📂 GitHub Repo →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">💬 Discord Check-in →</a>
+          <a href="../modules/sql-basics.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128387; Module 1: SQL Basics &rarr;</a>
+          <span class="text-dep-slate/60">&middot;</span>
+          <span class="text-dep-slate">Sample dataset coming to GitHub repo</span>
         </div>
       </div>
 
       <!-- Weeks 3-4 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
         <div class="flex items-center gap-3 mb-3">
-          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 3–4</span>
+          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 3&ndash;4</span>
           <h3 class="text-lg font-semibold text-dep-blue">Power BI Fundamentals + DAX Basics</h3>
         </div>
         <ul class="space-y-2 text-dep-charcoal mb-4">
@@ -109,18 +103,16 @@
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Build a dashboard from a sample dataset</span></li>
         </ul>
         <div class="flex flex-wrap gap-3 text-sm">
-          <a href="../modules/excel-powerbi-intro.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">📺 Module 3: Excel & Power BI →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">📂 GitHub Repo →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">💬 Discord Check-in →</a>
+          <a href="../modules/excel-powerbi-intro.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128387; Module 3: Excel &amp; Power BI &rarr;</a>
+          <span class="text-dep-slate/60">&middot;</span>
+          <span class="text-dep-slate">Power BI Desktop is free to download</span>
         </div>
       </div>
 
       <!-- Weeks 5-6 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
         <div class="flex items-center gap-3 mb-3">
-          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 5–6</span>
+          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 5&ndash;6</span>
           <h3 class="text-lg font-semibold text-dep-blue">Python pandas + Data Manipulation</h3>
         </div>
         <ul class="space-y-2 text-dep-charcoal mb-4">
@@ -129,18 +121,16 @@
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Analyze a real dataset and produce insights</span></li>
         </ul>
         <div class="flex flex-wrap gap-3 text-sm">
-          <a href="../modules/python-fundamentals.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">📺 Module 2: Python Fundamentals →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">📂 GitHub Repo →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">💬 Discord Check-in →</a>
+          <a href="../modules/python-fundamentals.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128387; Module 2: Python Fundamentals &rarr;</a>
+          <span class="text-dep-slate/60">&middot;</span>
+          <span class="text-dep-slate">Sample dataset coming to GitHub repo</span>
         </div>
       </div>
 
       <!-- Weeks 7-8 -->
-      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
         <div class="flex items-center gap-3 mb-3">
-          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 7–8</span>
+          <span class="bg-dep-gold text-white font-bold text-sm px-3 py-1 rounded-full">Weeks 7&ndash;8</span>
           <h3 class="text-lg font-semibold text-dep-blue">Cloud Deployment + GitHub Portfolio</h3>
         </div>
         <ul class="space-y-2 text-dep-charcoal mb-4">
@@ -149,11 +139,9 @@
           <li class="flex items-start gap-2"><svg class="w-4 h-4 text-dep-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Assignment: Complete portfolio + share on LinkedIn</span></li>
         </ul>
         <div class="flex flex-wrap gap-3 text-sm">
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">📂 GitHub Guide →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">☁️ Cloud Setup Guide →</a>
-          <span class="text-dep-slate/60">|</span>
-          <a href="#" class="text-dep-slate hover:text-dep-gold transition-colors">💬 Discord Check-in →</a>
+          <a href="../git-guide/index.html" class="text-dep-gold font-semibold hover:text-yellow-600 transition-colors">&#128196; GitHub Guide &rarr;</a>
+          <span class="text-dep-slate/60">&middot;</span>
+          <span class="text-dep-slate">AWS free tier guide coming soon</span>
         </div>
       </div>
     </div>
@@ -161,16 +149,16 @@
 
   <!-- Completion Badge -->
   <section id="badge" class="mb-12 bg-dep-lightgold rounded-xl p-8 border-l-4 border-dep-gold">
-    <h3 class="text-lg font-bold text-dep-blue mb-2">🏅 DEP-Branded Completion Badge</h3>
+    <h3 class="text-lg font-bold text-dep-blue mb-2">&#127935; DEP-Branded Completion Badge</h3>
     <p class="text-dep-slate mb-4">Share your badge on LinkedIn when you complete all 8 weeks. Directly activates career advancement motivation (75.3% of community).</p>
-    <a href="#" class="inline-block bg-dep-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">Download Badge (Canva Free Tier) →</a>
+    <a href="https://www.canva.com/design/DAG0Mz1jXgk/view" target="_blank" rel="noopener" class="inline-block bg-dep-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">Create Badge with Canva (Free Tier) &rarr;</a>
   </section>
 
   <!-- Checklist Link -->
   <section id="checklist" class="mb-12">
-    <h3 class="text-lg font-bold text-dep-blue mb-4">📋 Printable Checklist</h3>
+    <h3 class="text-lg font-bold text-dep-blue mb-4">&#128203; Printable Checklist</h3>
     <p class="text-dep-slate mb-4">Track your progress. Your selections are saved locally.</p>
-    <a href="checklist.html" class="inline-block bg-dep-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">Open Checklist →</a>
+    <a href="checklist.html" class="inline-block bg-dep-gold text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">Open Checklist &rarr;</a>
   </section>
 
 </main>

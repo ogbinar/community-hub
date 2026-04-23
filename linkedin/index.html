@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Profile Optimizer | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Interactive Checklist</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>AI-Assisted Content Generation</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">LinkedIn Profile Optimizer</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">A step-by-step checklist to optimize your LinkedIn profile for data roles. Includes AI prompt templates to generate content suggestions.</p>
+  </section>
+
+  <!-- Interactive Checklist -->
+  <section id="checklist" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-6">&#128203; Profile Optimization Checklist</h2>
+
+    <div class="space-y-4">
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Headline:</span> Replace "Looking for opportunities" with a skill-specific headline (e.g., "Data Analyst | SQL, Power BI, Python")
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">About Section:</span> Write a 2-3 sentence summary highlighting your data skills and career goals
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Projects Section:</span> Add 2-3 data projects with GitHub links and descriptions of tools used
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Skills Section:</span> Add at least 5 relevant skills (SQL, Python, Power BI, Excel, pandas)
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Featured Section:</span> Pin your best project or GitHub repository to the top of your profile
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Custom URL:</span> Set a custom LinkedIn URL (e.g., linkedin.com/in/yourname)
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Profile Photo:</span> Add a professional headshot (clear face, neutral background)
+        </div>
+      </label>
+
+      <label class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm border-l-4 border-dep-gold cursor-pointer hover:bg-dep-lightgold/30 transition-colors">
+        <input type="checkbox" class="linkedin-check w-5 h-5 rounded border-gray-300 accent-dep-gold focus:ring-dep-gold mt-0.5" onchange="saveLinkedInProgress()" />
+        <div>
+          <span class="font-semibold text-dep-blue">Banner Image:</span> Add a banner related to data/technology (Canva has free templates)
+        </div>
+      </label>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="mt-8">
+      <div class="w-full bg-gray-200 rounded-full h-3">
+        <div id="progress-fill" class="bg-dep-gold h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
+      <p class="text-sm text-dep-slate mt-2">Progress: <span id="progress-text">0%</span> (<span id="completed-count">0</span> of 8 completed)</p>
+    </div>
+  </section>
+
+  <!-- AI Prompt Templates -->
+  <section id="ai-prompts" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-6">&#129305; AI-Assisted Content Generation</h2>
+    <p class="text-dep-slate mb-6">Use these prompt templates with ChatGPT/Copilot to generate LinkedIn content suggestions. Copy the prompts, paste into your AI tool, and customize the results.</p>
+
+    <div class="space-y-4">
+      <!-- Prompt 1 -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128205; Headline Generator</h3>
+        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
+          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+          <pre><code>Write 5 LinkedIn headline options for a career shifter transitioning into data analytics.
+I have experience in [current role], and I'm learning SQL, Python, and Power BI.
+Make them specific to the skills, not generic.</code></pre>
+        </div>
+        <p class="text-sm text-dep-slate">Replace [current role] with your actual job title before using.</p>
+      </div>
+
+      <!-- Prompt 2 -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128205; About Section Generator</h3>
+        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
+          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+          <pre><code>Write a 3-sentence LinkedIn "About" section for someone transitioning into data.
+I'm currently working as [current role] but building data skills through structured learning.
+I've completed projects in SQL, Python, and Power BI. Keep it professional and authentic.</code></pre>
+        </div>
+        <p class="text-sm text-dep-slate">Replace [current role] with your actual job title before using.</p>
+      </div>
+
+      <!-- Prompt 3 -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128205; Project Description Generator</h3>
+        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
+          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+          <pre><code>Write a 4-sentence project description for my LinkedIn portfolio.
+Project: [briefly describe what the project does]
+Tools used: SQL, Python pandas, Power BI
+Focus on the business value and skills demonstrated.</code></pre>
+        </div>
+        <p class="text-sm text-dep-slate">Replace [briefly describe what the project does] with a short description of your project.</p>
+      </div>
+
+      <!-- Prompt 4 -->
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128205; Skills Section Generator</h3>
+        <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-3">
+          <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+          <pre><code>List the top 15 skills recruiters look for in entry-level data analyst roles.
+Group them into: Technical Skills, Analytical Skills, and Communication Skills.</code></pre>
+        </div>
+        <p class="text-sm text-dep-slate">Use this to ensure your LinkedIn Skills section covers what recruiters search for.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function saveLinkedInProgress() {
+    const checks = document.querySelectorAll('.linkedin-check');
+    const completed = Array.from(checks).filter(c => c.checked).length;
+    const total = checks.length;
+    const progress = (completed / total) * 100;
+
+    localStorage.setItem('dep-linkedin-progress', JSON.stringify(
+      Array.from(checks).map(c => c.checked)
+    ));
+
+    document.getElementById('progress-fill').style.width = progress + '%';
+    document.getElementById('progress-text').textContent = Math.round(progress) + '%';
+    document.getElementById('completed-count').textContent = completed;
+  }
+
+  window.onload = () => {
+    const saved = JSON.parse(localStorage.getItem('dep-linkedin-progress') || '[]');
+    const checks = document.querySelectorAll('.linkedin-check');
+    checks.forEach((c, i) => { c.checked = saved[i] === true; });
+    saveLinkedInProgress();
+  };
+
+  function copyCode(button) {
+    const codeBlock = button.parentElement;
+    const code = codeBlock.querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = button.textContent;
+      button.textContent = 'Copied!';
+      button.classList.remove('bg-dep-gold');
+      button.classList.add('bg-green-600');
+      setTimeout(() => {
+        button.textContent = original;
+        button.classList.remove('bg-green-600');
+        button.classList.add('bg-dep-gold');
+      }, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

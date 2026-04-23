@@ -29,10 +29,6 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     html { scroll-behavior: smooth; }
-    .sun-motif { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ffffff' opacity='0.06'/%3E%3Cline x1='50' y1='8' x2='50' y2='25' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='50' y1='75' x2='50' y2='92' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='8' y1='50' x2='25' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='75' y1='50' x2='92' y2='50' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='20.3' y1='20.3' x2='32.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='67.5' y1='67.5' x2='79.7' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='79.7' y1='20.3' x2='67.5' y2='32.5' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3Cline x1='32.5' y1='67.5' x2='20.3' y2='79.7' stroke='%23ffffff' stroke-width='2' opacity='0.06'/%3E%3C/svg%3E"); background-size: 120px 120px; }
-    .banig-divider { height: 8px; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(212,145,11,0.2) 8px, rgba(212,145,11,0.2) 16px); }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(30,58,95,0.15); }
     code { font-family: 'Courier New', monospace; }
   </style>
 </head>
@@ -60,18 +56,20 @@
   <section class="mb-12">
     <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
       <span>Module 2 of 3</span>
-      <span class="text-dep-slate/60">•</span>
+      <span class="text-dep-slate/60">&middot;</span>
       <span>AI-Augmented Learning</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Python Fundamentals</h1>
-    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Learn to interrogate AI-generated Python code — spot common bugs in data manipulation, understand why AI sometimes hallucinates pandas methods, and practice validating outputs.</p>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Master pandas data manipulation with AI as your co-pilot. Learn to validate every AI-generated Python snippet before trusting it.</p>
 
-    <!-- YouTube Embed -->
-    <div class="mt-8 rounded-xl overflow-hidden shadow-lg aspect-video max-w-4xl">
-      <iframe class="w-full h-full" src="https://www.youtube.com/embed/jIGFrn6es0w" title="Python Fundamentals Module" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Video placeholder -->
+    <div class="mt-8 mb-4 p-6 bg-white rounded-xl shadow-md border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-2">&#128379; Module Video</h3>
+      <p class="text-sm text-dep-slate mb-3">The 5-minute Python basics video will be hosted on the DEP YouTube channel. For now, follow along with the written guide below.</p>
+      <a href="https://www.youtube.com/results?search_query=data+engineering+pilipinas+python" target="_blank" rel="noopener" class="inline-block bg-dep-gold text-white px-5 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors text-sm">Search DEP YouTube Channel &rarr;</a>
     </div>
 
-    <p class="text-sm text-dep-slate mt-3">📺 Watch the 5-minute module video above, then follow along with each section below.</p>
+    <p class="text-sm text-dep-slate mt-3">&#128214; Follow along with each section below. Copy code examples, run them in your own environment, and compare against AI output.</p>
   </section>
 
   <!-- Section 1: Concept Explanation -->
@@ -81,22 +79,33 @@
       Concept Explanation
     </h2>
     <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">Python is the most popular programming language for data work. The key library you'll use is <strong>pandas</strong> — it's like Excel on steroids, but automated and reproducible.</p>
+      <p class="text-dep-charcoal leading-relaxed mb-4">Python is the most popular language for data work. The pandas library is like Excel inside Python &mdash; it lets you load, filter, transform, and analyze datasets with code.</p>
 
-      <h3 class="font-semibold text-dep-blue mb-2">Three Core pandas Operations</h3>
+      <h3 class="font-semibold text-dep-blue mb-2">The Three Pandas Objects</h3>
       <ul class="space-y-2 text-dep-charcoal">
-        <li><strong>Reading data</strong> — Load a CSV or Excel file into a DataFrame (like opening a spreadsheet)</li>
-        <li><strong>Filtering & transforming</strong> — Select rows, create new columns, clean messy data</li>
-        <li><strong>Aggregating</strong> — Group by category and calculate sums, averages, counts</li>
+        <li><strong>Series</strong> &mdash; A single column of data (like one Excel column)</li>
+        <li><strong>DataFrame</strong> &mdash; Multiple columns organized in rows and columns (like an entire Excel sheet)</li>
+        <li><strong>Index</strong> &mdash; The row labels that let you identify specific rows</li>
       </ul>
 
-      <p class="text-dep-charcoal leading-relaxed mt-4">The basic pattern for reading a file is:</p>
+      <p class="text-dep-charcoal leading-relaxed mt-4">The most common workflow is: load data &rarr; filter/transform &rarr; analyze &rarr; export. Here's the basic pattern:</p>
 
-      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold my-4">
-        <pre><code>import pandas as pd
-df = pd.read_csv('data.csv')
-print(df.head())</code></pre>
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold my-4 relative">
+        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <pre><code># Load data, filter, and analyze
+import pandas as pd
+
+# Load a CSV file
+df = pd.read_csv('sales_data.csv')
+
+# Filter rows where amount > 5000
+filtered = df[df['amount'] &gt; 5000]
+
+# Group by region and sum amounts
+result = filtered.groupby('region')['amount'].sum()</code></pre>
       </div>
+
+      <p class="text-sm text-dep-slate mt-3"><strong>Try it yourself:</strong> Install Python from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener" class="text-dep-gold underline hover:text-yellow-600">python.org</a>, then run: <code>pip install pandas</code></p>
     </div>
   </section>
 
@@ -107,19 +116,19 @@ print(df.head())</code></pre>
       AI-Generated Answer (What ChatGPT/Copilot Would Output)
     </h2>
     <div class="bg-dep-lightgold p-6 rounded-xl border-l-4 border-dep-gold">
-      <p class="text-sm text-dep-slate mb-3 font-medium">Here's what an AI would generate if asked: "Write Python code to calculate the average salary by department from a DataFrame."</p>
+      <p class="text-sm text-dep-slate mb-3 font-medium">Here's what an AI would generate if asked: "Write Python code to calculate the average sale per region from a sales DataFrame."</p>
 
-      <div class="bg-white rounded-lg p-4 mb-4 relative group">
+      <div class="bg-white rounded-lg p-4 mb-4 relative">
         <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
         <pre><code># AI-generated code
 import pandas as pd
 
-df = pd.read_csv('employees.csv')
-avg_salary_by_dept = df.groupby('department')['salary'].mean()
-print(avg_salary_by_dept)</code></pre>
+df = pd.read_csv('sales.csv')
+avg_by_region = df.groupby('region')['amount'].mean()
+print(avg_by_region)</code></pre>
       </div>
 
-      <p class="text-sm text-dep-slate">The code looks correct at first glance. But does it handle edge cases? Let's investigate.</p>
+      <p class="text-sm text-dep-slate">The code looks simple and correct. But is it? Let's find out where it might be wrong.</p>
     </div>
   </section>
 
@@ -130,58 +139,61 @@ print(avg_salary_by_dept)</code></pre>
       Where AI Gets It Wrong
     </h2>
     <div class="bg-red-50 p-6 rounded-xl border-l-4 border-dep-coral">
-      <p class="text-dep-charcoal leading-relaxed mb-4"><strong>This code has three common pitfalls that AI often misses:</strong></p>
+      <p class="text-dep-charcoal leading-relaxed mb-4"><strong>This code has three subtle bugs that AI commonly introduces:</strong></p>
 
       <ol class="space-y-3 text-dep-charcoal">
         <li class="flex gap-3">
           <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">1</span>
-          <div><strong>No handling of missing values.</strong> If the salary column has NaN values, .mean() will skip them silently — but you won't know how many were missing. Always check with .isna().sum() first.</div>
+          <div><strong>Bug: No handling of missing values.</strong> If the dataset has NaN or None values, mean() will produce incorrect results. A practitioner would add .dropna() or .fillna(0) first.</div>
         </li>
         <li class="flex gap-3">
           <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">2</span>
-          <div><strong>No handling of empty departments.</strong> If a department has zero employees or all NaN salaries, the result will show NaN — which can break downstream code.</div>
+          <div><strong>Bug: No error handling for missing columns.</strong> If the CSV doesn't have a 'region' column, the code crashes silently with a KeyError. Best practice wraps this in try/except or checks df.columns first.</div>
         </li>
         <li class="flex gap-3">
           <span class="bg-dep-coral text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-sm">3</span>
-          <div><strong>No type checking.</strong> If 'salary' is stored as a string (common with messy CSV files), .mean() will fail with a TypeError. AI rarely warns about this.</div>
+          <div><strong>Bug: No data type validation.</strong> If 'amount' is stored as strings instead of numbers, mean() will fail or produce wrong results. A practitioner would use pd.to_numeric() to ensure correct types.</div>
         </li>
       </ol>
 
-      <div class="bg-white rounded-lg p-4 mt-4">
-        <pre><code># Safer version
+      <div class="bg-white rounded-lg p-4 mt-4 relative">
+        <button onclick="copyCode(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <pre><code># Fixed version (with validation)
 import pandas as pd
 
-df = pd.read_csv('employees.csv')
+df = pd.read_csv('sales.csv')
 
-# Check for issues first
-print(f"Missing salaries: {df['salary'].isna().sum()}")
-print(f"Data types:\n{df.dtypes}")
+# Ensure correct data types
+df['amount'] = pd.to_numeric(df['amount'], errors='coerce')
 
-# Convert salary to numeric, coercing errors to NaN
-df['salary'] = pd.to_numeric(df['salary'], errors='coerce')
+# Drop rows with missing values before calculation
+df_valid = df.dropna(subset=['region', 'amount'])
 
-# Calculate with proper handling
-avg_salary_by_dept = df.groupby('department')['salary'].mean().round(2)
-print(avg_salary_by_dept)</code></pre>
+# Calculate average per region
+avg_by_region = df_valid.groupby('region')['amount'].mean()
+
+print(avg_by_region)</code></pre>
       </div>
+
+      <p class="text-sm text-dep-slate mt-3"><strong>Key takeaway:</strong> Always validate data types, handle missing values, and check column names before trusting AI-generated pandas code.</p>
     </div>
   </section>
 
   <!-- Section 4: Practitioner Validation -->
-  <section id="practitioner-validation" class="mb-10">
+  <section id="validation" class="mb-10">
     <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
-      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.35-9.5"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      How a Practitioner Validates This Code
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      Practitioner Validation Checklist
     </h2>
     <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
-      <p class="text-dep-charcoal leading-relaxed mb-4">Before trusting any AI-generated Python code, practitioners follow these validation steps:</p>
+      <p class="text-dep-charcoal leading-relaxed mb-4">Before trusting any AI-generated Python data code, practitioners follow these validation steps:</p>
 
       <ol class="space-y-3 text-dep-charcoal">
-        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span><div><strong>Check data types.</strong> Run df.dtypes to ensure columns are the right type before operations.</div></div></li>
-        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div><strong>Check for missing values.</strong> Run df.isna().sum() to see how many NaN values exist in each column.</div></div></li>
-        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span><div><strong>Test with sample data.</strong> Create a small DataFrame (5–10 rows) and verify the output matches expectations.</div></div></li>
-        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span><div><strong>Check edge cases.</strong> What happens if the column is empty? If all values are NaN? If there's a single row?</div></div></li>
-        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span><div><strong>Run in a notebook.</strong> Execute cell-by-cell to catch errors early, not at the end.</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span><div><strong>Check data types.</strong> Run df.dtypes to verify columns are the right type (numeric, string, datetime).</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span><div><strong>Count missing values.</strong> Run df.isnull().sum() to see how many NaN values exist in each column.</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span><div><strong>Verify column names.</strong> Print df.columns to confirm the exact spelling of columns before referencing them.</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span><div><strong>Check result shape.</strong> After groupby, verify the number of groups matches your expectations with .nunique().</div></div></li>
+        <li class="flex gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span><div><strong>Test with sample data.</strong> Create a small DataFrame with known values and compare output against expected results.</div></div></li>
       </ol>
     </div>
   </section>
@@ -193,35 +205,35 @@ print(avg_salary_by_dept)</code></pre>
       Resources
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
-        <h3 class="font-semibold text-dep-blue mb-2">📺 YouTube Video</h3>
-        <p class="text-sm text-dep-slate mb-3">5-minute video covering pandas basics with live demo.</p>
-        <span class="text-dep-gold font-semibold text-sm">Watch →</span>
-      </a>
-      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
-        <h3 class="font-semibold text-dep-blue mb-2">📂 GitHub Gist</h3>
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128379; YouTube Video</h3>
+        <p class="text-sm text-dep-slate mb-3">5-minute video covering Python pandas basics with live demo.</p>
+        <span class="text-dep-slate/60 text-sm">Coming soon to DEP YouTube channel</span>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; GitHub Gist</h3>
         <p class="text-sm text-dep-slate mb-3">Complete Python exercises with sample dataset and answer key.</p>
-        <span class="text-dep-gold font-semibold text-sm">View Code →</span>
-      </a>
-      <a href="#" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
-        <h3 class="font-semibold text-dep-blue mb-2">💬 Discord Q&A</h3>
+        <span class="text-dep-slate/60 text-sm">Coming soon to DEP GitHub repo</span>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
         <p class="text-sm text-dep-slate mb-3">Post your questions in the #python-fundamentals thread. Mentors respond within 24 hours.</p>
-        <span class="text-dep-gold font-semibold text-sm">Join Thread →</span>
-      </a>
+        <span class="text-dep-slate/60 text-sm">Join DEP Discord to access threads</span>
+      </div>
     </div>
   </section>
 
   <!-- Navigation Between Modules -->
   <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
-    <a href="sql-basics.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">← Previous Module</a>
+    <a href="sql-basics.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&larr; Previous Module</a>
     <div class="flex items-center gap-2 text-sm">
-      <span class="bg-dep-gold/20 text-dep-blue rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">1</span>
-      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">2</span>
+      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">1</span>
       <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">3</span>
+      <span class="bg-dep-gold/20 text-dep-blue rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">2</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">3</span>
     </div>
-    <a href="excel-powerbi-intro.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module →</a>
+    <a href="excel-powerbi-intro.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
   </section>
 
 </main>
@@ -234,11 +246,20 @@ print(avg_salary_by_dept)</code></pre>
 </footer>
 
 <script>
-  function copyCode(btn) {
-    const code = btn.parentElement.querySelector('code').textContent;
-    navigator.clipboard.writeText(code);
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy', 2000);
+  function copyCode(button) {
+    const codeBlock = button.parentElement;
+    const code = codeBlock.querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = button.textContent;
+      button.textContent = 'Copied!';
+      button.classList.remove('bg-dep-gold');
+      button.classList.add('bg-green-600');
+      setTimeout(() => {
+        button.textContent = original;
+        button.classList.remove('bg-green-600');
+        button.classList.add('bg-dep-gold');
+      }, 1500);
+    });
   }
 </script>
 
