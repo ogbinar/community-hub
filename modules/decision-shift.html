@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision to Shift Support Framework | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#quiz" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Quiz</a>
+        <a href="#plan" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Plan</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Phase 3 Feature</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Score: 7.8/10</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">"Decision to Shift" Support Framework</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Self-assessment quiz, skill gap analysis, personalized learning plan, and mentor matching. Addresses the 62.5% actively weighing their shift.</p>
+
+    <!-- Context stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">62.5% actively weighing their shift</span>
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">58.5% have NO computing degree</span>
+    </div>
+  </section>
+
+  <!-- Self-Assessment Quiz -->
+  <section id="quiz" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      Self-Assessment Quiz
+    </h2>
+    <p class="text-dep-slate mb-6">Answer these questions honestly to assess your readiness for a data career shift:</p>
+
+    <div id="quiz-results" class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold mb-10 hidden">
+      <h3 class="font-semibold text-dep-blue mb-3">Your Assessment Results</h3>
+      <div id="quiz-score" class="text-2xl font-bold text-dep-gold mb-4"></div>
+      <div id="quiz-feedback" class="text-dep-charcoal leading-relaxed"></div>
+    </div>
+
+    <!-- Quiz Questions -->
+    <div class="space-y-6">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Q1: What is your current role?</h3>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q1" value="student" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Student</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q1" value="non-tech" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Non-Tech Role</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q1" value="tech-entry" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Entry-Level Tech</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q1" value="experienced" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Experienced Tech</span></label>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Q2: How comfortable are you with SQL?</h3>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q2" value="none" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Never heard of it</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q2" value="basic" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Basic SELECT/WHERE</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q2" value="intermediate" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">JOIN/GROUP BY</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q2" value="advanced" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Advanced/Window Functions</span></label>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Q3: Do you have any data-related experience?</h3>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q3" value="none" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">None</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q3" value="excel" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Excel/Pivot Tables</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q3" value="python" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Python/Pandas</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q3" value="professional" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Professional Experience</span></label>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Q4: How many hours per week can you dedicate to learning?</h3>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q4" value="1-2" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">1–2 hours</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q4" value="3-5" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">3–5 hours</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q4" value="6-10" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">6–10 hours</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q4" value="10+" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">10+ hours</span></label>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <h3 class="font-semibold text-dep-blue mb-3">Q5: What is your primary motivation for shifting?</h3>
+        <div class="flex flex-wrap gap-2">
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q5" value="salary" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Higher salary</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q5" value="career" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Career growth</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q5" value="interest" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Personal interest</span></label>
+          <label class="inline-flex items-center gap-2 cursor-pointer select-none"><input type="radio" name="q5" value="remote" class="w-4 h-4 accent-dep-gold quiz-radio"/><span class="text-sm text-dep-charcoal bg-white border border-gray-200 px-3 py-1.5 rounded-full">Remote work flexibility</span></label>
+        </div>
+      </div>
+
+      <button onclick="submitQuiz()" class="mt-4 bg-dep-gold hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg text-base">Submit Assessment</button>
+    </div>
+  </section>
+
+  <!-- Personalized Plan -->
+  <section id="plan" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      Personalized Learning Plan
+    </h2>
+
+    <div id="plan-content" class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold mb-10 hidden">
+      <h3 class="font-semibold text-dep-blue mb-3">Your Recommended Path</h3>
+      <div id="plan-path" class="text-dep-charcoal leading-relaxed mb-6"></div>
+
+      <h4 class="font-semibold text-dep-blue mb-2">Suggested Modules (in order):</h4>
+      <ul id="plan-modules" class="space-y-2 text-sm text-dep-charcoal list-disc list-inside mb-6"></ul>
+
+      <h4 class="font-semibold text-dep-blue mb-2">Estimated Timeline:</h4>
+      <div id="plan-timeline" class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <pre id="plan-timeline-text" class="text-sm whitespace-pre-wrap"></pre>
+      </div>
+    </div>
+
+    <!-- Mentor Matching CTA -->
+    <div class="bg-dep-lightgold p-6 rounded-xl border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 2.74"/></svg>
+        Get Personalized Mentorship
+      </h3>
+      <p class="text-dep-charcoal mb-4">Share your assessment results with a volunteer mentor for personalized guidance. Mentors respond within 24 hours.</p>
+      <a href="../mentorship/index.html" class="inline-block bg-dep-gold hover:bg-yellow-600 text-white font-semibold px-6 py-2 rounded-lg transition-colors">Find a Mentor →</a>
+    </div>
+
+  </section>
+
+  <!-- Resources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://www.youtube.com/results?search_query=career+shift+data+analytics" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128379; YouTube Video</h3>
+        <p class="text-sm text-dep-slate mb-3">Search for career shift stories and data analytics transition tips.</p>
+        <span class="text-dep-gold font-semibold text-sm">Watch Tutorials &rarr;</span>
+      </a>
+      <a href="../pathway/index.html" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; DA/DE Pathway</h3>
+        <p class="text-sm text-dep-slate mb-3">Complete 8-week structured learning pathway for career shifters.</p>
+        <span class="text-dep-gold font-semibold text-sm">View Pathway &rarr;</span>
+      </a>
+      <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
+        <p class="text-sm text-dep-slate mb-3">Post your assessment results in the #decision-shift thread.</p>
+        <span class="text-dep-gold font-semibold text-sm">Join DEP Discord &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <a href="../modules/portfolio-builder.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&#8592; Previous Module</a>
+    <div class="flex items-center gap-2 text-sm">
+      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">10</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">11</span>
+    </div>
+    <a href="../mentorship/hiring.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function submitQuiz() {
+    const answers = {};
+    document.querySelectorAll('.quiz-radio:checked').forEach(r => {
+      answers[r.name] = r.value;
+    });
+
+    if (Object.keys(answers).length < 5) {
+      alert('Please answer all 5 questions before submitting.');
+      return;
+    }
+
+    // Calculate score
+    let score = 0;
+    const q1Scores = { student: 3, 'non-tech': 2, 'tech-entry': 4, experienced: 5 };
+    const q2Scores = { none: 0, basic: 2, intermediate: 4, advanced: 5 };
+    const q3Scores = { none: 0, excel: 2, python: 3, professional: 5 };
+    const q4Scores = { '1-2': 1, '3-5': 2, '6-10': 3, '10+': 4 };
+
+    score += (q1Scores[answers.q1] || 0);
+    score += (q2Scores[answers.q2] || 0);
+    score += (q3Scores[answers.q3] || 0);
+    score += (q4Scores[answers.q4] || 0);
+
+    const maxScore = 19;
+    const percentage = Math.round((score / maxScore) * 100);
+
+    // Display results
+    const resultsDiv = document.getElementById('quiz-results');
+    resultsDiv.classList.remove('hidden');
+    document.getElementById('quiz-score').textContent = `${percentage}% Ready`;
+
+    let feedback = '';
+    if (percentage < 40) {
+      feedback = 'You are at the beginning of your data career journey. Start with the SQL Basics module and build from there. The 8-week pathway is designed for beginners.';
+    } else if (percentage < 70) {
+      feedback = 'You have some foundation but need to strengthen key skills. Focus on the Power BI Gap Closer and DAX courses to bridge the gap between Shifters and Professionals.';
+    } else {
+      feedback = 'You are well-prepared for a data career shift. Consider advanced modules like Cloud Deployment Bootcamp and AI Workflow Interview Prep to stand out.';
+    }
+
+    document.getElementById('quiz-feedback').textContent = feedback;
+
+    // Generate personalized plan
+    const planDiv = document.getElementById('plan-content');
+    planDiv.classList.remove('hidden');
+
+    let path = '';
+    let modules = [];
+    let timeline = '';
+
+    if (percentage < 40) {
+      path = 'Beginner Path: Start with SQL and Excel fundamentals, then progress to Power BI and Python.';
+      modules = ['SQL Basics', 'Excel/Power BI Intro', 'Python Fundamentals', 'Career Shifter DA/DE Pathway'];
+      timeline = 'Week 1–2: SQL Basics + Excel\nWeek 3–4: Power BI Fundamentals\nWeek 5–6: Python pandas\nWeek 7–8: Cloud Deployment + GitHub Portfolio';
+    } else if (percentage < 70) {
+      path = 'Intermediate Path: Strengthen DAX and Power BI skills, then add Python and cloud deployment.';
+      modules = ['Power BI Gap Closer', 'DAX Signal Course', 'Python Fundamentals', 'Cloud Deployment Bootcamp'];
+      timeline = 'Week 1–2: Power BI Gap Closer\nWeek 3–4: DAX Signal Course\nWeek 5–6: Python + Cloud Basics\nWeek 7–8: Portfolio Project';
+    } else {
+      path = 'Advanced Path: Focus on AI workflow, cloud deployment, and interview preparation.';
+      modules = ['AI Workflow Interview Prep', 'Cloud Deployment Bootcamp', 'DAX Portfolio Project', 'AI Study Workflow Guide'];
+      timeline = 'Week 1–2: AI Workflow + DAX Portfolio\nWeek 3–4: Cloud Deployment\nWeek 5–6: AI Study Workflow\nWeek 7–8: Mock Interviews';
+    }
+
+    document.getElementById('plan-path').textContent = path;
+    document.getElementById('plan-modules').innerHTML = modules.map(m => `<li><a href="#" class="text-dep-gold underline hover:text-yellow-600">${m}</a></li>`).join('');
+    document.getElementById('plan-timeline-text').textContent = timeline;
+
+    // Scroll to results
+    resultsDiv.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

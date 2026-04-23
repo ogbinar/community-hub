@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Workflow Interview Prep | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#questions" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Q&A</a>
+        <a href="#answers" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Sample Answers</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Phase 3 Feature</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Score: 8.2/10</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">AI Workflow Interview Prep</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Module teaching how to articulate AI workflow in interviews: "I use Copilot for query generation, Claude for documentation review." Learn to explain your AI-assisted process confidently.</p>
+
+    <!-- Context stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">65.8% use AI daily for study</span>
+      <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">AI as co-creator in curriculum</span>
+    </div>
+  </section>
+
+  <!-- Interview Questions -->
+  <section id="questions" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      Common Interview Questions
+    </h2>
+
+    <!-- Q1 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('q1', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">Q1</span><span class="text-dep-blue font-semibold text-lg">"How do you use AI in your data workflow?"</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="q1" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-4">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Sample Answer</h4>
+            <pre>I use AI as a co-creator throughout my data workflow. For SQL queries, I generate initial drafts with Copilot, then review and optimize them myself — checking JOIN logic, verifying date functions, and ensuring portability across databases. For documentation, I use Claude to draft README files and explain complex DAX measures in plain language. The key is never accepting AI output blindly: I always validate against my own understanding and test with sample data.</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('q2', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">Q2</span><span class="text-dep-blue font-semibold text-lg">"Tell me about a time you debugged AI-generated code."</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="q2" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-4">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Sample Answer</h4>
+            <pre>I once used ChatGPT to generate a SQL query for year-over-year sales comparison. The AI output used YEAR() function which works in MySQL but not PostgreSQL. I caught this by testing the query against my local SQLite database and getting an error. I then replaced YEAR() with a date range comparison (WHERE order_date >= '2024-01-01' AND order_date < '2025-01-01') which works across all databases. This experience taught me to always test AI output in my target environment before trusting it.</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('q3', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">Q3</span><span class="text-dep-blue font-semibold text-lg">"How do you handle AI hallucinations in data analysis?"</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="q3" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-4">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Sample Answer</h4>
+            <pre>I follow a three-step validation process. First, I cross-check AI-generated DAX measures against Power BI's documentation to ensure the syntax is correct. Second, I run the measure against a small sample dataset where I know the expected results. Third, I compare the AI output against manual calculations in Excel for critical metrics. This approach caught an AI hallucination where ChatGPT suggested using SUMX with a single-column table — which works but was inefficient compared to a simple SUM.</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('q4', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">Q4</span><span class="text-dep-blue font-semibold text-lg">"What AI tools do you use and why?"</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="q4" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-4">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Sample Answer</h4>
+            <pre>I use a combination of tools depending on the task. For SQL query generation, I prefer GitHub Copilot because it integrates directly into my IDE and can see my table schema. For documentation and explanation, Claude excels at breaking down complex concepts into plain language. For Python data manipulation, ChatGPT works well for quick syntax checks. For DAX measures, I use the free Gemini API to brainstorm approaches before implementing them manually in Power BI. The key is matching the tool to the task.</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Sample Answers Section -->
+  <section id="answers" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      AI-Assisted Answer Generation Prompts
+    </h2>
+    <p class="text-dep-slate mb-6">Copy these prompts into Gemini or Copilot to draft your own interview answers:</p>
+
+    <div class="space-y-4">
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Prompt: AI Workflow Explanation</h4>
+        <pre class="text-sm whitespace-pre-wrap">Write a 2-minute interview answer explaining how I use AI in my data workflow. I work as a [Data Analyst/Data Engineer], use [SQL/Python/Power BI], and have [X years] of experience. Mention specific tools like Copilot, Claude, or ChatGPT. Emphasize validation and critical thinking over blind trust.</pre>
+      </div>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Prompt: Debugging Example</h4>
+        <pre class="text-sm whitespace-pre-wrap">Write a STAR-format interview answer about debugging AI-generated code. I work with [SQL/Python/DAX], use [Copilot/Claude/ChatGPT], and once caught an error where the AI output used [YEAR() function/SUMX with wrong syntax]. Explain how I validated it against documentation and tested with sample data.</pre>
+      </div>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Prompt: AI Tool Comparison</h4>
+        <pre class="text-sm whitespace-pre-wrap">Write a 1-minute answer comparing AI tools for data work. Explain when I use Copilot (IDE integration), Claude (documentation), ChatGPT (quick syntax), and Gemini (DAX brainstorming). Emphasize that different tools serve different purposes.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://www.youtube.com/results?search_query=ai+workflow+interview+preparation" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128379; YouTube Video</h3>
+        <p class="text-sm text-dep-slate mb-3">Search for AI workflow interview preparation tutorials and best practices.</p>
+        <span class="text-dep-gold font-semibold text-sm">Watch Tutorials &rarr;</span>
+      </a>
+      <a href="https://github.com/DataEngineeringPilipinas?tab=repositories" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; GitHub Gist</h3>
+        <p class="text-sm text-dep-slate mb-3">Sample interview answers and AI prompt templates.</p>
+        <span class="text-dep-gold font-semibold text-sm">View Code &rarr;</span>
+      </a>
+      <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
+        <p class="text-sm text-dep-slate mb-3">Practice mock interviews in the #ai-interview-prep thread. Mentors provide feedback.</p>
+        <span class="text-dep-gold font-semibold text-sm">Join DEP Discord &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <a href="../modules/dax-portfolio.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&#8592; Previous Module</a>
+    <div class="flex items-center gap-2 text-sm">
+      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">5</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">6</span>
+    </div>
+    <a href="../modules/drawio-templates.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleStep(id, btn) {
+    const content = document.getElementById(id);
+    const chevron = btn.querySelector('.step-chevron');
+    content.classList.toggle('open');
+    chevron.classList.toggle('rotated');
+  }
+
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiring Pipeline Connector | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#jobs" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Jobs</a>
+        <a href="#screening" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Screening</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Phase 3 Feature</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Score: 7.8/10</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Hiring Pipeline Connector</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Job posting board + candidate screening checklist + referral tracking. Addresses hiring friction (48.3% earn ≤₱35k).</p>
+
+    <!-- Context stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">48.3% earn ≤₱35k</span>
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Connects employers with qualified candidates</span>
+    </div>
+  </section>
+
+  <!-- Job Board -->
+  <section id="jobs" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Job Board
+    </h2>
+
+    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold mb-10">
+      <h3 class="font-semibold text-dep-blue mb-3">How to Post a Job</h3>
+      <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-6">
+        <li><strong>Contact a mentor:</strong> Use the Discord #hiring-pipeline channel to connect with a volunteer mentor who can review your posting.</li>
+        <li><strong>Submit job details:</strong> Provide role title, required skills, experience level, and compensation range.</li>
+        <li><strong>Get reviewed:</strong> Mentor reviews the posting for clarity and fairness.</li>
+        <li><strong>Post to Discord:</strong> Approved jobs are posted in the #job-board channel for community members.</li>
+      </ol>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Job Posting Template</h4>
+        <pre class="text-sm">## Job Title: [Role Name]
+## Company: [Company Name]
+## Location: [Remote/On-site/Hybrid]
+## Compensation: [₱Xk–₱Yk/month or range]
+
+### Required Skills:
+• SQL (SELECT, JOIN, GROUP BY)
+• Excel (Pivot Tables, VLOOKUP)
+• Power BI (Dashboard creation)
+
+### Preferred Qualifications:
+• 1–2 years experience
+• Portfolio project with GitHub link
+• Strong communication skills
+
+### How to Apply:
+Send your resume and portfolio link to [email] or DM @mentor in Discord.</pre>
+      </div>
+    </div>
+
+    <!-- Sample Jobs -->
+    <h3 class="font-semibold text-dep-blue mb-3">Sample Job Postings</h3>
+    <div class="space-y-4">
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="font-semibold text-dep-blue">Data Analyst (Entry Level)</h4>
+          <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">Open</span>
+        </div>
+        <p class="text-sm text-dep-slate mb-2"><strong>Company:</strong> Sample Tech Corp • <strong>Location:</strong> Remote (Philippines)</p>
+        <p class="text-sm text-dep-charcoal mb-3">Looking for entry-level data analysts with SQL and Power BI skills. Must have at least 1 portfolio project.</p>
+        <div class="flex items-center gap-2">
+          <span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-1 rounded-full">SQL</span>
+          <span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-1 rounded-full">Power BI</span>
+          <span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-1 rounded-full">Excel</span>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold">
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="font-semibold text-dep-blue">Junior Data Engineer</h4>
+          <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">Open</span>
+        </div>
+        <p class="text-sm text-dep-slate mb-2"><strong>Company:</strong> DataFlow Inc • <strong>Location:</strong> Hybrid (Manila)</p>
+        <p class="text-sm text-dep-charcoal mb-3">Junior DE role focused on Python and cloud deployment. Must have GitHub portfolio with at least 2 projects.</p>
+        <div class="flex items-center gap-2">
+          <span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-1 rounded-full">Python</span>
+          <span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-1 rounded-full">AWS</span>
+          <span class="bg-dep-blue/10 text-dep-blue text-xs px-2 py-1 rounded-full">Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screening Checklist -->
+  <section id="screening" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      Candidate Screening Checklist
+    </h2>
+
+    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-3">For Employers: Screening Criteria</h3>
+      <ul class="space-y-3 text-dep-charcoal list-disc list-inside mb-6">
+        <li><strong>Portfolio check:</strong> Does the candidate have at least 2 complete projects on GitHub?</li>
+        <li><strong>Technical skills:</strong> Can they write basic SQL queries (SELECT, JOIN, GROUP BY)?</li>
+        <li><strong>Communication:</strong> Can they explain their project clearly in writing?</li>
+        <li><strong>Cultural fit:</strong> Are they aligned with our team values and work style?</li>
+      </ul>
+
+      <h3 class="font-semibold text-dep-blue mb-3">For Candidates: Preparation Checklist</h3>
+      <ul class="space-y-3 text-dep-charcoal list-disc list-inside mb-6">
+        <li><strong>Resume:</strong> Updated with relevant skills and project descriptions</li>
+        <li><strong>GitHub:</strong> Clean repo structure with README files for each project</li>
+        <li><strong>LinkedIn:</strong> Optimized headline and About section</li>
+        <li><strong>Portfolio:</strong> At least 2 complete projects with documentation</li>
+        <li><strong>Certifications:</strong> Free certs from Microsoft Learn, Google Analytics, etc.</li>
+      </ul>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Referral Tracking Template</h4>
+        <pre class="text-sm">## Referral: [Candidate Name] → [Company]
+## Date Referred: [YYYY-MM-DD]
+## Status: [Applied/Interviewing/Offer/Hired]
+## Mentor: [Mentor Name]
+
+Notes:
+• Candidate skills: SQL, Power BI, Excel
+• Portfolio projects: 2 complete projects
+• Interview date: [YYYY-MM-DD]</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://www.indeed.com.ph/jobs?q=data+analyst" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; Indeed Philippines</h3>
+        <p class="text-sm text-dep-slate mb-3">Search for data analyst and data engineer jobs in the Philippines.</p>
+        <span class="text-dep-gold font-semibold text-sm">Browse Jobs &rarr;</span>
+      </a>
+      <a href="https://linkedin.com/jobs" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; LinkedIn Jobs</h3>
+        <p class="text-sm text-dep-slate mb-3">Search for data roles on LinkedIn with salary filters.</p>
+        <span class="text-dep-gold font-semibold text-sm">Browse Jobs &rarr;</span>
+      </a>
+      <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
+        <p class="text-sm text-dep-slate mb-3">Post job inquiries in the #hiring-pipeline channel.</p>
+        <span class="text-dep-gold font-semibold text-sm">Join DEP Discord &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <a href="../modules/decision-shift.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&#8592; Previous Module</a>
+    <div class="flex items-center gap-2 text-sm">
+      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">11</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">12</span>
+    </div>
+    <a href="../creator/spotlight.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

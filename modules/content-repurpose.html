@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Repurposing Toolkit | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#templates" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Templates</a>
+        <a href="#workflows" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Workflows</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Phase 3 Feature</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Score: 7.0/10</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">Content Repurposing Toolkit</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Templates for turning one piece of content into multiple formats: YouTube → LinkedIn → GitHub README → Discord announcement → Twitter thread.</p>
+
+    <!-- Context stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">24.6% YouTube awareness gap</span>
+      <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Maximize content reach across platforms</span>
+    </div>
+  </section>
+
+  <!-- Templates Section -->
+  <section id="templates" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Content Repurposing Templates
+    </h2>
+
+    <!-- YouTube Template -->
+    <div class="mb-6">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('youtube', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">YT</span><span class="text-dep-blue font-semibold text-lg">YouTube Video Template</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="youtube" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <h3 class="font-semibold text-dep-blue mb-3">Video Script Template</h3>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">5-Minute Tutorial Script</h4>
+            <pre class="text-sm">[0:00-0:15] Hook: "Did you know 80% of data analysts make this SQL mistake?"
+
+[0:15-0:30] Intro: "Hi, I'm [Name], and today we're covering [topic]. This is a common mistake that even experienced analysts make."
+
+[0:30-3:00] Main Content: Explain the concept with live demo. Show both the wrong way and the right way.
+
+[3:00-4:00] Example: Walk through a real-world example using sample data.
+
+[4:00-4:30] Recap: Summarize the key takeaway in 3 bullet points.
+
+[4:30-5:00] CTA: "If this helped, hit like and subscribe for more data tips. Comment below with what topic you want to see next."</pre>
+          </div>
+
+          <h4 class="font-semibold text-dep-blue mb-2">Video SEO Tips</h4>
+          <ul class="space-y-2 text-sm text-dep-charcoal list-disc list-inside">
+            <li><strong>Title:</strong> Include the main keyword (e.g., "SQL JOIN Tutorial for Beginners")</li>
+            <li><strong>Description:</strong> Write 200+ words with keywords naturally included</li>
+            <li><strong>Tags:</strong> Use 5–10 relevant tags (SQL, tutorial, data analysis)</li>
+            <li><strong>Thumbnail:</strong> Create eye-catching thumbnails using Canva (free)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkedIn Template -->
+    <div class="mb-6">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('linkedin', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">in</span><span class="text-dep-blue font-semibold text-lg">LinkedIn Post Template</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="linkedin" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <h3 class="font-semibold text-dep-blue mb-3">LinkedIn Post Template</h3>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">LinkedIn Post Template</h4>
+            <pre class="text-sm">🔥 I just learned something that changed how I do [topic]
+
+Most people think [common misconception]. But the truth is [key insight].
+
+Here's what I wish I knew earlier:
+
+1️⃣ [Key point 1 with specific example]
+2️⃣ [Key point 2 with specific example]
+3️⃣ [Key point 3 with specific example]
+
+This helped me [specific result/benefit].
+
+What's your experience with [topic]? Drop a comment below! 👇
+
+#DataAnalytics #SQL #[RelatedTopic]</pre>
+          </div>
+
+          <h4 class="font-semibold text-dep-blue mb-2">LinkedIn Best Practices</h4>
+          <ul class="space-y-2 text-sm text-dep-charcoal list-disc list-inside">
+            <li><strong>Post timing:</strong> Tuesday–Thursday, 9–11 AM PHT for best engagement</li>
+            <li><strong>Engagement:</strong> Reply to every comment within 2 hours of posting</li>
+            <li><strong>Visuals:</strong> Add a screenshot or infographic to increase reach by 3x</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub Template -->
+    <div class="mb-6">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('github', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">GH</span><span class="text-dep-blue font-semibold text-lg">GitHub README Template</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="github" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <h3 class="font-semibold text-dep-blue mb-3">GitHub README Template</h3>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">GitHub README Template</h4>
+            <pre class="text-sm"># [Project Name]
+
+## Overview
+Brief description of what this project does and why it matters.
+
+## Tools Used
+- Python 3.x
+- pandas, numpy
+- Power BI / Excel
+
+## What I Learned
+- Key takeaway 1 with specific example
+- Key takeaway 2 with specific example
+- Key takeaway 3 with specific example
+
+## How to Run
+1. Clone this repo: git clone [your-repo-url]
+2. Install dependencies: pip install pandas openpyxl
+3. Run the script: python analysis.py
+
+## Results
+[Add screenshot or description of results]
+
+## License
+MIT License - feel free to use and modify.</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Discord Template -->
+    <div class="mb-6">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('discord', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">DC</span><span class="text-dep-blue font-semibold text-lg">Discord Announcement Template</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="discord" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <h3 class="font-semibold text-dep-blue mb-3">Discord Announcement Template</h3>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Discord Announcement Template</h4>
+            <pre class="text-sm">📢 **New Content Alert!**
+
+**Topic:** [Topic Name]
+**Format:** [YouTube Video / GitHub Project / Tutorial]
+**Level:** [Beginner / Intermediate / Advanced]
+
+🔗 **Link:** [URL to content]
+
+📝 **What you'll learn:**
+• Key learning point 1
+• Key learning point 2
+• Key learning point 3
+
+💬 **Discussion:** Share your thoughts or questions in the #content-discussion channel!</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Twitter Template -->
+    <div class="mb-6">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('twitter', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">TW</span><span class="text-dep-blue font-semibold text-lg">Twitter Thread Template</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="twitter" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <h3 class="font-semibold text-dep-blue mb-3">Twitter Thread Template</h3>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Twitter Thread Template</h4>
+            <pre class="text-sm">🧵 A thread on [topic] that took me [X hours] to master:
+
+1/ Most people think [common misconception]. But the truth is [key insight]. Here's why it matters...
+
+2/ The #1 mistake I see beginners make is [mistake]. This costs them [specific consequence].
+
+3/ Here's how to fix it: [solution with step-by-step example]
+
+4/ Pro tip: [advanced technique or shortcut]
+
+5/ Resources that helped me learn this:
+• [Resource 1]
+• [Resource 2]
+• [Resource 3]
+
+6/ If you found this helpful, retweet the first tweet and follow for more data tips! 📊</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Workflows Section -->
+  <section id="workflows" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="8 12 10 14 16 8"/></svg>
+      Content Repurposing Workflow
+    </h2>
+
+    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-3">One Piece of Content → Five Platforms</h3>
+      <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-6">
+        <li><strong>Create YouTube video:</strong> Record a 5-minute tutorial on your topic</li>
+        <li><strong>Extract key points:</strong> List the 3 main takeaways from the video</li>
+        <li><strong>Write LinkedIn post:</strong> Use the template above to create a professional post</li>
+        <li><strong>Create GitHub README:</strong> Document your project with code examples</li>
+        <li><strong>Post Discord announcement:</strong> Share with the community for discussion</li>
+        <li><strong>Create Twitter thread:</strong> Condense key points into a 6-tweet thread</li>
+      </ol>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Content Calendar Template</h4>
+        <pre class="text-sm">## Weekly Content Calendar
+
+Week 1: SQL Basics Tutorial
+• YouTube: "SQL JOIN Explained in 5 Minutes"
+• LinkedIn: Post about common JOIN mistakes
+• GitHub: Sample SQL exercises with answer key
+• Discord: Announce video + discussion thread
+• Twitter: Thread on JOIN best practices
+
+Week 2: Power BI Dashboard
+• YouTube: "Build Your First Power BI Dashboard"
+• LinkedIn: Share dashboard screenshot + insights
+• GitHub: Sample dataset and DAX measures
+• Discord: Share results + ask for feedback
+• Twitter: Thread on dashboard design tips</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://www.youtube.com/results?search_query=content+repurposing+tutorial" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128379; YouTube Video</h3>
+        <p class="text-sm text-dep-slate mb-3">Search for content repurposing tutorials and social media strategies.</p>
+        <span class="text-dep-gold font-semibold text-sm">Watch Tutorials &rarr;</span>
+      </a>
+      <a href="https://www.canva.com/" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; Canva</h3>
+        <p class="text-sm text-dep-slate mb-3">Free design tool for creating thumbnails, infographics, and social media graphics.</p>
+        <span class="text-dep-gold font-semibold text-sm">Open Canva →</span>
+      </a>
+      <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
+        <p class="text-sm text-dep-slate mb-3">Post your questions in the #content-repurpose thread.</p>
+        <span class="text-dep-gold font-semibold text-sm">Join DEP Discord &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <a href="../modules/credential-tracker.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&#8592; Previous Module</a>
+    <div class="flex items-center gap-2 text-sm">
+      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">18</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">19</span>
+    </div>
+    <a href="../modules/ai-coding-toolkit.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleStep(id, btn) {
+    const content = document.getElementById(id);
+    const chevron = btn.querySelector('.step-chevron');
+    content.classList.toggle('open');
+    chevron.classList.toggle('rotated');
+  }
+
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAX Portfolio Project | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#project" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Project</a>
+        <a href="#steps" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Steps</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Phase 3 Feature</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Score: 8.2/10</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">DAX Portfolio Project</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">End-to-end DAX project template: data model design, measures, time intelligence, dashboard visualization. Closes the 2.2% vs 29.1% gap between Shifters and Pros.</p>
+
+    <!-- Gap stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-coral/10 text-dep-coral font-medium text-xs px-3 py-1 rounded-full">Only 2.2% of Shifters use DAX</span>
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">29.1% of Pros use DAX</span>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section id="project" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      Project Overview: Sales Dashboard
+    </h2>
+    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold mb-10">
+      <h3 class="font-semibold text-dep-blue mb-3">What You'll Build</h3>
+      <p class="text-dep-charcoal leading-relaxed mb-4">A complete Power BI dashboard that analyzes sales data with DAX measures for time intelligence, running totals, and year-over-year comparisons. This project demonstrates the exact skills employers look for.</p>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold mb-6">
+        <h4 class="font-semibold text-dep-blue mb-2">Sample Dataset Schema</h4>
+        <pre class="text-sm">-- Tables
+Sales(SaleID, DateID, CustomerID, ProductID, Amount, Quantity)
+Customers(CustomerID, Name, Region, JoinDate)
+Products(ProductID, Category, SubCategory, UnitPrice)
+Dates(DateID, Date, Year, Month, Day, Quarter)</pre>
+      </div>
+
+      <h4 class="font-semibold text-dep-blue mb-2">Dashboard Components</h4>
+      <ul class="space-y-2 text-sm text-dep-charcoal">
+        <li>&#128203; KPI cards: Total Sales, YTD Sales, YoY Growth %</li>
+        <li>&#128203; Line chart: Monthly sales trend with moving average</li>
+        <li>&#128203; Bar chart: Sales by product category</li>
+        <li>&#128203; Map: Sales by region</li>
+        <li>&#128203; Table: Top 10 customers by sales</li>
+      </ul>
+    </div>
+
+    <!-- Steps -->
+    <h2 id="steps" class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Step-by-Step Project Guide
+    </h2>
+
+    <!-- Step 1 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step1', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">1</span><span class="text-dep-blue font-semibold text-lg">Data Model Design</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step1" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li><strong>Import your data</strong> into Power BI from a CSV or Excel file.</li>
+            <li><strong>Create relationships:</strong> Dates → Sales, Customers → Sales, Products → Sales (one-to-many).</li>
+            <li><strong>Mark the Dates table</strong> as a date table in Power BI.</li>
+          </ol>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Star Schema Checklist</h4>
+            <pre>- [ ] One fact table (Sales) with numeric measures
+- [ ] Multiple dimension tables (Customers, Products, Dates)
+- [ ] Relationships: Dimension → Fact (one-to-many)
+- [ ] No circular relationships
+- [ ] Date table is marked as a date table</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step2', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">2</span><span class="text-dep-blue font-semibold text-lg">Essential DAX Measures</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step2" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li><strong>Create basic measures:</strong> Total Sales, Total Quantity, Average Order Value.</li>
+            <li><strong>Add time intelligence:</strong> YTD Sales, QTD Sales, MTD Sales.</li>
+            <li><strong>Calculate comparisons:</strong> Prior Year Sales, YoY Growth %.</li>
+          </ol>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Core DAX Measures</h4>
+            <pre>Total Sales = SUM(Sales[Amount])
+
+Total YTD = TOTALYTD([Total Sales], 'Dates'[Date])
+
+Sales Prior Year = 
+CALCULATE(
+  [Total Sales],
+  SAMEPERIODLASTYEAR('Dates'[Date])
+)
+
+YoY Growth % = 
+DIVIDE(
+  [Total Sales] - [Sales Prior Year],
+  [Sales Prior Year]
+)</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step3', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">3</span><span class="text-dep-blue font-semibold text-lg">Time Intelligence Measures</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step3" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li><strong>Use TOTALYTD, TOTALQTD, TOTALMTD</strong> for period-to-date calculations.</li>
+            <li><strong>Use PARALLELPERIOD, DATEADD</strong> for rolling 12-month and custom periods.</li>
+            <li><strong>Use DATESINPERIOD</strong> for flexible date range filtering.</li>
+          </ol>
+          <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative">
+            <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+            <h4 class="font-semibold text-dep-blue mb-2">Time Intelligence Examples</h4>
+            <pre>Sales Rolling 12 Months = 
+CALCULATE(
+  [Total Sales],
+  DATESINPERIOD('Dates'[Date], 
+    LASTDATE('Dates'[Date]), -12, MONTH)
+)
+
+Sales First Half YTD = 
+CALCULATE(
+  [Total Sales],
+  FILTER(ALL('Dates'), 
+    'Dates'[Month] <= 6 && 
+    YEAR('Dates'[Date]) = YEAR(TODAY()))
+)</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="mb-3">
+      <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('step4', this)">
+        <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">4</span><span class="text-dep-blue font-semibold text-lg">Dashboard Visualization</span></div>
+        <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="step4" class="step-content">
+        <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+          <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-4">
+            <li><strong>Add KPI cards</strong> for Total Sales, YTD Sales, YoY Growth %.</li>
+            <li><strong>Create a line chart</strong> with monthly sales trend and moving average.</li>
+            <li><strong>Build a bar chart</strong> showing sales by product category.</li>
+            <li><strong>Add a map visual</strong> for regional sales breakdown.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Resources
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="https://www.youtube.com/results?search_query=power+bi+dax+tutorial" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+          <h3 class="font-semibold text-dep-blue mb-2">&#128379; YouTube Video</h3>
+          <p class="text-sm text-dep-slate mb-3">Search for Power BI DAX tutorials covering measures, calculated columns, and time intelligence.</p>
+          <span class="text-dep-gold font-semibold text-sm">Watch Tutorials &rarr;</span>
+        </a>
+        <a href="https://github.com/DataEngineeringPilipinas?tab=repositories" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+          <h3 class="font-semibold text-dep-blue mb-2">&#128196; GitHub Gist</h3>
+          <p class="text-sm text-dep-slate mb-3">Sample DAX exercises with answer key and best practices.</p>
+          <span class="text-dep-gold font-semibold text-sm">View Code &rarr;</span>
+        </a>
+        <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+          <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
+          <p class="text-sm text-dep-slate mb-3">Post your questions in the #dax-portfolio thread. Mentors respond within 24 hours.</p>
+          <span class="text-dep-gold font-semibold text-sm">Join DEP Discord &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+      <a href="../modules/power-bi-gap.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&#8592; Previous Module</a>
+      <div class="flex items-center gap-2 text-sm">
+        <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">4</span>
+        <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">5</span>
+      </div>
+      <a href="../modules/ai-interview-prep.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
+    </section>
+
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleStep(id, btn) {
+    const content = document.getElementById(id);
+    const chevron = btn.querySelector('.step-chevron');
+    content.classList.toggle('open');
+    chevron.classList.toggle('rotated');
+  }
+
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>

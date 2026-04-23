@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Assisted Coding Toolkit | DEP Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dep-blue': '#1e3a5f',
+            'dep-gold': '#d4910b',
+            'dep-coral': '#c0392b',
+            'dep-warm': '#faf8f5',
+            'dep-charcoal': '#2d3748',
+            'dep-lightgold': '#fef3c7',
+            'dep-slate': '#6b7a8d',
+          },
+          fontFamily: { 'inter': ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    code { font-family: 'Courier New', monospace; }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .step-content.open { max-height: 4000px; }
+    .step-chevron { transform: rotate(0deg); transition: transform 0.2s ease; }
+    .step-chevron.rotated { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-dep-warm text-dep-charcoal font-inter">
+
+<!-- Shared Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dep-blue shadow-md">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../docs/index.html" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg class="w-7 h-7 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <span class="hidden sm:inline">DEP Community Hub</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../docs/index.html" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Hub</a>
+        <a href="#tools" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Tools</a>
+        <a href="#prompts" class="text-white/80 hover:text-dep-gold transition-colors text-sm">Prompts</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+  <!-- Header -->
+  <section class="mb-12">
+    <div class="inline-flex items-center gap-2 bg-dep-gold/10 text-dep-blue font-medium text-sm px-3 py-1 rounded-full mb-4">
+      <span>Phase 3 Feature</span>
+      <span class="text-dep-slate/60">&middot;</span>
+      <span>Score: 7.5/10</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-dep-blue mb-4">AI-Assisted Coding Toolkit</h1>
+    <p class="text-lg text-dep-slate max-w-2xl leading-relaxed">Guide to GitHub Copilot (16.5%), Cursor (12.7%), Databricks assistant (10.1%). Setup instructions, prompt engineering tips, and validation best practices.</p>
+
+    <!-- Context stat -->
+    <div class="mt-4 flex flex-wrap gap-3">
+      <span class="bg-dep-blue/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">GitHub Copilot: 16.5% adoption</span>
+      <span class="bg-dep-gold/10 text-dep-blue font-medium text-xs px-3 py-1 rounded-full">Cursor: 12.7% adoption</span>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="tools" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      AI Coding Tools Comparison
+    </h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white rounded-xl shadow-md overflow-hidden border-collapse">
+        <thead>
+          <tr class="bg-dep-blue text-white">
+            <th class="p-4 text-left font-semibold">Tool</th>
+            <th class="p-4 text-left font-semibold">Best For</th>
+            <th class="p-4 text-left font-semibold">Cost</th>
+            <th class="p-4 text-left font-semibold">Adoption</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-medium">GitHub Copilot</td>
+            <td class="p-4 text-sm">IDE integration (VS Code, JetBrains)</td>
+            <td class="p-4 text-sm"><span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">Free for students</span></td>
+            <td class="p-4 text-sm font-bold text-dep-gold">16.5%</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-dep-lightgold/20">
+            <td class="p-4 font-medium">Cursor</td>
+            <td class="p-4 text-sm">AI-first code editor</td>
+            <td class="p-4 text-sm"><span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">Free tier available</span></td>
+            <td class="p-4 text-sm font-bold text-dep-gold">12.7%</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-4 font-medium">Databricks Assistant</td>
+            <td class="p-4 text-sm">Spark and data engineering workflows</td>
+            <td class="p-4 text-sm"><span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">Free with Databricks</span></td>
+            <td class="p-4 text-sm font-bold text-dep-gold">10.1%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tool Details -->
+    <div class="mt-8 space-y-6">
+      <!-- GitHub Copilot -->
+      <div class="mb-3">
+        <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('copilot', this)">
+          <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">1</span><span class="text-dep-blue font-semibold text-lg">GitHub Copilot Setup Guide</span></div>
+          <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="copilot" class="step-content">
+          <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+            <h3 class="font-semibold text-dep-blue mb-3">How to Use GitHub Copilot</h3>
+            <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-6">
+              <li><strong>Install VS Code:</strong> Download from code.visualstudio.com (free)</li>
+              <li><strong>Install Copilot extension:</strong> Search "GitHub Copilot" in VS Code extensions</li>
+              <li><strong>Sign in:</strong> Use your GitHub account to activate Copilot</li>
+              <li><strong>Start coding:</strong> Open a Python or SQL file and start typing</li>
+            </ol>
+
+            <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+              <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+              <h4 class="font-semibold text-dep-blue mb-2">Copilot Prompt Examples</h4>
+              <pre class="text-sm"># Type this comment and press Tab to generate code:
+
+# Read CSV file and calculate sales by category
+import pandas as pd
+df = pd.read_csv('sales.csv')
+category_sales = df.groupby('Category').agg(
+    Total_Sales=('Amount', 'sum'),
+    Avg_Order=('Amount', 'mean')
+)
+print(category_sales)</pre>
+          </div>
+
+          <h4 class="font-semibold text-dep-blue mb-2">Validation Best Practices</h4>
+          <ul class="space-y-2 text-sm text-dep-charcoal list-disc list-inside">
+            <li><strong>Always review:</strong> Never blindly accept AI-generated code without reviewing it first</li>
+            <li><strong>Test with sample data:</strong> Run generated code against a small dataset to verify correctness</li>
+            <li><strong>Check imports:</strong> Ensure all required packages are installed before running</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cursor -->
+      <div class="mb-3">
+        <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('cursor', this)">
+          <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">2</span><span class="text-dep-blue font-semibold text-lg">Cursor Setup Guide</span></div>
+          <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="cursor" class="step-content">
+          <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+            <h3 class="font-semibold text-dep-blue mb-3">How to Use Cursor</h3>
+            <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-6">
+              <li><strong>Download Cursor:</strong> Get it from cursor.com (free tier available)</li>
+              <li><strong>Create a project:</strong> Open a folder with your Python or SQL files</li>
+              <li><strong>Use Chat:</strong> Press Ctrl/Cmd + L to open the AI chat panel</li>
+              <li><strong>Prompt engineering:</strong> Be specific about what you want Cursor to generate</li>
+            </ol>
+
+            <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+              <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+              <h4 class="font-semibold text-dep-blue mb-2">Cursor Prompt Examples</h4>
+              <pre class="text-sm"># In the Cursor chat panel:
+
+"Write a Python function that takes a DataFrame and returns 
+the top 10 customers by total sales. Include error handling 
+for missing columns."
+
+"Explain this DAX measure step by step:
+CALCULATE([Total Sales], SAMEPERIODLASTYEAR('Dates'[Date]))"</pre>
+          </div>
+
+          <h4 class="font-semibold text-dep-blue mb-2">Prompt Engineering Tips</h4>
+          <ul class="space-y-2 text-sm text-dep-charcoal list-disc list-inside">
+            <li><strong>Be specific:</strong> Include exact column names, expected output format, and edge cases</li>
+            <li><strong>Provide context:</strong> Mention your database type (MySQL, PostgreSQL, etc.)</li>
+            <li><strong>Ask for explanations:</strong> Request line-by-line breakdowns of complex queries</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Databricks Assistant -->
+      <div class="mb-3">
+        <button class="step-toggle w-full text-left bg-white rounded-xl shadow-md p-5 flex items-center justify-between hover:bg-dep-lightgold/30 transition-colors cursor-pointer" onclick="toggleStep('databricks', this)">
+          <div class="flex items-center gap-3"><span class="bg-dep-gold/20 text-dep-blue font-bold text-xs w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">3</span><span class="text-dep-blue font-semibold text-lg">Databricks Assistant Setup Guide</span></div>
+          <svg class="step-chevron w-5 h-5 text-dep-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="databricks" class="step-content">
+          <div class="bg-white rounded-b-xl shadow-md p-6 border-l-4 border-dep-gold mt-0">
+            <h3 class="font-semibold text-dep-blue mb-3">How to Use Databricks Assistant</h3>
+            <ol class="space-y-3 text-dep-charcoal list-decimal list-inside mb-6">
+              <li><strong>Create a Databricks account:</strong> Sign up at databricks.com (free tier available)</li>
+              <li><strong>Start a notebook:</strong> Create a new Python or SQL notebook</li>
+              <li><strong>Use the assistant:</strong> Click the AI icon in the toolbar to open Databricks Assistant</li>
+              <li><strong>Prompt your task:</strong> Describe what you want to accomplish in natural language</li>
+            </ol>
+
+            <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+              <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+              <h4 class="font-semibold text-dep-blue mb-2">Databricks Assistant Prompt Examples</h4>
+              <pre class="text-sm"># In Databricks notebook:
+
+"Write a Spark DataFrame transformation that joins two tables 
+and calculates year-over-year growth percentage."
+
+"Optimize this PySpark query for better performance on large datasets."</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Prompt Engineering -->
+  <section id="prompts" class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Prompt Engineering Best Practices
+    </h2>
+
+    <div class="bg-white rounded-xl shadow-md p-8 border-l-4 border-dep-gold">
+      <h3 class="font-semibold text-dep-blue mb-3">Writing Effective Prompts</h3>
+      <ul class="space-y-3 text-dep-charcoal list-disc list-inside mb-6">
+        <li><strong>Be specific about the task:</strong> Instead of "Write SQL," use "Write a SQL query that calculates monthly sales by product category"</li>
+        <li><strong>Provide context:</strong> Mention your database type, table structure, and expected output format</li>
+        <li><strong>Ask for explanations:</strong> Request line-by-line breakdowns of complex queries or code</li>
+        <li><strong>Iterate:</strong> If the first result isn't perfect, refine your prompt with more details</li>
+      </ul>
+
+      <div class="bg-dep-lightgold p-4 rounded-lg border-l-4 border-dep-gold relative mb-6">
+        <button onclick="copyText(this)" class="absolute top-2 right-2 bg-dep-gold text-white text-xs px-3 py-1 rounded hover:bg-yellow-600 transition-colors">Copy</button>
+        <h4 class="font-semibold text-dep-blue mb-2">Prompt Template</h4>
+        <pre class="text-sm">Task: [What you want the AI to do]
+Context: [Database type, table structure, data sample]
+Output format: [Expected result format]
+Edge cases: [How to handle NULLs, duplicates, etc.]
+Validation: [How to verify the output is correct]</pre>
+      </div>
+
+      <h4 class="font-semibold text-dep-blue mb-2">Common Mistakes to Avoid</h4>
+      <ul class="space-y-2 text-sm text-dep-charcoal list-disc list-inside">
+        <li><strong>Vague prompts:</strong> "Write code" → Too vague, specify the exact task</li>
+        <li><strong>No context:</strong> AI doesn't know your table structure or column names</li>
+        <li><strong>Blind trust:</strong> Always validate AI output before using it in production</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold text-dep-blue mb-4 flex items-center gap-2">
+      <svg class="w-5 h-5 text-dep-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resources
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://www.youtube.com/results?search_query=github+copilot+tutorial" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128379; YouTube Video</h3>
+        <p class="text-sm text-dep-slate mb-3">Search for GitHub Copilot tutorials and AI coding best practices.</p>
+        <span class="text-dep-gold font-semibold text-sm">Watch Tutorials &rarr;</span>
+      </a>
+      <a href="https://github.com/DataEngineeringPilipinas?tab=repositories" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128196; GitHub Gist</h3>
+        <p class="text-sm text-dep-slate mb-3">Sample AI prompts and validation scripts for data professionals.</p>
+        <span class="text-dep-gold font-semibold text-sm">View Code &rarr;</span>
+      </a>
+      <a href="https://discord.gg/buDgydz7J9" target="_blank" rel="noopener" class="bg-white rounded-xl shadow-md p-6 border-l-4 border-dep-gold card-hover block">
+        <h3 class="font-semibold text-dep-blue mb-2">&#128172; Discord Q&A</h3>
+        <p class="text-sm text-dep-slate mb-3">Post your questions in the #ai-coding-toolkit thread.</p>
+        <span class="text-dep-gold font-semibold text-sm">Join DEP Discord &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200">
+    <a href="../modules/content-repurpose.html" class="text-dep-slate hover:text-dep-gold transition-colors text-sm">&#8592; Previous Module</a>
+    <div class="flex items-center gap-2 text-sm">
+      <span class="bg-gray-100 text-gray-400 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">19</span>
+      <svg class="w-4 h-4 text-dep-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <span class="bg-dep-gold text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">20</span>
+    </div>
+    <a href="../creator/spotlight.html" class="text-dep-gold hover:text-yellow-600 transition-colors font-semibold text-sm">Next Module &rarr;</a>
+  </section>
+
+</main>
+
+<!-- Shared Footer -->
+<footer class="bg-dep-blue py-8 border-t-2 border-dep-gold/30">
+  <div class="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-white/60 text-sm">Built by the Data Engineering Pilipinas community. All tools are free and open-source.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleStep(id, btn) {
+    const content = document.getElementById(id);
+    const chevron = btn.querySelector('.step-chevron');
+    content.classList.toggle('open');
+    chevron.classList.toggle('rotated');
+  }
+
+  function copyText(btn) {
+    const code = btn.parentElement.querySelector('pre').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>
